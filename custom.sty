@@ -1,0 +1,68 @@
+\ProvidesPackage{tema-memoria}
+\RequirePackage{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{colortbl}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+
+% =========================================================
+% PALETA DE COLORES (desde CSS)
+% =========================================================
+\definecolor{BgDark}{HTML}{0D1E30}
+\definecolor{GoldTitle}{HTML}{F0C040}
+\definecolor{LightBlue}{HTML}{7ECFFF}
+\definecolor{MintGreen}{HTML}{A8E6CF}
+\definecolor{HitGreen}{HTML}{00B894}
+\definecolor{MissRed}{HTML}{D63031}
+\definecolor{WarnColor}{HTML}{FF7675}
+\definecolor{TableHeadBg}{HTML}{1E3A5A}
+\definecolor{TableBodyBg}{HTML}{141E2C}
+\definecolor{TableBorder}{HTML}{2A4A6A}
+
+% Colores de la Pirámide
+\definecolor{PyReg}{HTML}{c0392b}
+\definecolor{PyL1}{HTML}{d35400}
+\definecolor{PyL2}{HTML}{f1c40f}
+\definecolor{PyRam}{HTML}{2ecc71}
+\definecolor{PySSD}{HTML}{2980b9}
+\definecolor{PyDisk}{HTML}{8e44ad}
+
+% =========================================================
+% CONFIGURACIÓN BEAMER / METROPOLIS
+% =========================================================
+\setbeamercolor{background canvas}{bg=BgDark}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{frametitle}{bg=TableHeadBg, fg=LightBlue}
+\setbeamercolor{title}{fg=GoldTitle}
+\setbeamercolor{subtitle}{fg=MintGreen}
+\setbeamercolor{progress bar}{fg=HitGreen, bg=LightBlue!30}
+\setbeamercolor{title separator}{fg=GoldTitle}
+\setbeamercolor{alerted text}{fg=WarnColor}
+\setbeamercolor{itemize item}{fg=GoldTitle}
+\setbeamercolor{block title}{bg=TableHeadBg, fg=GoldTitle}
+\setbeamercolor{block body}{bg=BgDark!80!white, fg=white}
+
+% =========================================================
+% CAJAS DE CONCEPTO (tcolorbox)
+% =========================================================
+\tcbset{
+  caja base/.style={
+    boxrule=0pt, leftrule=5pt, sharp corners=west, arc=8pt,
+    fontupper=\small, boxsep=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt,
+    before skip=0.5em, after skip=0.5em
+  }
+}
+\newtcolorbox{conceptobox}[1][]{caja base, colback=LightBlue!15!BgDark, colframe=LightBlue, title=#1, coltitle=LightBlue, fonttitle=\bfseries}
+\newtcolorbox{conceptotemporal}[1][]{caja base, colback=GoldTitle!15!BgDark, colframe=GoldTitle, title=#1, coltitle=GoldTitle, fonttitle=\bfseries}
+\newtcolorbox{conceptoespacial}[1][]{caja base, colback=MintGreen!15!BgDark, colframe=MintGreen, title=#1, coltitle=MintGreen, fonttitle=\bfseries}
+\newtcolorbox{conceptowarn}[1][]{caja base, colback=WarnColor!15!BgDark, colframe=WarnColor, title=#1, coltitle=WarnColor, fonttitle=\bfseries}
+\newtcolorbox{conceptohit}[1][]{caja base, colback=HitGreen!15!BgDark, colframe=HitGreen, title=#1, coltitle=HitGreen, fonttitle=\bfseries}
+
+% =========================================================
+% UTILIDADES TEXTO
+% =========================================================
+\newcommand{\verde}[1]{\textcolor{HitGreen}{\textbf{#1}}}
+\newcommand{\rojo}[1]{\textcolor{MissRed}{\textbf{#1}}}
+\newcommand{\highlight}[1]{\textcolor{GoldTitle}{\textbf{#1}}}

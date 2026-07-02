@@ -1,100 +1,107 @@
-#+options: H:2 toc:nil
-#+latex_class: beamer
-#+latex_class_options: [table, aspectratio=169]
-#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
-#+beamer_theme: metropolis
+% Created 2026-07-01 Wed 22:46
+% Intended LaTeX compiler: pdflatex
+\documentclass[table, aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{/home/stevenech/S9-Memoria-del-Sistema/bibliography/bibliography.bib}
+\usepackage[default]{sourcesanspro}
+\usetheme{metropolis}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=2.5em, text margin right=2.5em}
+\usepackage{tcolorbox}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\usepackage{booktabs}
+\usepackage{array}
+\definecolor{BgDark}{HTML}{0D1E30}
+\definecolor{GoldTitle}{HTML}{F0C040}
+\definecolor{LightBlue}{HTML}{7ECFFF}
+\definecolor{MintGreen}{HTML}{A8E6CF}
+\definecolor{HitGreen}{HTML}{00B894}
+\definecolor{MissRed}{HTML}{D63031}
+\definecolor{WarnColor}{HTML}{FF7675}
+\definecolor{TableHeadBg}{HTML}{1E3A5A}
+\definecolor{TableBodyBg}{HTML}{141E2C}
+\definecolor{TableBorder}{HTML}{2A4A6A}
+\definecolor{PyReg}{HTML}{c0392b}
+\definecolor{PyL1}{HTML}{d35400}
+\definecolor{PyL2}{HTML}{f1c40f}
+\definecolor{PyRam}{HTML}{2ecc71}
+\definecolor{PySSD}{HTML}{2980b9}
+\definecolor{PyDisk}{HTML}{8e44ad}
+\setbeamercolor{background canvas}{bg=BgDark}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{palette primary}{bg=TableHeadBg, fg=LightBlue}
+\setbeamercolor{frametitle}{bg=TableHeadBg, fg=LightBlue}
+\setbeamercolor{title}{fg=GoldTitle}
+\setbeamercolor{subtitle}{fg=MintGreen}
+\setbeamercolor{progress bar}{fg=HitGreen, bg=LightBlue!30}
+\setbeamercolor{title separator}{fg=GoldTitle}
+\setbeamercolor{alerted text}{fg=WarnColor}
+\setbeamercolor{itemize item}{fg=GoldTitle}
+\setbeamercolor{block title}{bg=TableHeadBg, fg=GoldTitle}
+\setbeamercolor{block body}{bg=BgDark!80!white, fg=white}
+\setbeamercolor{section in toc}{fg=GoldTitle}
+\setbeamercolor{subsection in toc}{fg=LightBlue}
+\tcbset{caja base/.style={boxrule=0pt, leftrule=5pt, sharp corners=west, arc=8pt, fontupper=\small, boxsep=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, before skip=0.5em, after skip=0.5em}}
+\newtcolorbox{conceptobox}[1][]{caja base, colback=LightBlue!15!BgDark, colframe=LightBlue, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
+\newtcolorbox{conceptotemporal}[1][]{caja base, colback=GoldTitle!15!BgDark, colframe=GoldTitle, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
+\newtcolorbox{conceptoespacial}[1][]{caja base, colback=MintGreen!15!BgDark, colframe=MintGreen, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
+\newtcolorbox{conceptowarn}[1][]{caja base, colback=WarnColor!15!BgDark, colframe=WarnColor, title={#1}, coltitle=white, fonttitle=\bfseries}
+\newtcolorbox{conceptohit}[1][]{caja base, colback=HitGreen!15!BgDark, colframe=HitGreen, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
+\newtcolorbox{cajaimagen}[1][]{boxrule=1.5pt, arc=6pt, colback=white, colframe=LightBlue, boxsep=2pt, left=2pt, right=2pt, top=2pt, bottom=2pt, halign=center}
+\newcommand{\verde}[1]{\textcolor{HitGreen}{\textbf{#1}}}
+\newcommand{\rojo}[1]{\textcolor{MissRed}{\textbf{#1}}}
+\newcommand{\highlight}[1]{\textcolor{GoldTitle}{\textbf{#1}}}
+\usetheme{metropolis}
+\author{Lenin G. Falconí}
+\date{}
+\title{S9 — Memoria del Sistema}
+\hypersetup{
+ pdfauthor={Lenin G. Falconí},
+ pdftitle={S9 — Memoria del Sistema},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={Spanish}}
+\begin{document}
 
-#+title: S9 — Memoria del Sistema
-#+date: 
-#+author: Lenin G. Falconí
-#+email: lenin.falconi@epn.edu.ec
-#+language: es
-#+select_tags: export
-#+exclude_tags: noexport
-#+creator: Emacs 27.1 (Org mode 9.3)
-#+cite_export: biblatex
+\maketitle
 
-#+bibliography: ./bibliography/bibliography.bib
-#+LATEX_HEADER: \usepackage[T1]{fontenc}
-#+LATEX_HEADER: \usepackage[utf8]{inputenc}
-#+LATEX_HEADER: \usepackage[spanish]{babel}
-#+LATEX_HEADER: \usepackage[backend=biber,citestyle=apa, style=apa]{biblatex}
+\section{Indicaciones}
+\label{sec:org8a8f8af}
+\begin{frame}[label={sec:org40ff79e}]{Reparto y Bibliografía}
+\begin{itemize}
+\item Reparto del tema por grupos:
+\begin{itemize}
+\item \alert{G3:} Estructura del sistema de Memoria + Memoria Caché.
+\item \alert{G4:} Memoria Interna (DRAM, SRAM, ROM), Corrección de Errores (Hamming), Organización Avanzada.
+\end{itemize}
+\item Fuentes bibliográficas:
+\begin{itemize}
+\item \textcite{stallings2006esp}, 7ma edición, 2006, Capítulos 5 y 6.
+\item \textcite{stallings2022computer}, 11ava edición, 2022, Capítulos 4, 5 y 6.
+\end{itemize}
+\end{itemize}
+\end{frame}
 
-# --- FUENTE MÁS MODERNA (SI NO TIENES FIRA SANS DE METROPOLIS) ---
-#+LATEX_HEADER: \usepackage[default]{sourcesanspro}
-
-# --- FORZAR CARGA DEL TEMA Y MÁRGENES ---
-#+LATEX_HEADER: \usetheme{metropolis}
-#+LATEX_HEADER: \setbeamertemplate{navigation symbols}{}
-#+LATEX_HEADER: \setbeamersize{text margin left=2.5em, text margin right=2.5em}
-
-# --- AQUÍ INICIAN LOS ESTILOS TRADUCIDOS DEL CSS ---
-#+LATEX_HEADER: \usepackage{tcolorbox}
-#+LATEX_HEADER: \usepackage{colortbl}
-#+LATEX_HEADER: \usepackage{tikz}
-#+LATEX_HEADER: \usetikzlibrary{positioning,arrows.meta,calc}
-#+LATEX_HEADER: \usepackage{booktabs}
-#+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \definecolor{BgDark}{HTML}{0D1E30}
-#+LATEX_HEADER: \definecolor{GoldTitle}{HTML}{F0C040}
-#+LATEX_HEADER: \definecolor{LightBlue}{HTML}{7ECFFF}
-#+LATEX_HEADER: \definecolor{MintGreen}{HTML}{A8E6CF}
-#+LATEX_HEADER: \definecolor{HitGreen}{HTML}{00B894}
-#+LATEX_HEADER: \definecolor{MissRed}{HTML}{D63031}
-#+LATEX_HEADER: \definecolor{WarnColor}{HTML}{FF7675}
-#+LATEX_HEADER: \definecolor{TableHeadBg}{HTML}{1E3A5A}
-#+LATEX_HEADER: \definecolor{TableBodyBg}{HTML}{141E2C}
-#+LATEX_HEADER: \definecolor{TableBorder}{HTML}{2A4A6A}
-#+LATEX_HEADER: \definecolor{PyReg}{HTML}{c0392b}
-#+LATEX_HEADER: \definecolor{PyL1}{HTML}{d35400}
-#+LATEX_HEADER: \definecolor{PyL2}{HTML}{f1c40f}
-#+LATEX_HEADER: \definecolor{PyRam}{HTML}{2ecc71}
-#+LATEX_HEADER: \definecolor{PySSD}{HTML}{2980b9}
-#+LATEX_HEADER: \definecolor{PyDisk}{HTML}{8e44ad}
-
-# --- CONFIGURACIÓN DE METROPOLIS ---
-#+LATEX_HEADER: \setbeamercolor{background canvas}{bg=BgDark}
-#+LATEX_HEADER: \setbeamercolor{normal text}{fg=white}
-#+LATEX_HEADER: \setbeamercolor{palette primary}{bg=TableHeadBg, fg=LightBlue}
-#+LATEX_HEADER: \setbeamercolor{frametitle}{bg=TableHeadBg, fg=LightBlue}
-#+LATEX_HEADER: \setbeamercolor{title}{fg=GoldTitle}
-#+LATEX_HEADER: \setbeamercolor{subtitle}{fg=MintGreen}
-#+LATEX_HEADER: \setbeamercolor{progress bar}{fg=HitGreen, bg=LightBlue!30}
-#+LATEX_HEADER: \setbeamercolor{title separator}{fg=GoldTitle}
-#+LATEX_HEADER: \setbeamercolor{alerted text}{fg=WarnColor}
-#+LATEX_HEADER: \setbeamercolor{itemize item}{fg=GoldTitle}
-#+LATEX_HEADER: \setbeamercolor{block title}{bg=TableHeadBg, fg=GoldTitle}
-#+LATEX_HEADER: \setbeamercolor{block body}{bg=BgDark!80!white, fg=white}
-#+LATEX_HEADER: \setbeamercolor{section in toc}{fg=GoldTitle}
-#+LATEX_HEADER: \setbeamercolor{subsection in toc}{fg=LightBlue}
-
-# --- CAJAS DE CONCEPTO Y ESTILO PARA IMÁGENES ---
-#+LATEX_HEADER: \tcbset{caja base/.style={boxrule=0pt, leftrule=5pt, sharp corners=west, arc=8pt, fontupper=\small, boxsep=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, before skip=0.5em, after skip=0.5em}}
-#+LATEX_HEADER: \newtcolorbox{conceptobox}[1][]{caja base, colback=LightBlue!15!BgDark, colframe=LightBlue, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
-#+LATEX_HEADER: \newtcolorbox{conceptotemporal}[1][]{caja base, colback=GoldTitle!15!BgDark, colframe=GoldTitle, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
-#+LATEX_HEADER: \newtcolorbox{conceptoespacial}[1][]{caja base, colback=MintGreen!15!BgDark, colframe=MintGreen, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
-#+LATEX_HEADER: \newtcolorbox{conceptowarn}[1][]{caja base, colback=WarnColor!15!BgDark, colframe=WarnColor, title={#1}, coltitle=white, fonttitle=\bfseries}
-#+LATEX_HEADER: \newtcolorbox{conceptohit}[1][]{caja base, colback=HitGreen!15!BgDark, colframe=HitGreen, title={#1}, coltitle=BgDark, fonttitle=\bfseries}
-#+LATEX_HEADER: \newtcolorbox{cajaimagen}[1][]{boxrule=1.5pt, arc=6pt, colback=white, colframe=LightBlue, boxsep=2pt, left=2pt, right=2pt, top=2pt, bottom=2pt, halign=center}
-
-#+LATEX_HEADER: \newcommand{\verde}[1]{\textcolor{HitGreen}{\textbf{#1}}}
-#+LATEX_HEADER: \newcommand{\rojo}[1]{\textcolor{MissRed}{\textbf{#1}}}
-#+LATEX_HEADER: \newcommand{\highlight}[1]{\textcolor{GoldTitle}{\textbf{#1}}}
-# --- FIN DE LOS ESTILOS ---
-
-* Indicaciones
-** Reparto y Bibliografía
-- Reparto del tema por grupos:
-  - *G3:* Estructura del sistema de Memoria + Memoria Caché.
-  - *G4:* Memoria Interna (DRAM, SRAM, ROM), Corrección de Errores (Hamming), Organización Avanzada.
-- Fuentes bibliográficas:
-  - \textcite{stallings2006esp}, 7ma edición, 2006, Capítulos 5 y 6.
-  - \textcite{stallings2022computer}, 11ava edición, 2022, Capítulos 4, 5 y 6.
-
-* Estructura del sistema de Memoria
-** Jerarquía de Memoria
-
-#+begin_export latex
+\section{Estructura del sistema de Memoria}
+\label{sec:org97dfd22}
+\begin{frame}[label={sec:orgab37af6}]{Jerarquía de Memoria}
 \begin{center}
 \begin{tikzpicture}[node distance=2mm,
     every node/.style={draw=none,minimum height=0.8cm,font=\small\bfseries,align=center,text=white,rounded corners=3pt}]
@@ -110,17 +117,16 @@
   Hacia abajo: $\uparrow$ capacidad, $\downarrow$ costo/bit \quad\vline\quad
   Hacia arriba: $\uparrow$ velocidad}
 \end{center}
-#+end_export
+\end{frame}
 
-* Memoria Interna
-** DRAM y SRAM: Principios Básicos
-
-#+begin_export latex
+\section{Memoria Interna}
+\label{sec:org3533016}
+\begin{frame}[label={sec:orgb086438}]{DRAM y SRAM: Principios Básicos}
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
     \begin{conceptobox}[DRAM (RAM Dinámica)]
       El estándar para Memoria Principal.
-    \end{conceptobox}
+    \end{conceptobox}x
     \begin{itemize}
       \item \textbf{Estructura:} 1 transistor + 1 condensador.
       \item \textbf{Lógica:} El bit se almacena como \textit{carga eléctrica} (naturaleza analógica).
@@ -139,11 +145,9 @@
     \end{itemize}
   \end{column}
 \end{columns}
-#+end_export
+\end{frame}
 
-** DRAM vs SRAM: La gran decisión
-
-#+begin_export latex
+\begin{frame}[label={sec:org53adbde}]{DRAM vs SRAM: La gran decisión}
 ¿Por qué no usar la memoria más rápida en todo el sistema? La respuesta está en la física:
 
 \vspace{4mm}
@@ -164,11 +168,9 @@
   \textbf{Uso Ideal}        & Memoria Principal (RAM) & Memoria Caché (L1/L2) \\
 \end{tabular}
 \end{table}
-#+end_export
+\end{frame}
 
-** Evolución de las Memorias ROM
-
-#+begin_export latex
+\begin{frame}[label={sec:org29fd52c}]{Evolución de las Memorias ROM}
 \begin{conceptobox}[La necesidad de flexibilidad]
   La ROM nació como "Solo Lectura", pero la necesidad de actualizar el firmware impulsó métodos de borrado cada vez más avanzados.
 \end{conceptobox}
@@ -181,12 +183,11 @@
   \item \highlight{EEPROM:} Borrable \azul{eléctricamente a nivel de byte}. Flexible, pero costosa y menos densa.
   \item \highlight{Flash Memory:} Borrable eléctricamente \verde{por bloques}. Combina la altísima densidad de EPROM con la flexibilidad eléctrica. ¡El estándar actual!
 \end{itemize}
-#+end_export
+\end{frame}
 
-* Corrección de Errores
-** Control de Errores en Memoria
-
-#+begin_export latex
+\section{Corrección de Errores}
+\label{sec:orgd1d05d9}
+\begin{frame}[label={sec:org03341c2}]{Control de Errores en Memoria}
 Para lidiar con los errores, se implementan lógicas de detección y corrección en el flujo de lectura y escritura de la memoria.
 
 \vspace{4mm}
@@ -195,11 +196,9 @@ Para lidiar con los errores, se implementan lógicas de detección y corrección
     \includegraphics[width=0.8\textwidth, keepaspectratio]{imagenes/Figura_5_7.png}
   \end{cajaimagen}
 \end{center}
-#+end_export
+\end{frame}
 
-** Hard Error vs Soft Error
-
-#+begin_export latex
+\begin{frame}[label={sec:org0aafa3f}]{Hard Error vs Soft Error}
 Los sistemas de memoria están sujetos a fallos. Se dividen en dos familias principales:
 
 \vspace{3mm}
@@ -217,11 +216,9 @@ Los sistemas de memoria están sujetos a fallos. Se dividen en dos familias prin
   $\rightarrow$ \textbf{Causas:} Ruido eléctrico, \highlight{radiación natural} (partículas alfa). \\
   $\rightarrow$ \textbf{Solución:} \verde{Corregible}. Si lo detectamos, podemos volver a escribir el bit correcto.
 \end{conceptohit}
-#+end_export
+\end{frame}
 
-** Código de Hamming: Concepto General
-
-#+begin_export latex
+\begin{frame}[label={sec:orgfc130c4}]{Código de Hamming: Concepto General}
 Para corregir un \textit{Soft Error}, no basta con saber \textit{que} ocurrió un error, tenemos que saber \textbf{exactamente dónde ocurrió}.
 \begin{columns}[c]
   \begin{column}{0.5\textwidth}
@@ -237,11 +234,9 @@ Para corregir un \textit{Soft Error}, no basta con saber \textit{que} ocurrió u
     \end{cajaimagen}
   \end{column}
 \end{columns}
-#+end_export
+\end{frame}
 
-** Código de Hamming: Generación (Paso 1)
-
-#+begin_export latex
+\begin{frame}[label={sec:org18bb0d5}]{Código de Hamming: Generación (Paso 1)}
 \textbf{1. Datos a enviar (4 bits):} \texttt{1011} (D1, D2, D3, D4) \\
 \textbf{2. Posiciones:} Metemos los datos dejando libres las potencias de 2 (P1, P2, P4).
 
@@ -271,11 +266,9 @@ Para corregir un \textit{Soft Error}, no basta con saber \textit{que} ocurrió u
   }
 \end{tikzpicture}
 \end{center}
-#+end_export
+\end{frame}
 
-** Código de Hamming: Error y Corrección (Paso 2)
-
-#+begin_export latex
+\begin{frame}[label={sec:orgf86d39e}]{Código de Hamming: Error y Corrección (Paso 2)}
 \begin{conceptowarn}[¡Impacto de partícula radiactiva!]
   El bit en la \textbf{posición 6} cambia de \texttt{1} a \texttt{0} de forma silenciosa.
 \end{conceptowarn}
@@ -301,10 +294,15 @@ Para corregir un \textit{Soft Error}, no basta con saber \textit{que} ocurrió u
   Tomamos los valores de error y armamos el Síndrome binario (S4 S2 S1) = $110_2 = \highlight{6}$. \\
   ¡El hardware detecta instantáneamente que el bit 6 falló y lo invierte, recuperando el dato!
 \end{conceptohit}
-#+end_export
+\end{frame}
 
-* Organización Avanzada de Memorias RAM
-** DDR SDRAM y Memorias Flash (11, 216)
-- Desarrollo del resto del tema por parte del grupo de exposición.
+\section{Organización Avanzada de Memorias RAM}
+\label{sec:org117df01}
+\begin{frame}[label={sec:org137b322}]{DDR SDRAM y Memorias Flash (11, 216)}
+\begin{itemize}
+\item Desarrollo del resto del tema por parte del grupo de exposición.
+\end{itemize}
 
-#+print_bibliography:
+\printbibliography
+\end{frame}
+\end{document}
