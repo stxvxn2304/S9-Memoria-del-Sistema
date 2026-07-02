@@ -4,9 +4,9 @@
 #+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
 #+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+title: Plantilla para Toma de Notas en Clase
-#+date: 2024-07-
-#+author: COLOQUE SU NOMBRE
-#+email: coloque.su.nombre@epn.edu.ec
+#+date:  2026-07-01
+#+author: Echeverría Steven, Jami Mateo, Pérez Martín y Zúñiga Sebastián. 
+#+email: sebastian.zuniga@epn.edu.ec
 #+language: Español
 #+select_tags: export
 #+exclude_tags: noexport
@@ -48,20 +48,165 @@ ARQUITECTURA DE COMPUTADORES}
 #+begin_comment
 Este comentario contiene la estructura básica para toma de notas de
 acuerdo a la metodología explicada por la Universidad de Cornell.
-* 2024-xx-xx Título de la clase/charla
+* 2026-07-01 Organización de la Memoria Principal Semiconductora
+
 ** Preguntas y Términos clave (Cue):
-- término clave1 ::
-- término clave2 ::
+- término clave1 :: celda 
+- término clave2 :: escritura
+- término clave3 :: lectura
+  
+- ¿Cuál es la unidad fundamental de la memoria semiconductora? ::
+- ¿Cómo se llama el proceso en que se fija el estado de una celda de memoria? ::
+- :: 
 ** Notas (Notes):
-- nota1
-- nota2
-  - subnota
-  - subnota
-- nota3
-  1. numerado
-  2. numerado
+- La unidad fundamental de la memoria semiconductora es una celda de
+  memoria. Sus propiedades  son:
+  - Poseen dos estados estables o semiestables que representan el 1
+    y  0 lógico.
+  - Al escribir en ellas, es posible fijar su estado.
+  - Al leerlas, se detecta su estado.
+- Cada celda posee tres terminales: de selección, escritura y
+  lectua. Cada una de ellas permite realizar las operaciones
+  pertinentes en la memoria semiconductora.
+
 ** Resumen (Summary):
-Aquí se realiza un breve resumen
+La celda es la unidad fundamental de la memoria principal, puesto que
+almacena la unidad más básica en informática: un bit. Se caracteriza
+por tener dos  estados semiestables, que representan el 0 y 1
+lógico. Además, es posible realizar dos operaciones principales en
+estas celdas: escritura, que consiste en fijar su estado, y lectura,
+que permite detectar su estado almacenado. Para este proceso, se usan
+tres terminales: de selección, lectura y escritura. 
+
+
+* 2026-07-01 Lógica del chip
+
+** Preguntas y Términos clave (Cue)
+- término clave1 :: palabra
+- término clave2 :: líneas
+- término clave3 :: memoria DRAM
+- término clave4 :: organización
+- término clave5 :: refresco
+- ¿Cuáles son las dos formas principales de estructurar los datos en una memoria semiconductora? :: 
+- ¿Las líneas de direcciones se conectan directamente a las celdas de una memoria semiconductora? ::
+- ¿Qué tipo de líneas se encargan de activar una fial de bits en la matriz de memoria? ::
+- ¿Cuántos bits se pueden leer o escribir a la vez en una memoria DRAM? :: 
+- ¿Es cierto que se emplean 22 líneas de direcciones en una memoria DRAM? ::
+- ¿Qué señal permite guardar ciertos bits como coordenadas de fila, y qué otra señal los guarda como coordenadas de columna? ::
+- Además de las operaciones de lectura y escritura, ¿en qué ámbito se emplea la señal de control RAS? :: 
+
+** Notas (Notes)
+- Al diseñar una memoria semiconductora, es importante considerar
+  el número de bits de datos que pueden ser leídos o escritos a la
+  vez.
+*** Formas de estructurar los datos en la memoria:
+  1. Procurar que la disposición física de la matriz sea igual a la
+     disposición lógica de la misma. En este caso, la matriz posee ~W~
+     palabras con ~n~ bits cada una.
+  2. Organizar la memoria mediante la forma un-bit-por-chip, en la
+     cual cada chip almacena un solo bit de cada palabra, en cada
+     dirección de la memoria.
+*** Organización típica de una memoria DRAM
+**** Las líneas en una memoria DRAM
+- Existen determinados tipos de líneas que permiten realizar las
+  operaciones de lectura y escritura en la matriz de una memoria
+  semiconductora:
+- Líneas de direcciones: :: son conductores que llegan del procesador
+  y, al conectarse con el decodificador de direcciones, envían señales
+  a la matriz de memoria para activar una celda específica. No se
+  encuentran directamente acopladas a las celdas.
+  + La cantidad de líneas de direcciones requeridas en una matriz se calcula
+  como ~log_2(W)~ donde ~W~ es la cantidad de palabras almacenadas. 
+- Líneas de datos: :: son esenciales para las operaciones de escritura
+  y lectura, pues transportan los bits que se fijarán en los estados
+  de celdas determinadas, o bien reciben el valor almacenado en alguna
+  de ellas, según se requiera.
+- Líneas horizontales: :: También llamadas líneas de palabras, activan
+  toda una fila de bits dentro de la matriz de memoria.
+- Líneas verticales: :: También se conocen como líneas de
+  bits. Transportan el dato almacenado en una celda específica.
+
+**** Proceso de lectura y escritura en una memoria DRAM
+- Su matriz de memoria está compuesta por 4 matrices cuadradas de
+  ~2048 \cdot 2048~ elementos.
+- Todas las celdas se acoplan a líneas horizontales, que conectan a los
+  terminales de selección, y a las verticales, que conectan al terminal de
+  Entrada-Datos/Detección de cada celda.
+- Se leen o escriben cuatro bits a la vez. :: Esto dado que, una vez
+  activada una fila de bits dentro de la matriz de memoria, se leen
+  cuatro columnas indicadas por el decodificador de columnas.
+- Para la lectura, :: es necesario pasar cada línea de bits a través de
+  un //amplificador de lectura//.
+- Para la escritura, :: se requiere activar cada línea a uno o a cero
+  según lo indiquen las líneas de datos.
+- Teóricamente, se deberían emplear 22 líneas de direcciones para esta
+  memoria. Sin embargo, en la práctica se utiliza una estrategia de
+  multiplexación en el tiempo para usar solo 11 líneas:
+  1) Se proporciona a la matriz once señales de dirección para las
+     filas de la matriz. En ese instante, se activa la señal de
+     control Row Address Selection (RAS) que indica al chip guardar
+     dichos bits como las coordenadas de la fila.
+  2) Seguidamente, se utilizan las mismas líneas para transmitir otras
+     once señales referentes a las columnas de la matriz. En este
+     caso, se activa la señal Column Address Selection (CAS) que
+     indica al chip guardar los bits recibidos como coordenadas de la columna.
+- Es necesario realizar operaciones de refresco en una memoria DRAM
+  para evitar que los bits almacenados en la matriz de memoria se
+  pierdan.
+- Una técnica de refresco muy efectiva es:
+  1. Inhabilitar todas las celdas de la DRAM
+  2. Un contador de refresco recorre cada una de las celdas
+  3. Para cada celda, se pasa el bit almacenado del contador de
+     refresco al decodificador de filas y se activa la señal RAS.
+  4. Los datos se leen y escriben nuevamente en cada celda.
+
+** Resumen (Summary)
+Dentro del diseño de la memoria semiconductora, es indispensable
+considerar el número de bits que se leerán o escribirán a la
+vez. Para esto, se puede considerar emplear una distribución física
+similar a la lógica, o bien una del tipo un-bit-por-chip. Para
+realizar estas operaciones con celdas, se requieren diferentes tipos
+de líneas: de direcciones, de datos, horizontales y verticales.
+
+Por otro lado, en la organización típica de una DRAM, se puede leer o  escribir cuatro
+bits a la vez. Compuesta por cuatro matrices cuadradas de ~2048 \cdot
+2048~, esta memoria permite leer y escribir cuatro bits a la
+vez. Además, cada celda está conectada a líneas horizontales y
+verticales, y se utilizan cuatro líneas de datos que operan en cuatro
+columnas de la matriz de memoria. Aunque teóricamente deberían existir
+22 líneas de direcciones, la multiplexación en el tiempo permite reducir
+este número a 11. Una DRAM requiere operaciones de refresco para
+evitar pérdida de información, lo cual se puede conseguir mediante el
+uso de un contador de refresco. 
+
+* 2026-07-01 Encapsulación del chip y Organización en módulos
+
+** Preguntas y términos clave
+
+
+
+** Notas (Notes)
+- Los circuitos integrados se montan con patillas o terminales que los
+  conectan con el mundo exterior.
+- Por ejemplo, una memoria EPROM encapsulada de 8 Mb necesita 32 terminales.
+
+*** Señales transferidas por los terminales
+1. La dirección de la palabra a la que se accede
+2. El dato a leer, con ocho líneas
+3. La línea de alimentación del chip
+4. Un terminal de tierra
+5. Un terminal de habilitación del chip, empleado para verificar si la
+   dirección dada por el bus de direcciones es válida para cada chip.
+6. Una tensión de programación
+
+*** Organización en módulos
+- Se necesita un número de chips igual al número de bits por palabra. 
+
+
+
+
+
+
 #+end_comment
 * 2024-xx-xx Título de la clase/charla
 ** Preguntas y Términos clave (Cue):
