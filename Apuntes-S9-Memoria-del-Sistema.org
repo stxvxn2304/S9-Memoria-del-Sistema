@@ -207,6 +207,145 @@ uso de un contador de refresco.
 
 
 
+
+
+
+
+
+
+
+* 2026-07-01 Memoria Flash (Flash Memory)
+** Preguntas y Términos clave (Cue):
+- ¿Por qué la memoria Flash se considera una tecnología intermedia
+  entre EPROM y EEPROM?
+- ¿Cuál es la diferencia operativa fundamental entre la Flash tipo NOR
+  y la NAND?
+- ¿Cómo funciona el mecanismo de borrado en bloques y qué ventajas de
+  velocidad aporta?
+- Término clave: Acceso aleatorio a nivel de byte
+- Término clave: Acceso por páginas
+
+** Notas (Notes):
+*** Origen
+- Introducida a mediados de la década de 1980.
+- Se ubica en un punto intermedio entre EPROM y EEPROM en términos de
+  costo y funcionalidad.
+- Al igual que la EEPROM, utiliza una tecnología de borrado eléctrico,
+  pero con una mejora en la velocidad.
+
+*** Mecanismo de Borrado
+- Una memoria Flash completa (o secciones específicas de ella llamadas
+  bloques) puede borrarse en cuestión de unos pocos segundos.
+- Esto representa una velocidad masiva comparada con la EPROM (que
+  necesita exposición prolongada a luz ultravioleta).
+- El nombre "Flash" proviene de la velocidad con la que el microchip
+  organiza y borra sus secciones.
+
+*** Tipos
+**** Flash NOR:
+- Proporciona acceso aleatorio directo a nivel de byte. Esto
+  significa que las celdas se pueden leer igual que una memoria RAM o
+  ROM tradicional.
+- Es la opción ideal para almacenar código ejecutable y firmware de
+  sistemas, como el BIOS de la computadora o microcontroladores,
+  debido a su rápida velocidad de lectura.
+- Sus tiempos de escritura y de borrado son notablemente más lentos
+  que los de la Flash NAND.
+**** Flash NAND:
+- Está organizada a nivel de componentes lógicos en páginas (ej. 4 KB)
+  y bloques (ej. 128 páginas).
+- No permite acceso aleatorio a nivel de byte, las lecturas y
+  escrituras se ejecutan obligatoriamente por páginas completas, y los
+  borrados se hacen por bloques enteros.
+- Ofrece velocidades de escritura y borrado drásticamente más rápidas
+  que NOR.
+- Posee una densidad de almacenamiento mucho mayor y un costo por bit
+  significativamente inferior.
+- Es la tecnología estándar usada para almacenamiento secundario
+  masivo, como son: Flash USB, tarjetas SD y unidades de estado sólido
+  (SSD).
+
+** Resumen (Summary):
+La memoria Flash es un dispositivo semiconductor no volátil que
+evoluciona de la EEPROM mediante un borrado eléctrico ultrarrápido por
+bloques. Se divide comercial y técnicamente en dos arquitecturas: NOR
+(para lecturas rápidas de acceso aleatorio a nivel de byte) y NAND
+(para escritura/borrado rápido organizadas por páginas, y es el
+estándar).
+
+
+* 2026-07-01 Nuevas Tecnologías de Memoria de Estado Sólido No Volátil
+** Preguntas y Términos clave (Cue):
+- ¿Qué limitaciones físicas de las memorias DRAM y Flash tradicionales
+  generan la necesidad de desarrollar nuevas tecnologías?
+- ¿Cómo logra la STT-RAM almacenar información de forma no volátil sin
+  usar carga eléctrica retenida?
+- ¿Cuál es el principio físico que gobierna el cambio de estado en las
+  memorias PCRAM?
+- ¿Qué ventaja de escalabilidad ofrece la ReRAM frente a las celdas de
+  transistores convencionales?
+
+** Notas (Notes):
+*** Objetivo de las Tecnologías Emergentes
+- Buscar superar las limitaciones físicas de escalabilidad que sufren
+  las tecnologías de memoria Flash NAND y DRAM (como la fuga de
+  corriente y la densidad de celdas a escalas nanométricas inferiores).
+- El propósito ideal es combinar la alta velocidad operativa de las
+  memorias volátiles (SRAM/DRAM) con la retención permanente de datos
+  de las memorias no volátiles (FLash).
+
+*** SST-RAM (Spin-Transfer Torque RAM)
+- Utiliza las propiedades cuánticas y magnéticas del espín de los
+  electrones para alterar la resistencia eléctrica de la celda de
+  almacenamiento.
+- Los datos se guardan mediante la orientación de los campos
+  magnéticos en unión de túnel magnético: una configuración paralela
+  ofrece baja resistencia eléctrica y una configuración antiparalela
+  ofrece alta resistencia eléctrica.
+- Ventajas: Posee una densidad extremadamente alta, consumo de energía
+  ultra bajo durante el reposo, velocidades de conmutación
+  competitivas con la SRAM y una durabilidad de ciclos de escritura
+  prácticamente infinita.
+
+*** PCRAM (Phase-Change RAM)
+- Tiene como base las propiedades físicas de una aleación de vidrio
+  calcógeno (material GST: Germanio-Antimonio-Telurio).
+- La celda altera su estado estructural mediante la aplicación precisa
+  de calor inducido por pulsos eléctricos controlados.
+- *Estado Amorfo:* Estructura atómica desordenada que genera una alta
+  resistencia eléctrica (representa un estado binario).
+- *Estado Cristalino:* Estructura atómica ordenada que genera una baja
+  resistencia eléctrica (representa el estado binario opuesto).
+- Ventajas: Ofrece una densidad de almacenamiento muy competitiva,
+  mejor durabilidad frente a la Flash tradicional y tiempos de
+  escritura estables.
+
+*** ReRAM (Resistive RAM)
+- Opera mediante el principio de alternancia de la resistencia
+  eléctrica a través de un material dieléctrico de estado sólido
+  (usualmente un óxido metálico).
+- Al aplicar un voltaje específico, se forman o se rompen diminutos
+  filamentos conductores de átomos dentro del material aislante,
+  conmutando la celda entre estados de alta y baja resistencia de
+  manera controlada.
+- Ventajas: Posee un potencial de escalabilidad nanométrica superior,
+  bajo consumo de energía y velocidades de operación rápidas, es una
+  alternativa clave para arquitecturas de computación neuromórfica.
+
+** Resumen (Summary):
+Las tecnologías emergentes de estado sólido no volátil (STT-RAM,
+PCRAM y ReRAM) surgen para romper los límites físicos de escalabilidad
+de DRAM Y Flash. En lugar de atrapar cargas eléctricas en
+transistores, manipulan estados físicos alternativos de la materia:
+- STT-RAM altera la orientación del espín magnético del electrón.
+- PCRAM conmuta térmicamente un material calcógeno entre estados
+  amorfo y cristalino.
+- ReRAM genera filamentos conductores en un material dieléctrico.
+Todas buscan alcanzar velocidad instantánea de RAM y la permanencia de
+un disco duro, como si se tratara del "Santo Grial" de la computación.
+
+
+
 #+end_comment
 * 2024-xx-xx Título de la clase/charla
 ** Preguntas y Términos clave (Cue):
