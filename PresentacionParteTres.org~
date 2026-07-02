@@ -1,0 +1,104 @@
+#+OPTIONS: num:nil toc:nil timestamp:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: dracula
+#+REVEAL_TRANS: slide
+#+REVEAL_SPEED: default
+#+REVEAL_SLIDE_NUMBER: c/t
+#+REVEAL_HLEVEL: 2
+#+REVEAL_PLUGINS: (highlight notes math)
+#+REVEAL_MATHJAX: t
+#+REVEAL_MATHJAX_URL: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#+REVEAL_INIT_OPTIONS: width:1200, height:900, margin: 0.1, minScale:0.2, maxScale:1.2
+#+REVEAL_EXTRA_CSS: https://use.fontawesome.com/releases/v5.15.4/css/all.css
+#+REVEAL_EXTRA_CSS: ./custom.css
+
+#+TITLE: Organización Avanzada de Memorias RAM
+#+AUTHOR: Mateo Israel Jami Tonato y Equipo
+#+DATE: 2026-07-02
+#+LANGUAGE: es
+
+* Inicio
+** @@html:<i class="fas fa-microchip"></i>@@ Arquitectura de Computadores
+#+begin_export html
+<div class="fase-header">
+  <div class="numero">1</div><br>
+  <h2>Organización Avanzada de Memorias RAM</h2>
+  <div class="integrante">Presentado por: Mateo Israel Jami Tonato y Equipo</div>
+</div>
+#+end_export
+
+* 1. Organización Avanzada de Memorias RAM
+** @@html:<i class="fas fa-brain"></i>@@ Concepto General
+#+begin_export html
+<div class="concepto-box">
+  <strong>Definición:</strong> [Aquí insertaremos la introducción y el concepto principal sobre la organización de memorias según el libro].
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- [Punto clave a rellenar 1]
+- [Punto clave a rellenar 2]
+- [Punto clave a rellenar 3]
+
+* 2. DRAM Síncrona (SDRAM)
+** @@html:<i class="fas fa-sync"></i>@@ Características de SDRAM
+#+begin_export html
+<div class="col2">
+  <div>
+    <ul style="font-size: 0.9em;">
+      <li>[Aquí detallaremos cómo funciona la sincronización con el reloj].</li>
+      <li>[Dato importante del libro sobre SDRAM].</li>
+      <li>[Otra característica relevante].</li>
+    </ul>
+  </div>
+  <div>
+    <div class="media-placeholder">
+      <div class="icon"><i class="fas fa-project-diagram"></i></div>
+      [Espacio reservado para diagrama de señales o bloques de SDRAM]
+    </div>
+  </div>
+</div>
+#+end_export
+
+* 3. DDR SDRAM
+** @@html:<i class="fas fa-tachometer-alt"></i>@@ Fundamentos DDR SDRAM
+#+begin_export html
+<div class="concepto-box espacial">
+  <strong>Doble Tasa de Transferencia:</strong> [Explicación del libro sobre cómo transfiere datos en ambos flancos del reloj].
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- [Información general sobre DDR]
+- Específico: Configuración o características de *(7, 187)* [Se llenará con el texto oficial]
+- Específico: Configuración o características de *(11, 216)* [Se llenará con el texto oficial]
+
+** @@html:<i class="fas fa-chart-bar"></i>@@ Comparativa y Rendimiento
+#+begin_export html
+<div class="media-placeholder">
+  <div class="icon"><i class="fas fa-chart-line"></i></div>
+  [Espacio reservado para gráfico comparativo o cronograma de DDR SDRAM]
+</div>
+#+end_export
+
+* 4. EDRAM (Enhanced DRAM)
+** @@html:<i class="fas fa-bolt"></i>@@ Características de EDRAM
+#+begin_export html
+<div class="concepto-box hit">
+  <strong>Ventaja Principal:</strong> [Aquí colocaremos el concepto de EDRAM y por qué se considera "mejorada" según tu fuente].
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- [Punto 1 sobre arquitectura interna de EDRAM]
+- [Punto 2 sobre caché estática integrada, si el libro lo menciona]
+- [Punto 3 sobre rendimiento]
+
+* Fin de la Presentación
+** @@html:<i class="fas fa-question-circle"></i>@@ ¿Preguntas?
+#+begin_export html
+<div class="text-center">
+  <h3 class="azul">¡Gracias por su atención!</h3>
+  <p class="muted small">Bibliografía: [Aquí pondremos el nombre y autor del libro que me vas a pasar]</p>
+</div>
+#+end_export
