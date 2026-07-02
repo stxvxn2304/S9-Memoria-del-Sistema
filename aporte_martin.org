@@ -1,0 +1,27 @@
+#+TITLE: Aporte Martín — Nuevas Tecnologías de Memoria
+#+OPTIONS: toc:nil num:nil
+
+* Nuevas Tecnologías de Memoria @@html:<span class="fase-badge">G4 — Martín Pérez</span>@@
+
+** Tabla Comparativa de Tecnologías
+| Tecnología | Velocidad                       | Capacidad / Densidad          | Volatilidad | Confiabilidad / Durabilidad           |
+|------------+---------------------------------+-------------------------------+-------------+---------------------------------------|
+| *SRAM*     | Ultra Alta (Nivel de Caché)     | Baja                          | Volátil     | Alta (Ciclos de escritura infinitos)  |
+| *DRAM*     | Alta                            | Alta                          | Volátil     | Alta (Requiere refresco constante)    |
+| *Flash*    | Media (Lectura) / Baja (Escrit) | Muy Alta                      | No Volátil  | Media (Sufre desgaste por bloques)    |
+| *STT-RAM*  | Alta (Cercana a la SRAM)        | Alta                          | No Volátil  | Muy Alta (Resistencia casi ilimitada) |
+| *PCRAM*    | Media / Alta                    | Muy Alta                      | No Volátil  | Alta (Mayor durabilidad que la Flash) |
+| *ReRAM*    | Alta                            | Muy Alta (Alta escalabilidad) | No Volátil  | Alta                                  |
+
+** Conclusión del Análisis
+#+REVEAL_HTML: <div class="concepto-box temporal">
+Toda la evolución estudiada de las tecnologías de memoria semiconductora busca, en última instancia, combinar todas esas ventajas en una única memoria universal (combinar la velocidad instantánea de la SRAM, la densidad masiva de la DRAM y la retención permanente de la Flash).
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="concepto-box hit">
+Actualmente, la tecnología que más cerca está de lograr este objetivo es la <b>STT-RAM</b>. Es la gran candidata porque es casi tan rápida como las memorias más veloces que existen, no pierde los datos al apagar el equipo y, a diferencia de la memoria Flash normal (como la de un pendrive o SSD), no se desgasta ni se daña por más que escribas en ella miles de veces.
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="concepto-box warn">
+Pero, al 100%, ese objetivo todavía no se ha alcanzado por completo en el mercado porque las opciones actuales siguen siendo costosas o difíciles de fabricar en masa.
+#+REVEAL_HTML: </div>
