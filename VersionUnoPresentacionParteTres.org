@@ -496,13 +496,10 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
 #+begin_export html
 <div class="col2">
   <div>
-#+end_export
-#+ATTR_REVEAL: :frag (appear)
     <ul style="font-size: 0.9em;">
-      <li><strong>Contador de Ráfagas y Control:</strong> Gestionan la inicialización en flancos ascendentes.</li>
-      <li><strong>Empaquetado de Datos:</strong> Se realiza automáticamente tras la latencia configurada.</li>
+      <li class="fragment"><strong>Contador de Ráfagas y Control:</strong> Gestionan la inicialización en flancos ascendentes.</li>
+      <li class="fragment"><strong>Empaquetado de Datos:</strong> Se realiza automáticamente tras la latencia configurada.</li>
     </ul>
-#+begin_export html
   </div>
   <div>
 #+end_export
