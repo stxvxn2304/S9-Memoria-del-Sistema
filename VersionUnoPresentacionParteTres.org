@@ -172,7 +172,7 @@
 - @@html:<span style="color: #8be9fd;"><strong>Líneas de direcciones:</strong></span>@@ llegan del procesador y envían señales para activar una celda específica. Requeridas: \(\color{#ffb86c}{\log_2(W)}\).
 - @@html:<span style="color: #8be9fd;"><strong>Líneas de datos:</strong></span>@@ esenciales para operaciones de escritura y lectura.
 - @@html:<span style="color: #8be9fd;"><strong>Líneas horizontales:</strong></span>@@ (líneas de palabras), activan toda una fila de bits.
-- @@html:<span style="color: #8be9fd;"><strong>Líneas verticales:</strong></span>@@ (líneas de bits), transportan el dato almacenado en una celda.
+- @@html:<span style="color: #8be9fd;"><strong>Líneas verticales:</strong></span>@@ (líneas de bits), transportan el voltaje del bit que se va a escribir, o bien reciben el bit que se ha leído.
 
 ** @@html:<i class="fas fa-exchange-alt"></i>@@ Proceso de lectura y escritura
 #+ATTR_REVEAL: :frag (appear)
@@ -184,7 +184,7 @@
 
 ** @@html:<i class="fas fa-clock"></i>@@ Multiplexación y Refresco en DRAM
 #+ATTR_REVEAL: :frag (appear)
-- @@html:<span style="color: #f1fa8c;"><strong>Multiplexación en el tiempo:</strong></span>@@(11 líneas en lugar de 22):
+- @@html:<span style="color: #f1fa8c;"><strong>Multiplexación en el tiempo:</strong></span>@@permite usar 11 líneas en lugar de 22:
   1. Once señales de dirección para filas.
   2. Luego las mismas líneas para columnas.
 - @@html:<span style="color: #f1fa8c;"><strong>Refresco:</strong></span>@@ evita pérdida de bits en DRAM. Técnica:
@@ -196,8 +196,7 @@
 ** @@html:<i class="fas fa-box"></i>@@ Encapsulación del Chip
 #+begin_export html
 <div class="concepto-box espacial">
-  <strong>Terminales:</strong> Circuitos integrados se montan con patillas que los conectan al exterior. Ejemplo: EPROM de 8 Mb necesita 32 terminales.
-</div>
+  <strong>Terminales:</strong> Circuitos integrados se montan con patillas que los conectan al exterior. 
 #+end_export
 
 #+ATTR_REVEAL: :frag (appear)
@@ -209,7 +208,7 @@
 
     <ul style="font-size: 0.8em;">
       <li>Esta memoria sí permite borrar sus datos guardados.</li>
-      <li>Una EPROM encapsulada de 8 Mb posee un millón de palabras.</li>
+      <li>Una EPROM encapsulada de 8 Mb posee un millón de palabras, cada una de 8 bits.</li>
 
       <li>
         Se requiere de 32 terminales para almacenar dichas palabras, cada una con las siguientes funciones:
