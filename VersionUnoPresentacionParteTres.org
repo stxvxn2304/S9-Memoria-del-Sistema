@@ -4,7 +4,7 @@
 #+REVEAL_TRANS: slide
 #+REVEAL_SPEED: default
 #+REVEAL_SLIDE_NUMBER: c/t
-#+REVEAL_HLEVEL: 2
+#+REVEAL_HLEVEL: 1
 #+REVEAL_PLUGINS: (highlight notes math)
 #+REVEAL_MATHJAX: t
 #+REVEAL_MATHJAX_URL: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -497,10 +497,13 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
 #+begin_export html
 <div class="col2">
   <div>
+#+end_export
+#+ATTR_REVEAL: :frag (appear)
     <ul style="font-size: 0.9em;">
       <li><strong>Contador de Ráfagas y Control:</strong> Gestionan la inicialización en flancos ascendentes.</li>
       <li><strong>Empaquetado de Datos:</strong> Se realiza automáticamente tras la latencia configurada.</li>
     </ul>
+#+begin_export html
   </div>
   <div>
 #+end_export
@@ -620,9 +623,9 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
       <strong>NOR</strong>
     </div>
     <ul style="font-size: 0.8em;">
-      <li><strong>Conexión:</strong> Celdas organizadas en paralelo.</li>
-      <li><strong>Ventaja:</strong> Acceso aleatorio rapidísimo a nivel de byte. Lee instrucciones directamente.</li>
-      <li><strong>Aplicación:</strong> Código de arranque (firmware) en microcontroladores y sistemas embebidos.</li>
+      <li class="fragment"><strong>Conexión:</strong> Celdas organizadas en paralelo.</li>
+      <li class="fragment"><strong>Ventaja:</strong> Acceso aleatorio rapidísimo a nivel de byte. Lee instrucciones directamente.</li>
+      <li class="fragment"><strong>Aplicación:</strong> Código de arranque (firmware) en microcontroladores y sistemas embebidos.</li>
     </ul>
   </div>
   <div>
@@ -630,10 +633,10 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
       <strong>NAND</strong>
     </div>
     <ul style="font-size: 0.8em;">
-      <li><strong>Conexión:</strong> Celdas en serie (cadenas de 16-32 transistores).</li>
-      <li><strong>Ventaja:</strong> Ocupan menos espacio físico. Muy baratas y capacidad gigantesca.</li>
-      <li><strong>Limitación:</strong> Obligada a leer/escribir en bloques/páginas. Sin acceso aleatorio directo.</li>
-      <li><strong>Aplicación:</strong> Almacenamiento masivo (USBs, SDs, SSDs).</li>
+      <li class="fragment"><strong>Conexión:</strong> Celdas en serie (cadenas de 16-32 transistores).</li>
+      <li class="fragment"><strong>Ventaja:</strong> Ocupan menos espacio físico. Muy baratas y capacidad gigantesca.</li>
+      <li class="fragment"><strong>Limitación:</strong> Obligada a leer/escribir en bloques/páginas. Sin acceso aleatorio directo.</li>
+      <li class="fragment"><strong>Aplicación:</strong> Almacenamiento masivo (USBs, SDs, SSDs).</li>
     </ul>
   </div>
 </div>
