@@ -226,15 +226,34 @@
 </div>
 #+end_export
   
-#+ATTR_HTML: :width 50% :align center
+#+ATTR_HTML: :width 70% :align center
 [[./imagenes/encapsulacion_chips.png]]
 
 * 9. Organización en módulos
-** @@html:<i class="fas fa-cubes"></i>@@ Organización en módulos
-#+ATTR_REVEAL: :frag (appear)
-- Número de chips igual al número de bits por palabra.
-- RAM 256 K palabras (8 bits c/u): @@html:<span style="color: #ff79c6;">ocho chips de 256 KB</span>@@.
-- Memoria mayor = matriz de chips. Ejemplo: 1 M de palabras (8 bits c/u) requiere @@html:<span style="color: #ff79c6;">cuatro columnas de chips</span>@@ similares a la de 256 KB.
+
+#+begin_export html
+<div class="col2">
+  <div>
+    <h3>Memoria RAM de 256 KB</h3>
+#+end_export
+
+#+ATTR_HTML: :width 90%
+[[./imagenes/memoria_ram_256.jpg]]
+
+#+begin_export html
+  </div>
+
+  <div>
+    <h3>Memoria RAM de 1 MB</h3>
+#+end_export
+
+#+ATTR_HTML: :width 90%
+[[./imagenes/memoria_ram_1Mb.jpg]]
+
+#+begin_export html
+  </div>
+</div>
+#+end_export
 
 * 10. Correccion de Errores y código de Hamming
 ** @@html:<i class="fas fa-exclamation-triangle"></i>@@ Hard Error vs Soft Error
