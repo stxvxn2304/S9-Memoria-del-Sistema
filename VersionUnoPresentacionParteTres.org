@@ -715,6 +715,10 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
 #+begin_export html
 <div class="text-center">
   <h3 class="azul">¡Gracias por su atención!</h3>
-  <p class="muted small">Bibliografía: Estructura y Organización de Computadores (Basado en Capítulos 5 y 6).</p>
+  <p class="muted small">Bibliografía: 
+William Stallings, Antonio Cañas Vargas y Alberto Prieto Espinosa.
+Organización y arquitectura de computadores. Pearson Educación,
+2006.
+</p>
 </div>
 #+end_export
