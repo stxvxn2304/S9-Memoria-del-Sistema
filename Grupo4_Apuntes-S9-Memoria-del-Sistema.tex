@@ -1,4 +1,4 @@
-% Created 2026-07-03 Fri 00:05
+% Created 2026-07-03 Fri 00:14
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -44,10 +44,10 @@ ARQUITECTURA DE COMPUTADORES}
 \thispagestyle{fancy}
 
 \section{2026-07-01 Organización de la Memoria Principal Semiconductora}
-\label{sec:org3fd771e}
+\label{sec:org156453a}
 
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:org43b2c39}
+\label{sec:orgaaf11ff}
 \begin{description}
 \item[{término clave1}] celda
 \item[{término clave2}] escritura
@@ -60,7 +60,7 @@ ARQUITECTURA DE COMPUTADORES}
 \item[{¿Cuáles son los terminales que posee una celda de memoria?}] 
 \end{description}
 \subsection{Notas (Notes):}
-\label{sec:org0c6f3ed}
+\label{sec:org4dddac4}
 \begin{itemize}
 \item La unidad fundamental de la memoria semiconductora es una celda de
 memoria. Sus propiedades  son:
@@ -76,7 +76,7 @@ pertinentes en la memoria semiconductora.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:orge502499}
+\label{sec:org1b9cc78}
 La celda es la unidad fundamental de la memoria principal, puesto que
 almacena la unidad más básica en informática: un bit. Se caracteriza
 por tener dos  estados semiestables, que representan el 0 y 1
@@ -86,10 +86,10 @@ que permite detectar su estado almacenado. Para este proceso, se usan
 tres terminales: de selección, lectura y escritura.
 
 \section{2026-07-01 DRAM y SRAM}
-\label{sec:org1025a00}
+\label{sec:org316f44d}
 
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:org8af0ab1}
+\label{sec:orgc6bc39f}
 \begin{description}
 \item[{término clave1}] DRAM
 \item[{término clave2}] SRAM
@@ -111,7 +111,7 @@ tres terminales: de selección, lectura y escritura.
 \end{description}
 
 \subsection{Notas (Notes):}
-\label{sec:org90f90b8}
+\label{sec:org4ab23f0}
 \begin{itemize}
 \item Características generales de la memoria RAM semiconductora
 \begin{itemize}
@@ -157,7 +157,7 @@ la DRAM mediante niveles de caché.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:orgdf40e57}
+\label{sec:orgf4df0c0}
 La memoria principal semiconductora se basa en dos tecnologías de
 acceso aleatorio y volátiles: DRAM y SRAM. La DRAM almacena bits como
 carga en condensadores, lo que permite una alta densidad y bajo coste
@@ -167,10 +167,10 @@ ofrecen mayor velocidad sin necesidad de refresco, lo que la hace
 ideal para memorias caché a pesar de ser más cara y menos densa.
 
 \section{2026-07-01 Tipos de Memoria de Solo Lectura (ROM)}
-\label{sec:org95c7eb2}
+\label{sec:org65d6afa}
 
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:org71bae8b}
+\label{sec:orga812040}
 \begin{description}
 \item[{término clave1}] ROM
 \item[{término clave2}] PROM
@@ -189,7 +189,7 @@ ideal para memorias caché a pesar de ser más cara y menos densa.
 \end{description}
 
 \subsection{Notas (Notes):}
-\label{sec:org2f57d40}
+\label{sec:org0227b0b}
 \begin{itemize}
 \item Memoria de solo lectura (ROM)
 \begin{itemize}
@@ -228,7 +228,7 @@ entre la EPROM y la EEPROM en coste y funcionalidad.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:orgab93af8}
+\label{sec:orgcda24f4}
 La memoria ROM es un almacenamiento no volátil que evoluciona desde
 las versiones cableadas de fábrica hacia opciones programables como la
 PROM. Existen variantes denominadas de sobre-todo lectura que permiten
@@ -240,10 +240,10 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
 
 
 \section{2026-07-01 Lógica del chip}
-\label{sec:org6a9f7dc}
+\label{sec:orgab9a2af}
 
 \subsection{Preguntas y Términos clave (Cue)}
-\label{sec:orge3005d4}
+\label{sec:orgae19f3d}
 \begin{description}
 \item[{término clave1}] palabra
 \item[{término clave2}] líneas
@@ -254,26 +254,26 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
 
 \item[{¿Las líneas de direcciones se conectan directamente a las celdas de una memoria semiconductora?}] 
 
-\item[{¿Qué tipo de líneas se encargan de activar una fial de bits en la matriz de memoria?}] 
+\item[{¿Qué tipo de líneas se encargan de activar una fila de bits en la matriz de memoria?}] 
 
 \item[{¿Cuántos bits se pueden leer o escribir a la vez en una memoria DRAM?}] 
 
 \item[{¿Es cierto que se emplean 22 líneas de direcciones en una memoria DRAM?}] 
 
-\item[{¿Qué señal permite guardar ciertos bits como coordenadas de fila, y qué otra señal los guarda como coordenadas de columna?}] 
+\item[{¿Qué señal permite guardar ciertos bits como coordenadas de fila?}] 
 
 \item[{Además de las operaciones de lectura y escritura, ¿en qué ámbito se emplea la señal de control RAS?}] 
 \end{description}
 
 \subsection{Notas (Notes)}
-\label{sec:org751f665}
+\label{sec:orgf766350}
 \begin{itemize}
 \item Al diseñar una memoria semiconductora, es importante considerar
 el número de bits de datos que pueden ser leídos o escritos a la
 vez.
 \end{itemize}
 \subsubsection{Formas de estructurar los datos en la memoria:}
-\label{sec:org6120dc6}
+\label{sec:org25eec26}
 \begin{enumerate}
 \item Procurar que la disposición física de la matriz sea igual a la
 disposición lógica de la misma. En este caso, la matriz posee \texttt{W}
@@ -283,10 +283,10 @@ cual cada chip almacena un solo bit de cada palabra, en cada
 dirección de la memoria.
 \end{enumerate}
 \subsubsection{Organización típica de una memoria DRAM}
-\label{sec:orge61bb09}
+\label{sec:org53ed344}
 \begin{enumerate}
 \item Las líneas en una memoria DRAM
-\label{sec:org422f3dc}
+\label{sec:org7d7d3dd}
 \begin{itemize}
 \item Existen determinados tipos de líneas que permiten realizar las
 operaciones de lectura y escritura en la matriz de una memoria
@@ -310,7 +310,7 @@ bits. Transportan el dato almacenado en una celda específica.
 \end{itemize}
 
 \item Proceso de lectura y escritura en una memoria DRAM
-\label{sec:org0efe651}
+\label{sec:orgf3c0998}
 \begin{itemize}
 \item Su matriz de memoria está compuesta por 4 matrices cuadradas de
 \(2048 \times 2048\) elementos.
@@ -352,7 +352,7 @@ refresco al decodificador de filas y se activa la señal RAS.
 \end{enumerate}
 
 \subsection{Resumen (Summary)}
-\label{sec:org665fbdd}
+\label{sec:org0cfccc5}
 Dentro del diseño de la memoria semiconductora, es indispensable
 considerar el número de bits que se leerán o escribirán a la
 vez. Para esto, se puede considerar emplear una distribución física
@@ -372,10 +372,10 @@ evitar pérdida de información, lo cual se puede conseguir mediante el
 uso de un contador de refresco. 
 
 \section{2026-07-01 Encapsulación del chip y Organización en módulos}
-\label{sec:org2526b82}
+\label{sec:orgc8b3bd3}
 
 \subsection{Preguntas y términos clave}
-\label{sec:org838b352}
+\label{sec:orgcddf89a}
 \begin{description}
 \item[{término clave1}] memoria EPROM
 \item[{término clave2}] encapsulación
@@ -399,14 +399,14 @@ uso de un contador de refresco.
 \end{description}
 
 \subsection{Notas (Notes)}
-\label{sec:org5df3192}
+\label{sec:org93caaeb}
 \begin{itemize}
 \item Los circuitos integrados se montan con patillas o terminales que los
 conectan con el mundo exterior.
 \end{itemize}
 
 \subsubsection{Memoria EPROM}
-\label{sec:orge10c317}
+\label{sec:org7b6ac26}
 La memoria EPROM (Erasable Programmable Read-Only Memory) es un tipo
 de memoria ROM que, a diferencia de la ROM tradicional, sí permite
 borrar sus datos guardados mediante técnicas de radiación de luz
@@ -422,7 +422,7 @@ realizan las siguientes funciones:
 \[
      n=\log_{2}(W)
      \].
-\item Puesto que se peude almacenar 1000000 palabras en total se necesitan
+\item Puesto que se puede almacenar 1000000 palabras en total se necesitan
 \(\log_2(1000000) \approx 20\) terminales, numeradas desde A0 hasta A19.
 \end{itemize}
 \item El dato a leer, para el cual se utilizan ocho líneas de datos (D0 - D7).
@@ -437,7 +437,7 @@ número total de terminales sea par.
 \end{enumerate}
 
 \subsubsection{Organización en módulos}
-\label{sec:org92904bc}
+\label{sec:org5282551}
 \begin{itemize}
 \item Se necesita un número de chips igual al número de bits por palabra.
 \item Para ilustrar, en una memoria RAM de 256 K palabras, cada una de
@@ -449,7 +449,7 @@ chips organizadas de forma similar a la memoria de 256 KB.
 \end{itemize}
 
 \subsection{Resumen (Summary)}
-\label{sec:org0090841}
+\label{sec:org63fba82}
 Los circuitos integrados se conectan a otros componentes mediante
 terminales. En el caso de una memoria EPROM, se necesita 32
 terminales: 20 de direcciones, 9 líneas de datos, 1 línea de
@@ -457,14 +457,14 @@ alimentación, un terminal de tierra, uno de habilitación del chip y
 una tensión de programación. Además, existe un terminal llamado NC que
 garantiza que el número total de terminales sea par. Por otro lado, la
 organización modular permite diseñar RAMs con tamaños más elevados,
-como 256 KB yo 1 Mb. 
+como 256 KB y 1 MB. 
 
 
 \section{2026-07-01 Errores en Memorias Semiconductoras: Hard y Soft Errors}
-\label{sec:org157fd90}
+\label{sec:orgb9f785a}
 
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:orgff89cde}
+\label{sec:orgfe771ea}
 \begin{description}
 \item[{término clave1}] Hard error
 \item[{término clave2}] Soft error
@@ -484,7 +484,7 @@ como 256 KB yo 1 Mb.
 \end{description}
 
 \subsection{Notas (Notes):}
-\label{sec:orgbe31006}
+\label{sec:org96e0167}
 \begin{itemize}
 \item Clasificación general de errores en memoria
 \begin{itemize}
@@ -532,7 +532,7 @@ corregible.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:org5ff6ee9}
+\label{sec:org574b545}
 Los errores en las memorias semiconductoras se clasifican en
 permanentes (hard) y transitorios (soft). Mientras que los hard errors
 implican un daño físico en las celdas debido a defectos de fábrica o
@@ -544,10 +544,10 @@ solucionar estas discrepancias durante las operaciones de lectura y
 escritura.
 
 \section{2026-07-01 Técnicas de Corrección de Errores: Código de Hamming}
-\label{sec:orga52f306}
+\label{sec:org8e57596}
 
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:orgdc08bb1}
+\label{sec:org6268433}
 \begin{description}
 \item[{término clave1}] Hamming
 \item[{término clave2}] Comprobación
@@ -567,7 +567,7 @@ escritura.
 \end{description}
 
 \subsection{Notas (Notes):}
-\label{sec:org1554b68}
+\label{sec:org077c39b}
 \begin{itemize}
 \item El código de Hamming es una técnica de corrección de errores simples
 (SEC) diseñada para incrementar la fiabilidad de las memorias
@@ -596,7 +596,7 @@ de la memoria.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:org040facc}
+\label{sec:orgd3ae76f}
 El código de Hamming es un método fundamental para garantizar la
 integridad de los datos en memorias semiconductoras mediante el uso de
 bits de paridad redundantes. Al organizar estos bits en posiciones
@@ -611,9 +611,9 @@ permanentes como transitorios.
 
 
 \section{2026-07-01 Memoria Flash (Flash Memory)}
-\label{sec:orgc4ba5b0}
+\label{sec:org7c05a65}
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:org14eec18}
+\label{sec:orgb2d4661}
 \begin{description}
 \item[{término clave1}] Acceso aleatorio a nivel de byte
 \item[{término clave2}] Acceso por páginas
@@ -626,9 +626,9 @@ permanentes como transitorios.
 \end{description}
 
 \subsection{Notas (Notes):}
-\label{sec:orge0190b1}
+\label{sec:org5552b48}
 \subsubsection{Origen}
-\label{sec:orgdfc099d}
+\label{sec:org6a915da}
 \begin{itemize}
 \item Introducida a mediados de la década de 1980.
 \item Se ubica en un punto intermedio entre EPROM y EEPROM en términos de
@@ -638,7 +638,7 @@ pero con una mejora en la velocidad.
 \end{itemize}
 
 \subsubsection{Mecanismo de Borrado}
-\label{sec:orge0c1e6d}
+\label{sec:org03bfd09}
 \begin{itemize}
 \item Una memoria Flash completa (o secciones específicas de ella llamadas
 bloques) puede borrarse en cuestión de unos pocos segundos.
@@ -649,10 +649,10 @@ organiza y borra sus secciones.
 \end{itemize}
 
 \subsubsection{Tipos}
-\label{sec:orgb2cf87e}
+\label{sec:orgf8a64a8}
 \begin{enumerate}
 \item Flash NOR:
-\label{sec:orga097875}
+\label{sec:orgdf60214}
 \begin{itemize}
 \item Proporciona acceso aleatorio directo a nivel de byte. Esto
 significa que las celdas se pueden leer igual que una memoria RAM o
@@ -664,7 +664,7 @@ debido a su rápida velocidad de lectura.
 que los de la Flash NAND.
 \end{itemize}
 \item Flash NAND:
-\label{sec:org74b6cf1}
+\label{sec:org22671d6}
 \begin{itemize}
 \item Está organizada a nivel de componentes lógicos en páginas (ej. 4 KB)
 y bloques (ej. 128 páginas).
@@ -682,7 +682,7 @@ masivo, como son: Flash USB, tarjetas SD y unidades de estado sólido
 \end{enumerate}
 
 \subsection{Resumen (Summary):}
-\label{sec:orgb20d26d}
+\label{sec:org1d927d5}
 La memoria Flash es un dispositivo semiconductor no volátil que
 evoluciona de la EEPROM mediante un borrado eléctrico ultrarrápido por
 bloques. Se divide comercial y técnicamente en dos arquitecturas: NOR
@@ -692,9 +692,9 @@ estándar).
 
 
 \section{2026-07-01 Nuevas Tecnologías de Memoria de Estado Sólido No Volátil}
-\label{sec:org610c4d1}
+\label{sec:org7fe8bac}
 \subsection{Preguntas y Términos clave (Cue):}
-\label{sec:orgfa6d435}
+\label{sec:org0533fee}
 \begin{itemize}
 \item ¿Qué limitaciones físicas de las memorias DRAM y Flash tradicionales
 generan la necesidad de desarrollar nuevas tecnologías?
@@ -707,9 +707,9 @@ transistores convencionales?
 \end{itemize}
 
 \subsection{Notas (Notes):}
-\label{sec:orgf973f61}
+\label{sec:orgf329b99}
 \subsubsection{Objetivo de las Tecnologías Emergentes}
-\label{sec:org3dcfe33}
+\label{sec:orge5ec925}
 \begin{itemize}
 \item Buscar superar las limitaciones físicas de escalabilidad que sufren
 las tecnologías de memoria Flash NAND y DRAM (como la fuga de
@@ -720,7 +720,7 @@ de las memorias no volátiles (FLash).
 \end{itemize}
 
 \subsubsection{SST-RAM (Spin-Transfer Torque RAM)}
-\label{sec:org3bf8ffc}
+\label{sec:orga269465}
 \begin{itemize}
 \item Utiliza las propiedades cuánticas y magnéticas del espín de los
 electrones para alterar la resistencia eléctrica de la celda de
@@ -736,7 +736,7 @@ prácticamente infinita.
 \end{itemize}
 
 \subsubsection{PCRAM (Phase-Change RAM)}
-\label{sec:org7f123cf}
+\label{sec:org85e6469}
 \begin{itemize}
 \item Tiene como base las propiedades físicas de una aleación de vidrio
 calcógeno (material GST: Germanio-Antimonio-Telurio).
@@ -752,7 +752,7 @@ escritura estables.
 \end{itemize}
 
 \subsubsection{ReRAM (Resistive RAM)}
-\label{sec:org7d6d62e}
+\label{sec:org76381d5}
 \begin{itemize}
 \item Opera mediante el principio de alternancia de la resistencia
 eléctrica a través de un material dieléctrico de estado sólido
@@ -767,7 +767,7 @@ alternativa clave para arquitecturas de computación neuromórfica.
 \end{itemize}
 
 \subsection{Resumen (Summary):}
-\label{sec:org3f0c458}
+\label{sec:org3b735f1}
 Las tecnologías emergentes de estado sólido no volátil (STT-RAM,
 PCRAM y ReRAM) surgen para romper los límites físicos de escalabilidad
 de DRAM Y Flash. En lugar de atrapar cargas eléctricas en
@@ -782,7 +782,7 @@ Todas buscan alcanzar velocidad instantánea de RAM y la permanencia de
 un disco duro, como si se tratara del "Santo Grial" de la computación.
 
 \section{{\bfseries\sffamily TODO} Mis Tareas [100\%]}
-\label{sec:org53e10a3}
+\label{sec:org83187d7}
 \begin{itemize}
 \item[{$\boxtimes$}] Leer este documento
 \item[{$\boxtimes$}] Escribir el resumen  de la exposición 1

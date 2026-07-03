@@ -198,10 +198,10 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
 - término clave5 :: refresco
 - ¿Cuáles son las dos formas principales de estructurar los datos en una memoria semiconductora? :: 
 - ¿Las líneas de direcciones se conectan directamente a las celdas de una memoria semiconductora? ::
-- ¿Qué tipo de líneas se encargan de activar una fial de bits en la matriz de memoria? ::
+- ¿Qué tipo de líneas se encargan de activar una fila de bits en la matriz de memoria? ::
 - ¿Cuántos bits se pueden leer o escribir a la vez en una memoria DRAM? :: 
 - ¿Es cierto que se emplean 22 líneas de direcciones en una memoria DRAM? ::
-- ¿Qué señal permite guardar ciertos bits como coordenadas de fila, y qué otra señal los guarda como coordenadas de columna? ::
+- ¿Qué señal permite guardar ciertos bits como coordenadas de fila? ::
 - Además de las operaciones de lectura y escritura, ¿en qué ámbito se emplea la señal de control RAS? :: 
 
 ** Notas (Notes)
@@ -325,7 +325,7 @@ realizan las siguientes funciones:
      \[
      n=\log_{2}(W)
      \].
-   - Puesto que se peude almacenar 1000000 palabras en total se necesitan
+   - Puesto que se puede almacenar 1000000 palabras en total se necesitan
      $\log_2(1000000) \approx 20$ terminales, numeradas desde A0 hasta A19.
 2. El dato a leer, para el cual se utilizan ocho líneas de datos (D0 - D7).
 3. La línea de alimentación del chip \(V_{CC}\)
@@ -354,7 +354,7 @@ alimentación, un terminal de tierra, uno de habilitación del chip y
 una tensión de programación. Además, existe un terminal llamado NC que
 garantiza que el número total de terminales sea par. Por otro lado, la
 organización modular permite diseñar RAMs con tamaños más elevados,
-como 256 KB yo 1 Mb. 
+como 256 KB y 1 MB. 
 
 
 * 2026-07-01 Errores en Memorias Semiconductoras: Hard y Soft Errors
