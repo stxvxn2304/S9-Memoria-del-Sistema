@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Memoria Interna</title>
+<meta name="author" content="Echeverría Steven, Jami Mateo, Pérez Martín y Zúñiga Sebastián"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/dracula.css" id="theme"/>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
+<link rel="stylesheet" href="./custom.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Memoria Interna</h1><p class="subtitle"></p>
+<h2 class="author">Echeverría Steven, Jami Mateo, Pérez Martín y Zúñiga Sebastián</h2><h2 class="date">2026-07-02</h2>
+</section>
+
+<section>
+<section id="slide-org7cf874a">
+<h2 id="org7cf874a">Inicio</h2>
+<div class="outline-text-2" id="text-org7cf874a">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org11d0922">
+<h3 id="org11d0922"><i class="fas fa-microchip"></i> Arquitectura de Computadores</h3>
+<div class="fase-header">
+  <div class="numero">1</div><br>
+  <h2>Organización Avanzada de Memorias RAM</h2>
+  <div class="integrante">Presentado por Zúñiga Sebastián</div>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org6f062c2">
+<h2 id="org6f062c2">1. Organización de la memoria principal semiconductora*</h2>
+<div class="outline-text-2" id="text-org6f062c2">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org8c516a7">
+<h3 id="org8c516a7"><i class="fas fa-microchip"></i> ¿Cómo funciona exactamente una memoria?</h3>
+<ul>
+<li class="fragment appear">La unidad fundamental de la memoria semiconductora es una celda de
+memoria. Sus propiedades  son:</li>
+<li class="fragment appear">Poseen dos estados estables o semiestables que representan el 1
+y  0 lógico.</li>
+<li class="fragment appear">Al escribir en ellas, es posible fijar su estado.</li>
+<li class="fragment appear">Al leerlas, se detecta su estado.</li>
+
+</ul>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org1e2fe90">
+<h2 id="org1e2fe90">Lógica del chip</h2>
+<div class="outline-text-2" id="text-org1e2fe90">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org7a55ae2">
+<h3 id="org7a55ae2"><i class="fas fa-microchip"></i> Estructura de Datos y Matriz</h3>
+<div class="concepto-box">
+  <strong>Consideración principal:</strong> Al diseñar una memoria semiconductora, es importante considerar el número de bits de datos que pueden ser leídos o escritos a la vez.
+</div>
+
+<ul>
+<li class="fragment appear">Procurar que la disposición física de la matriz sea igual a la disposición lógica. La matriz posee \(\color{#bd93f9}{W}\) palabras con \(\color{#bd93f9}{n}\) bits cada una.</li>
+<li class="fragment appear">Organizar la memoria mediante la forma <span style="color: #ff79c6;"><strong>un-bit-por-chip</strong></span>, cada chip almacena un solo bit de cada palabra en cada dirección.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc169594">
+<h3 id="orgc169594"><i class="fas fa-layer-group"></i> Las líneas en una memoria DRAM</h3>
+<div class="concepto-box">
+  Existen determinados tipos de líneas que permiten realizar las operaciones de lectura y escritura en la matriz de una memoria semiconductora.
+</div>
+
+<ul>
+<li class="fragment appear"><span style="color: #8be9fd;"><strong>Líneas de direcciones:</strong></span> llegan del procesador y envían señales para activar una celda específica. Requeridas: \(\color{#ffb86c}{\log_2(W)}\).</li>
+<li class="fragment appear"><span style="color: #8be9fd;"><strong>Líneas de datos:</strong></span> esenciales para operaciones de escritura y lectura.</li>
+<li class="fragment appear"><span style="color: #8be9fd;"><strong>Líneas horizontales:</strong></span> (líneas de palabras), activan toda una fila de bits.</li>
+<li class="fragment appear"><span style="color: #8be9fd;"><strong>Líneas verticales:</strong></span> (líneas de bits), transportan el dato almacenado en una celda.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbb5d651">
+<h3 id="orgbb5d651"><i class="fas fa-exchange-alt"></i> Proceso de lectura y escritura</h3>
+<ul>
+<li class="fragment appear">Matriz compuesta por 4 matrices cuadradas de \(\color{#ffb86c}{2048 \cdot 2048}\) elementos.</li>
+<li class="fragment appear">Celdas acopladas a líneas horizontales (selección) y verticales (Entrada-Datos/Detección).</li>
+<li class="fragment appear"><span style="color: #50fa7b;"><strong>Se leen o escriben cuatro bits a la vez:</strong></span> se activan filas y se leen 4 columnas indicadas por el decodificador.</li>
+<li class="fragment appear"><span style="color: #50fa7b;"><strong>Para la lectura:</strong></span> se pasa cada línea por un <span style="color: #ff79c6;"><em>amplificador de lectura</em></span>.</li>
+<li class="fragment appear"><span style="color: #50fa7b;"><strong>Para la escritura:</strong></span> se activa cada línea a 1 o 0 según líneas de datos.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org607cb87">
+<h3 id="org607cb87"><i class="fas fa-clock"></i> Multiplexación y Refresco en DRAM</h3>
+<ul>
+<li class="fragment appear"><span style="color: #f1fa8c;"><strong>Multiplexación en el tiempo:</strong></span>(11 líneas en lugar de 22):
+<ol>
+<li>Once señales de dirección para filas.</li>
+<li>Luego las mismas líneas para columnas.</li>
+
+</ol></li>
+<li class="fragment appear"><span style="color: #f1fa8c;"><strong>Refresco:</strong></span> evita pérdida de bits en DRAM. Técnica:
+<ol>
+<li>Inhabilitar todas las celdas.</li>
+<li>Contador recorre celdas, pasa bit al decodificador de filas y activa RAS.</li>
+<li>Datos se leen y escriben nuevamente.</li>
+
+</ol></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0fbd43f">
+<h2 id="org0fbd43f">Encapsulación del chip y Organización en módulos</h2>
+<div class="outline-text-2" id="text-org0fbd43f">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgeb14dde">
+<h3 id="orgeb14dde"><i class="fas fa-box"></i> Encapsulación del Chip</h3>
+<div class="concepto-box espacial">
+  <strong>Terminales:</strong> Circuitos integrados se montan con patillas que los conectan al exterior. Ejemplo: EPROM de 8 Mb necesita 32 terminales.
+</div>
+
+<ul>
+<li class="fragment appear">Señales transferidas por los terminales:
+<ol>
+<li>Dirección de palabra a la que se accede: \(n = \log_2(W)\).</li>
+<li>El dato a leer (ocho líneas).</li>
+<li>Línea de alimentación del chip.</li>
+<li>Un terminal de tierra.</li>
+<li>Habilitación del chip (validar dirección dada por el bus).</li>
+<li>Una tensión de programación.</li>
+
+</ol></li>
+
+</ul>
+
+
+<div id="org5ed1edc" class="figure">
+<p><img src="./imagenes/encapsulacion_chips.png" alt="encapsulacion_chips.png" width="70%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd1d08ae">
+<h3 id="orgd1d08ae"><i class="fas fa-cubes"></i> Organización en módulos</h3>
+<ul>
+<li class="fragment appear">Número de chips igual al número de bits por palabra.</li>
+<li class="fragment appear">RAM 256 K palabras (8 bits c/u): <span style="color: #ff79c6;">ocho chips de 256 KB</span>.</li>
+<li class="fragment appear">Memoria mayor = matriz de chips. Ejemplo: 1 M de palabras (8 bits c/u) requiere <span style="color: #ff79c6;">cuatro columnas de chips</span> similares a la de 256 KB.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdeb81cf">
+<h2 id="orgdeb81cf">1. DRAM Síncrona (SDRAM)</h2>
+<div class="outline-text-2" id="text-orgdeb81cf">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org904a757">
+<h3 id="org904a757"><i class="fas fa-sync"></i> El Problema de la Latencia</h3>
+<div class="concepto-box">
+  <strong>Concepto SDRAM:</strong> Sincronizada al reloj del sistema, permite mover datos bajo control del reloj. Libera al procesador de los "wait states" (tiempos de espera) de la DRAM asíncrona clásica mientras la memoria opera internamente.
+</div>
+
+<ul>
+<li class="fragment appear"><b><b>Modo de Ráfagas (Burst Mode):</b></b> Extrae secuencias de datos a gran velocidad en la misma fila para evitar configurar direcciones repetitivamente.</li>
+<li class="fragment appear"><b><b>Registro de Modo:</b></b> Programa la longitud de ráfaga (1, 2, 4, 8 bits o página) y la latencia.</li>
+<li class="fragment appear"><b><b>Bancos Múltiples:</b></b> Diseño dividido para procesar operaciones en paralelo.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdd42373">
+<h3 id="orgdd42373"><i class="fas fa-project-diagram"></i> Arquitectura Interna SDRAM</h3>
+<div class="col2">
+  <div>
+    <ul style="font-size: 0.9em;">
+      <li><strong>Contador de Ráfagas y Control:</strong> Gestionan la inicialización en flancos ascendentes.</li>
+      <li><strong>Empaquetado de Datos:</strong> Se realiza automáticamente tras la latencia configurada.</li>
+    </ul>
+  </div>
+  <div>
+
+<div id="org13d13f9" class="figure">
+<p><img src="./imagenes/sdram-arquitectura.jpeg.jpeg" alt="sdram-arquitectura.jpeg.jpeg" width="90%" align="center" />
+</p>
+</div>
+
+
+<div id="org6810d29" class="figure">
+<p><img src="./imagenes/sdram-tiempos.jpeg.jpeg" alt="sdram-tiempos.jpeg.jpeg" width="90%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org9d3bcbe">
+<h2 id="org9d3bcbe">2. DDR SDRAM</h2>
+<div class="outline-text-2" id="text-org9d3bcbe">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1251cd2">
+<h3 id="org1251cd2"><i class="fas fa-tachometer-alt"></i> Fundamentos DDR</h3>
+<div class="concepto-box espacial">
+  <strong>Double-Data-Rate:</strong> Transfiere datos dos veces por ciclo (flanco de subida y de bajada). Utiliza un <em>Prefetch Buffer</em> (búfer de precarga) que accede a múltiples palabras en paralelo internamente para no limitar el bus de I/O.
+</div>
+
+<ul>
+<li class="fragment appear"><b><b>DDR1:</b></b> Prefetch de 2 bits (velocidad 2x frente al núcleo).</li>
+<li class="fragment appear"><b><b>DDR2:</b></b> Prefetch de 4 bits (velocidad 4x).</li>
+<li class="fragment appear"><b><b>DDR3:</b></b> Prefetch de 8 bits (velocidad 8x).</li>
+<li class="fragment appear"><b><b>DDR4:</b></b> Mantiene prefetch de 8 bits pero introduce <b><b>Bank Groups</b></b> (Grupos de bancos) para operar columnas en paralelo y alcanzar tasas de 2133 a 4266 Mbps.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgefe9854">
+<h3 id="orgefe9854"><i class="fas fa-chart-line"></i> Evolución de Generaciones</h3>
+
+<div id="orgaed4a65" class="figure">
+<p><img src="./imagenes/ddr-evolucion.jpeg.jpeg" alt="ddr-evolucion.jpeg.jpeg" width="75%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga15d652">
+<h2 id="orga15d652">3. EDRAM (Embedded DRAM)</h2>
+<div class="outline-text-2" id="text-orga15d652">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org89fc75e">
+<h3 id="org89fc75e"><i class="fas fa-bolt"></i> Características de EDRAM</h3>
+<div class="concepto-box hit">
+  <strong>Ventaja Principal:</strong> Integra la tecnología DRAM en el mismo chip del procesador. Ofrece mayor densidad y disipa menos energía que la SRAM, reduciendo los tiempos de acceso por proximidad y buses anchos.
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcfb6619">
+<h3 id="orgcfb6619"><i class="fas fa-cogs"></i> Implementaciones Modernas</h3>
+<ul>
+<li class="fragment appear"><b><b>IBM z13:</b></b> Uso masivo compartido (Caché L3 de 64 MB por CPU y Caché L4 compartida de 480 MB).</li>
+<li class="fragment appear"><b><b>Intel Core (Original):</b></b> Diseñada como caché L4 tradicional ("victim cache" de L3) con dependencias directas.</li>
+<li class="fragment appear"><b><b>Intel Core (Actual):</b></b> Actúa como un <b><b>Búfer Transparente</b></b> directamente en el controlador de memoria. Acelera gráficos y PCIe sin pasar por el CPU.</li>
+
+</ul>
+
+
+<div id="org8857c6f" class="figure">
+<p><img src="./imagenes/edram-intel.jpeg.jpeg" alt="edram-intel.jpeg.jpeg" width="65%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org55988d9">
+<h2 id="org55988d9">4. Memoria Flash</h2>
+<div class="outline-text-2" id="text-org55988d9">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org0b318fd">
+<h3 id="org0b318fd"><i class="fas fa-save"></i> Principios de Operación</h3>
+<div class="concepto-box temporal">
+  <strong>Efecto Túnel:</strong> Utiliza un transistor con <em>Floating Gate</em> (puerta flotante). <br>
+  Estado '1' = Vacía. <br>Estado '0' = Electrones atrapados al aplicar alto voltaje (escritura).
+</div>
+
+<ul>
+<li class="fragment appear">No volátil, borrado eléctrico por grandes bloques ("flashes").</li>
+<li class="fragment appear"><b><b>NOR Flash:</b></b> Conexión en paralelo. Acceso aleatorio de alta velocidad por byte. Ideal para sistemas embebidos y ejecutar código.</li>
+<li class="fragment appear"><b><b>NAND Flash:</b></b> Transistores en serie (16-32). Acceso por bloques. Densidad colosal, domina almacenamiento (SSDs, USBs).</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0110032">
+<h3 id="org0110032"><i class="fas fa-object-group"></i> Topología NOR vs NAND</h3>
+<div class="col2">
+  <div>
+
+<div id="org8b74a41" class="figure">
+<p><img src="./imagenes/flash-transistor.jpeg.jpeg" alt="flash-transistor.jpeg.jpeg" width="95%" align="center" />
+</p>
+</div>
+</div>
+<div>
+
+<div id="org42a381f" class="figure">
+<p><img src="./imagenes/flash-nornand.jpeg.jpeg" alt="flash-nornand.jpeg.jpeg" width="95%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga34ab25">
+<h2 id="orga34ab25">Fin de la Presentación</h2>
+<div class="outline-text-2" id="text-orga34ab25">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd370a7e">
+<h3 id="orgd370a7e"><i class="fas fa-question-circle"></i> ¿Preguntas?</h3>
+<div class="text-center">
+  <h3 class="azul">¡Gracias por su atención!</h3>
+  <p class="muted small">Bibliografía: Estructura y Organización de Computadores (Basado en Capítulos 5 y 6).</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1200, height:900, margin: 0.1, minScale:0.2, maxScale:1.2,
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+
+});
+
+</script>
+</body>
+</html>
