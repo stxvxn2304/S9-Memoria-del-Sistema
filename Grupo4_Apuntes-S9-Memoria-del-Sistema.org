@@ -38,7 +38,7 @@
 
 
 #+begin_export latex
-\fancyhead[C]{\includegraphics[scale=0.05]{./logoEPN.jpg}\\
+\fancyhead[C]{\includegraphics[scale=0.05]{./imagenes/logoEpn.jpg}\\
 ESCUELA POLITÉCNICA NACIONAL\\FACULTAD DE INGENIERÍA DE SISTEMAS\\
 ARQUITECTURA DE COMPUTADORES}
 \thispagestyle{fancy}
@@ -53,7 +53,7 @@ ARQUITECTURA DE COMPUTADORES}
   
 - ¿Cuál es la unidad fundamental de la memoria semiconductora? ::
 - ¿Cómo se llama el proceso en que se fija el estado de una celda de memoria? ::
-- :: 
+- ¿Cuáles son los terminales que posee una celda de memoria? :: 
 ** Notas (Notes):
 - La unidad fundamental de la memoria semiconductora es una celda de
   memoria. Sus propiedades  son:
@@ -220,33 +220,33 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
 - Existen determinados tipos de líneas que permiten realizar las
   operaciones de lectura y escritura en la matriz de una memoria
   semiconductora:
-- Líneas de direcciones: :: son conductores que llegan del procesador
+- Líneas de direcciones:  son conductores que llegan del procesador
   y, al conectarse con el decodificador de direcciones, envían señales
   a la matriz de memoria para activar una celda específica. No se
   encuentran directamente acopladas a las celdas.
   + La cantidad de líneas de direcciones requeridas en una matriz se calcula
-  como ~log_2(W)~ donde ~W~ es la cantidad de palabras almacenadas. 
-- Líneas de datos: :: son esenciales para las operaciones de escritura
+  como $\log_2(W)$ donde ~W~ es la cantidad de palabras almacenadas.
+- Líneas de datos: son esenciales para las operaciones de escritura
   y lectura, pues transportan los bits que se fijarán en los estados
   de celdas determinadas, o bien reciben el valor almacenado en alguna
   de ellas, según se requiera.
-- Líneas horizontales: :: También llamadas líneas de palabras, activan
+- Líneas horizontales:  También llamadas líneas de palabras, activan
   toda una fila de bits dentro de la matriz de memoria.
-- Líneas verticales: :: También se conocen como líneas de
+- Líneas verticales:  También se conocen como líneas de
   bits. Transportan el dato almacenado en una celda específica.
 
 **** Proceso de lectura y escritura en una memoria DRAM
 - Su matriz de memoria está compuesta por 4 matrices cuadradas de
-  ~2048 \cdot 2048~ elementos.
+  $2048 \times 2048$ elementos.
 - Todas las celdas se acoplan a líneas horizontales, que conectan a los
   terminales de selección, y a las verticales, que conectan al terminal de
   Entrada-Datos/Detección de cada celda.
-- Se leen o escriben cuatro bits a la vez. :: Esto dado que, una vez
+- Se leen o escriben cuatro bits a la vez. Esto dado que, una vez
   activada una fila de bits dentro de la matriz de memoria, se leen
   cuatro columnas indicadas por el decodificador de columnas.
-- Para la lectura, :: es necesario pasar cada línea de bits a través de
+- Para la lectura :: es necesario pasar cada línea de bits a través de
   un //amplificador de lectura//.
-- Para la escritura, :: se requiere activar cada línea a uno o a cero
+- Para la escritura :: se requiere activar cada línea a uno o a cero
   según lo indiquen las líneas de datos.
 - Teóricamente, se deberían emplear 22 líneas de direcciones para esta
   memoria. Sin embargo, en la práctica se utiliza una estrategia de
@@ -278,8 +278,8 @@ realizar estas operaciones con celdas, se requieren diferentes tipos
 de líneas: de direcciones, de datos, horizontales y verticales.
 
 Por otro lado, en la organización típica de una DRAM, se puede leer o  escribir cuatro
-bits a la vez. Compuesta por cuatro matrices cuadradas de ~2048 \cdot
-2048~, esta memoria permite leer y escribir cuatro bits a la
+bits a la vez. Compuesta por cuatro matrices cuadradas de 2048 \cdot
+2048, esta memoria permite leer y escribir cuatro bits a la
 vez. Además, cada celda está conectada a líneas horizontales y
 verticales, y se utilizan cuatro líneas de datos que operan en cuatro
 columnas de la matriz de memoria. Aunque teóricamente deberían existir
@@ -291,32 +291,70 @@ uso de un contador de refresco.
 * 2026-07-01 Encapsulación del chip y Organización en módulos
 
 ** Preguntas y términos clave
+- término clave1 :: memoria EPROM
+- término clave2 :: encapsulación
+- término clave3 :: palabra
+- término clave4 :: módulo
+- término clave5 :: terminal 
 
+- ¿En qué se diferencia la memoria EPROM con la ROM tradicional? ::
 
+- ¿Cuántas palabras se pueden almacenar en una memoria EPROM? ::
+
+- ¿Qué expresión se usa para calcular el número de terminales de direcciones en una memoria EPROM? ::
+
+- ¿Cuántas líneas de datos se emplean en una memoria EPROM? ::
+
+- En una organización modular, ¿cómo se define la cantidad de chips que se utilizarán? :: 
 
 ** Notas (Notes)
 - Los circuitos integrados se montan con patillas o terminales que los
   conectan con el mundo exterior.
-- Por ejemplo, una memoria EPROM encapsulada de 8 Mb necesita 32 terminales.
 
-*** Señales transferidas por los terminales
+*** Memoria EPROM
+La memoria EPROM (Erasable Programmable Read-Only Memory) es un tipo
+de memoria ROM que, a diferencia de la ROM tradicional, sí permite
+borrar sus datos guardados mediante técnicas de radiación de luz
+ultravioleta. 
+
+Una memoria EPROM encapsulada de 8 Mb, en la cual cada palabra tiene
+un tamaño de 8 bits (1 byte), requiere 32 terminales. Estos
+realizan las siguientes funciones:
 1. La dirección de la palabra a la que se accede
-   - Estas terminales se calculan como ~n = log_2(W)~
-2. El dato a leer, con ocho líneas
-3. La línea de alimentación del chip
-4. Un terminal de tierra
-5. Un terminal de habilitación del chip, empleado para verificar si la
-   dirección dada por el bus de direcciones es válida para cada chip.
-6. Una tensión de programación
+   - El número total de Estas terminales se calcula como
+     \[
+     n=\log_{2}(W)
+     \].
+   - Puesto que se peude almacenar 1000000 palabras en total se necesitan
+     $\log_2(1000000) \approx 20$ terminales, numeradas desde A0 hasta A19.
+2. El dato a leer, para el cual se utilizan ocho líneas de datos (D0 - D7).
+3. La línea de alimentación del chip \(V_{CC}\)
+4. Un terminal de tierra \(V_{SS}\)
+5. Un terminal de habilitación del chip \(V_{CE}\), empleado para verificar si la
+   dirección dada por el bus de direcciones es válida para cada chip. 
+6. Una tensión de programación que se aplica durante las operaciones
+   de memoria \(V_{PP}\).
+7. El terminal NC (No conectar) se incluye en el chip para que el
+   número total de terminales sea par.
 
 *** Organización en módulos
 - Se necesita un número de chips igual al número de bits por palabra.
 - Para ilustrar, en una memoria RAM de 256 K palabras, cada una de
-ocho bits, se necesitarían ocho chips de 256 KB.
+  ocho bits, se necesitarían ocho chips de 32 KB.
 - En cambio, si se está trabajando con una memoria mayor, se
   requeriría una matriz de chips. A saber, en una memoria de 1 M de
   palabras, cada una de ocho bits, se necesitarían cuatro columnas de
-  chips organizadas de forma similar a la memoria de 256 KB.                                                                                                    
+  chips organizadas de forma similar a la memoria de 256 KB.
+
+** Resumen (Summary)
+Los circuitos integrados se conectan a otros componentes mediante
+terminales. En el caso de una memoria EPROM, se necesita 32
+terminales: 20 de direcciones, 9 líneas de datos, 1 línea de
+alimentación, un terminal de tierra, uno de habilitación del chip y
+una tensión de programación. Además, existe un terminal llamado NC que
+garantiza que el número total de terminales sea par. Por otro lado, la
+organización modular permite diseñar RAMs con tamaños más elevados,
+como 256 KB yo 1 Mb. 
 
 
 * 2026-07-01 Errores en Memorias Semiconductoras: Hard y Soft Errors
@@ -434,16 +472,15 @@ computación de altas prestaciones para mitigar fallos tanto
 permanentes como transitorios.
 
 
+
 * 2026-07-01 Memoria Flash (Flash Memory)
 ** Preguntas y Términos clave (Cue):
-- ¿Por qué la memoria Flash se considera una tecnología intermedia
-  entre EPROM y EEPROM?
-- ¿Cuál es la diferencia operativa fundamental entre la Flash tipo NOR
-  y la NAND?
-- ¿Cómo funciona el mecanismo de borrado en bloques y qué ventajas de
-  velocidad aporta?
-- Término clave: Acceso aleatorio a nivel de byte
-- Término clave: Acceso por páginas
+- término clave1 :: Acceso aleatorio a nivel de byte
+- término clave2 :: Acceso por páginas
+
+- ¿Por qué la memoria Flash se considera una tecnología intermedia entre EPROM y EEPROM? ::
+- ¿Cuál es la diferencia operativa fundamental entre la Flash tipo NOR y la NAND? ::
+- ¿Cómo funciona el mecanismo de borrado en bloques y qué ventajas de velocidad aporta? ::
 
 ** Notas (Notes):
 *** Origen
