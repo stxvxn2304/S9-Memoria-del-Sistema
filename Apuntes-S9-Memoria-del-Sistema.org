@@ -192,6 +192,7 @@ uso de un contador de refresco.
 
 *** Señales transferidas por los terminales
 1. La dirección de la palabra a la que se accede
+   - Estas terminales se calculan como ~n = log_2(W)~
 2. El dato a leer, con ocho líneas
 3. La línea de alimentación del chip
 4. Un terminal de tierra
@@ -200,8 +201,13 @@ uso de un contador de refresco.
 6. Una tensión de programación
 
 *** Organización en módulos
-- Se necesita un número de chips igual al número de bits por palabra. 
-
+- Se necesita un número de chips igual al número de bits por palabra.
+- Para ilustrar, en una memoria RAM de 256 K palabras, cada una de
+ocho bits, se necesitarían ocho chips de 256 KB.
+- En cambio, si se está trabajando con una memoria mayor, se
+  requeriría una matriz de chips. A saber, en una memoria de 1 M de
+  palabras, cada una de ocho bits, se necesitarían cuatro columnas de
+  chips organizadas de forma similar a la memoria de 256 KB.                                                                                                    
 
 
 
