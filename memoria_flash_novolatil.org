@@ -1,0 +1,73 @@
+* Memoria Flash (Flash Memory)
+
+  Es un tipo de memoria intermedia que revolucionó el almacenamiento. Nació a mediados de los años 80 porque se necesitaba algo que fuera rápido para borrar datos pero que no costara una fortuna. 
+
+  Evolucionó combinando lo mejor de dos tecnologías anteriores:
+  - (EPROM): Eran memorias que se borraban exponiéndolas a luz ultravioleta, lo cual era lentísimo y requería sacar el chip de la placa.
+  - (EEPROM): Memorias más modernas que ya se borraban con electricidad, pero lo hacían byte por byte, de forma muy lenta.
+
+  La memoria Flash tomó la ventaja de borrado eléctrico de la EEPROM, pero lo hace a gran velocidad y en "bloques" enteros (de ahí el nombre "Flash", porque se limpia en un destello). Además, al igual que la EPROM, usa solo un transistor por cada bit de información, logrando una alta densidad para meter miles de millones de datos en espacios diminutos.
+
+** ¿Cómo guarda y borra los datos físicamente?
+   En lugar de usar transistores comunes, la memoria flash añade un elemento clave llamado *compuerta flotante* (imagínala como una pequeña "caja fuerte" aislada eléctricamente por una capa delgada de óxido). 
+
+   El truco funciona así:
+   - Estado Inicial (Representa un 1 lógico): La caja fuerte está vacía. La electricidad pasa libremente por el transistor.
+   - Guardar datos (Representa un 0 lógico): Se aplica un voltaje fuerte que empuja a los electrones a cruzar el aislamiento (*tunneling*) y quedarse atrapados dentro de la caja fuerte. Aunque apagues la computadora, los electrones no pueden escapar (memoria persistente o no volátil).
+   - Lectura: Un circuito externo revisa si el transistor deja pasar corriente o no para saber si hay electrones atrapados.
+   - Mecanismo de borrado: Se aplica un voltaje alto en la dirección opuesta, lo que "saca" a la fuerza todos los electrones atrapados de golpe. El diseño obliga a limpiar secciones o bloques completos a la vez, no permite borrado a nivel de un solo byte.
+
+** Tipos de Flash Memory
+
+*** NOR
+    - Conexión: Las celdas se organizan en paralelo.
+    - Ventaja principal: Permite un acceso aleatorio rapidísimo a nivel de byte. Puede buscar y leer directamente una instrucción específica en cualquier parte del chip.
+    - Aplicación: Es perfecta para almacenar el código de arranque (firmware) en microcontroladores y sistemas embebidos donde los datos casi nunca varían pero se necesitan ejecutar al instante.
+
+*** NAND
+    - Conexión: Las celdas se organizan en serie (en cadenas de 16 o 32 transistores).
+    - Ventaja principal: Al estar en serie, ocupan muchísimo menos espacio físico. Esto hace que sean muy baratas de fabricar y tengan una capacidad de almacenamiento gigantesca.
+    - Limitación: No tiene un bus de direcciones externo para acceso aleatorio; está obligada a leer y escribir en bloques o páginas completas de información a la vez.
+    - Aplicación: Es la reina del almacenamiento masivo moderno, usada
+      en memorias USB, tarjetas SD y en las unidades de estado sólido
+      (SSD).
+
+
+* Nuevas Tecnologías de Memoria Sólida No Volátil
+  El problema actual en la computación es que las memorias tradicionales (SRAM para caché, DRAM para memoria principal y los Discos Duros) están llegando a su límite físico; cada vez es más difícil hacer los chips más pequeños sin que fallen o consuman demasiada energía. 
+
+  Estas tres nuevas tecnologías ya están en producción y buscan el "santo grial": combinar la velocidad extrema de la memoria RAM con la capacidad de no perder los datos al apagarse (como un disco duro).
+
+** STT-RAM (Spin-Transfer Torque RAM)
+   - ¿Qué es?: Es una evolución avanzada de la memoria magnética (MRAM). Es un fuerte candidato para convertirse en la futura memoria caché o incluso memoria principal.
+   - ¿Cómo funciona?: No guarda cargas eléctricas, sino que usa el magnetismo. Cada celda tiene una "Unión de Túnel Magnético" con dos capas magnéticas: una capa fija (que nunca cambia) y una capa libre (que puede voltear su orientación). 
+     - Si ambas capas apuntan a la misma dirección (paralelas), la electricidad pasa fácil (baja resistencia = 0 lógico).
+     - Si apuntan en direcciones opuestas (antiparalelas), a la electricidad le cuesta pasar (alta resistencia = 1 lógico). El cambio se logra aplicando la corriente directamente para voltear la capa libre.
+   - Sus fuertes para la exposición: Es increíblemente rápida (tarda menos de 10 nanosegundos en leer/escribir), casi no se desgasta (dura más de $10^{15}$ ciclos de uso) y consume absolutamente cero energía cuando la computadora está en modo de espera (standby).
+
+** PCRAM (Phase-Change RAM)
+   - ¿Qué es?: Es la más madura y estudiada de estas tres tecnologías. Utiliza un material especial (aleación de calcogenuro), que es el mismo material brillante que se usaba antes en los CD y DVD del tipo regrabables. Está pensada para complementar o reemplazar a la DRAM en la memoria principal.
+   - ¿Cómo funciona?: Cambia el estado físico del material usando pulsos de calor eléctrico para alternar entre dos formas:
+     - Estado Cristalino (SET): El material está ordenado, deja pasar la corriente fácilmente (baja resistencia = representa un estado). Se logra calentándolo un poco.
+     - Estado Amorfo (RESET): El material se vuelve desordenado como el vidrio, bloqueando la corriente (alta resistencia = representa el otro estado). Se logra con un chispazo fuerte de corriente que lo derrite y lo enfría de golpe.
+   - Sus fuertes para la exposición: Al basarse en la estructura física del material y no en atrapar electrones volátiles, es sumamente estable y retiene la información de forma segura a largo plazo.
+  
+** ReRAM / RRAM (Resistive RAM)
+   - ¿Qué es?: Es una memoria de tipo resistivo. En lugar de atrapar cargas eléctricas (como la Flash), funciona alterando físicamente la resistencia de un óxido metálico. Es una gran candidata tanto para memoria principal como para almacenamiento masivo.
+   - ¿Cómo funciona?: Imagina que dentro de la celda hay un espacio vacío. Cuando aplicas un voltaje, se crean microscópicos "puentes" o filamentos conductores dentro del óxido que dejan pasar la corriente (baja resistencia). Al aplicar voltaje en otra dirección, esos puentes se rompen y la corriente ya no pasa (alta resistencia). Midiendo qué tan fácil pasa la corriente, la computadora lee un 1 o un 0.
+   - Sus fuertes para la exposición: Funciona con voltajes muy bajos
+     (ahorra mucha energía), dura muchísimo más tiempo que la memoria
+     Flash común antes de gastarse y, a nivel teórico, sus celdas son
+     tan diminutas que permitirán crear tarjetas de almacenamiento
+     gigantescas en tamaños microscópicos.
+
+** Tabla Comparativa de Tecnologías de Memoria
+   A continuación, se presenta una comparación de los parámetros críticos de rendimiento entre las tecnologías semiconductoras tradicionales y las alternativas emergentes de estado sólido:
+
+   #+CAPTION: Tabla comparativa de tecnologías de memoria tradicionales y emergentes
+   [[./imagenes/tabla_comparativa_Arq.png]]
+
+** Conclusión del Desarrollo Tecnológico
+   Toda la evolución estudiada busca combinar todas esas ventajas en una única memoria, objetivo que aún no se ha alcanzado. 
+
+   *Nota de exposición:* A pesar de los colosales avances con tecnologías como STT-RAM o PCRAM, la arquitectura de computadores actual sigue dependiendo de una jerarquía de memoria fragmentada (Caché, RAM y Almacenamiento Secundario) debido a que ninguna tecnología comercial logra reunir de forma simultánea la velocidad extrema de la SRAM, la altísima densidad de la DRAM/NAND y la no volatilidad permanente a un costo de fabricación universalmente viable.
