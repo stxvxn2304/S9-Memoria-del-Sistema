@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Organización Avanzada de Memorias RAM</title>
+<meta name="author" content="Mateo Israel Jami Tonato y Equipo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/dracula.css" id="theme"/>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
+<link rel="stylesheet" href="./custom.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Organización Avanzada de Memorias RAM</h1><p class="subtitle"></p>
+<h2 class="author">Mateo Israel Jami Tonato y Equipo</h2><h2 class="date">2026</h2>
+</section>
+
+<section>
+<section id="slide-org6f3a968">
+<h2 id="org6f3a968">Inicio</h2>
+<div class="outline-text-2" id="text-org6f3a968">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc4326b1">
+<h3 id="orgc4326b1"><i class="fas fa-microchip"></i> Arquitectura de Computadores</h3>
+<div class="fase-header">
+  <div class="numero">1</div><br>
+  <h2>Organización Avanzada de Memorias RAM</h2>
+  <div class="integrante">Presentado por: Mateo Israel Jami Tonato y Equipo</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org77d921c">
+<h2 id="org77d921c">1. DRAM Síncrona (SDRAM)</h2>
+<div class="outline-text-2" id="text-org77d921c">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1c97d29">
+<h3 id="org1c97d29"><i class="fas fa-sync"></i> El Problema de la Latencia</h3>
+<div class="concepto-box">
+  <strong>Concepto SDRAM:</strong> Sincronizada al reloj del sistema, permite mover datos bajo control del reloj. Libera al procesador de los "wait states" (tiempos de espera) de la DRAM asíncrona clásica mientras la memoria opera internamente.
+</div>
+
+<ul>
+<li class="fragment appear"><b><b>Modo de Ráfagas (Burst Mode):</b></b> Extrae secuencias de datos a gran velocidad en la misma fila para evitar configurar direcciones repetitivamente.</li>
+<li class="fragment appear"><b><b>Registro de Modo:</b></b> Programa la longitud de ráfaga (1, 2, 4, 8 bits o página) y la latencia.</li>
+<li class="fragment appear"><b><b>Bancos Múltiples:</b></b> Diseño dividido para procesar operaciones en paralelo.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga3f2131">
+<h3 id="orga3f2131"><i class="fas fa-project-diagram"></i> Arquitectura Interna SDRAM</h3>
+<div class="col2">
+  <div>
+    <ul style="font-size: 0.9em;">
+      <li><strong>Contador de Ráfagas y Control:</strong> Gestionan la inicialización en flancos ascendentes.</li>
+      <li><strong>Empaquetado de Datos:</strong> Se realiza automáticamente tras la latencia configurada.</li>
+    </ul>
+  </div>
+  <div>
+
+<div id="org6d91376" class="figure">
+<p><img src="./imagenes/sdram-arquitectura.jpeg.jpeg" alt="sdram-arquitectura.jpeg.jpeg" width="90%" align="center" />
+</p>
+</div>
+
+
+<div id="orgf438191" class="figure">
+<p><img src="./imagenes/sdram-tiempos.jpeg.jpeg" alt="sdram-tiempos.jpeg.jpeg" width="90%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2bae301">
+<h2 id="org2bae301">2. DDR SDRAM</h2>
+<div class="outline-text-2" id="text-org2bae301">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org8c3ee39">
+<h3 id="org8c3ee39"><i class="fas fa-tachometer-alt"></i> Fundamentos DDR</h3>
+<div class="concepto-box espacial">
+  <strong>Double-Data-Rate:</strong> Transfiere datos dos veces por ciclo (flanco de subida y de bajada). Utiliza un <em>Prefetch Buffer</em> (búfer de precarga) que accede a múltiples palabras en paralelo internamente para no limitar el bus de I/O.
+</div>
+
+<ul>
+<li class="fragment appear"><b><b>DDR1:</b></b> Prefetch de 2 bits (velocidad 2x frente al núcleo).</li>
+<li class="fragment appear"><b><b>DDR2:</b></b> Prefetch de 4 bits (velocidad 4x).</li>
+<li class="fragment appear"><b><b>DDR3:</b></b> Prefetch de 8 bits (velocidad 8x).</li>
+<li class="fragment appear"><b><b>DDR4:</b></b> Mantiene prefetch de 8 bits pero introduce <b><b>Bank Groups</b></b> (Grupos de bancos) para operar columnas en paralelo y alcanzar tasas de 2133 a 4266 Mbps.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org5980f5e">
+<h3 id="org5980f5e"><i class="fas fa-chart-line"></i> Evolución de Generaciones</h3>
+
+<div id="org14ff7b0" class="figure">
+<p><img src="./imagenes/ddr-evolucion.jpeg.jpeg" alt="ddr-evolucion.jpeg.jpeg" width="75%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd5e2ba9">
+<h2 id="orgd5e2ba9">3. EDRAM (Embedded DRAM)</h2>
+<div class="outline-text-2" id="text-orgd5e2ba9">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd3cdab9">
+<h3 id="orgd3cdab9"><i class="fas fa-bolt"></i> Características de EDRAM</h3>
+<div class="concepto-box hit">
+  <strong>Ventaja Principal:</strong> Integra la tecnología DRAM en el mismo chip del procesador. Ofrece mayor densidad y disipa menos energía que la SRAM, reduciendo los tiempos de acceso por proximidad y buses anchos.
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org972264a">
+<h3 id="org972264a"><i class="fas fa-cogs"></i> Implementaciones Modernas</h3>
+<ul>
+<li class="fragment appear"><b><b>IBM z13:</b></b> Uso masivo compartido (Caché L3 de 64 MB por CPU y Caché L4 compartida de 480 MB).</li>
+<li class="fragment appear"><b><b>Intel Core (Original):</b></b> Diseñada como caché L4 tradicional ("victim cache" de L3) con dependencias directas.</li>
+<li class="fragment appear"><b><b>Intel Core (Actual):</b></b> Actúa como un <b><b>Búfer Transparente</b></b> directamente en el controlador de memoria. Acelera gráficos y PCIe sin pasar por el CPU.</li>
+
+</ul>
+
+
+<div id="orgccf7947" class="figure">
+<p><img src="./imagenes/edram-intel.jpeg.jpeg" alt="edram-intel.jpeg.jpeg" width="65%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd15ef7c">
+<h2 id="orgd15ef7c">4. Memoria Flash</h2>
+<div class="outline-text-2" id="text-orgd15ef7c">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org559117c">
+<h3 id="org559117c"><i class="fas fa-save"></i> Principios de Operación</h3>
+<div class="concepto-box temporal">
+  <strong>Efecto Túnel:</strong> Utiliza un transistor con <em>Floating Gate</em> (puerta flotante). <br>
+  Estado '1' = Vacía. <br>Estado '0' = Electrones atrapados al aplicar alto voltaje (escritura).
+</div>
+
+<ul>
+<li class="fragment appear">No volátil, borrado eléctrico por grandes bloques ("flashes").</li>
+<li class="fragment appear"><b><b>NOR Flash:</b></b> Conexión en paralelo. Acceso aleatorio de alta velocidad por byte. Ideal para sistemas embebidos y ejecutar código.</li>
+<li class="fragment appear"><b><b>NAND Flash:</b></b> Transistores en serie (16-32). Acceso por bloques. Densidad colosal, domina almacenamiento (SSDs, USBs).</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgedd1eca">
+<h3 id="orgedd1eca"><i class="fas fa-object-group"></i> Topología NOR vs NAND</h3>
+<div class="col2">
+  <div>
+
+<div id="orge7e8a2b" class="figure">
+<p><img src="./imagenes/flash-transistor.jpeg.jpeg" alt="flash-transistor.jpeg.jpeg" width="95%" align="center" />
+</p>
+</div>
+</div>
+<div>
+
+<div id="orgf6e65a7" class="figure">
+<p><img src="./imagenes/flash-nornand.jpeg.jpeg" alt="flash-nornand.jpeg.jpeg" width="95%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4196f63">
+<h2 id="org4196f63">Fin de la Presentación</h2>
+<div class="outline-text-2" id="text-org4196f63">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org3dd88ed">
+<h3 id="org3dd88ed"><i class="fas fa-question-circle"></i> ¿Preguntas?</h3>
+<div class="text-center">
+  <h3 class="azul">¡Gracias por su atención!</h3>
+  <p class="muted small">Bibliografía: Estructura y Organización de Computadores (Basado en Capítulos 5 y 6).</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1200, height:900, margin: 0.1, minScale:0.2, maxScale:1.2,
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+
+});
+
+</script>
+</body>
+</html>
