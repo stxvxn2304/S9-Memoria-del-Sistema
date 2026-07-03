@@ -253,9 +253,8 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
   de ellas, según se requiera.
 - Líneas horizontales:  También llamadas líneas de palabras, activan
   toda una fila de bits dentro de la matriz de memoria.
-- Líneas verticales:  También se conocen como líneas de
-  bits. Transportan el dato almacenado en una celda específica.
-
+- Líneas verticales:  También se conocen como líneas de bits. Transportan los valores del voltaje de los bits que se van a escribir, o reciben el bit almacenado en una celda específica.
+  bits. 
 **** Proceso de lectura y escritura en una memoria DRAM
 - Su matriz de memoria está compuesta por 4 matrices cuadradas de
   $2048 \times 2048$ elementos.
@@ -265,9 +264,9 @@ de la EPROM con la flexibilidad de la actualización eléctrica.
 - Se leen o escriben cuatro bits a la vez. Esto dado que, una vez
   activada una fila de bits dentro de la matriz de memoria, se leen
   cuatro columnas indicadas por el decodificador de columnas.
-- Para la lectura :: es necesario pasar cada línea de bits a través de
+- Para la lectura :: es necesario pasar cada línea de bits (verticales) a través de
   un //amplificador de lectura//.
-- Para la escritura :: se requiere activar cada línea a uno o a cero
+- Para la escritura :: se requiere activar cada línea a uno o a cero.
   según lo indiquen las líneas de datos.
 - Teóricamente, se deberían emplear 22 líneas de direcciones para esta
   memoria. Sin embargo, en la práctica se utiliza una estrategia de
@@ -333,7 +332,7 @@ Una memoria EPROM encapsulada de 8 Mb, en la cual cada palabra tiene
 un tamaño de 8 bits (1 byte), requiere 32 terminales. Estos
 realizan las siguientes funciones:
 1. La dirección de la palabra a la que se accede
-   - El número total de Estas terminales se calcula como
+   - El número total de estas terminales se calcula como
      \[
      n=\log_{2}(W)
      \].
