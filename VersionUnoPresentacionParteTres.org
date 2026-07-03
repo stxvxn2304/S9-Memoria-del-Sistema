@@ -413,13 +413,13 @@ Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores 
 @@html:<strong>@@Mensaje final transmitido hacia la memoria:@@html:</strong>@@
 #+begin_export html
 <div style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
   <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
   <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
   <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
-  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
 </div>
 #+end_export
 
