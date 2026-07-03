@@ -44,7 +44,7 @@ ARQUITECTURA DE COMPUTADORES}
 \thispagestyle{fancy}
 #+end_export
 
-* 2026-07-01 Organización de la Memoria Principal Semiconductora
+* 2026-07-01 Organización de la memoria interna
 
 ** Preguntas y Términos clave (Cue):
 - término clave1 :: celda 
@@ -74,19 +74,15 @@ estas celdas: escritura, que consiste en fijar su estado, y lectura,
 que permite detectar su estado almacenado. Para este proceso, se usan
 tres terminales: de selección, lectura y escritura.
 
-* 2026-07-01 DRAM y SRAM
+* 2026-07-01 DRAM
 
 ** Preguntas y Términos clave (Cue):
 - término clave1 :: DRAM
-- término clave2 :: SRAM
-- término clave3 :: Volatilidad
-- término clave4 :: Refresco
-- ¿Cuáles son las dos formas básicas de memorias semiconductoras de acceso aleatorio? ::
+- término clave2 :: Volatilidad
+- término clave3 :: Refresco
 - ¿A qué propiedad física de la celda de memoria hace referencia el término dinámica? ::
 - ¿Qué componente electrónico básico se utiliza en la DRAM para almacenar la carga? ::
-- ¿Cómo se denomina la configuración de transistores que utiliza la SRAM para mantener estados estables? ::
 - ¿Por qué la DRAM requiere circuitería adicional de refresco para mantener los datos? ::
-- ¿Cuál es la principal ventaja de la SRAM sobre la DRAM en términos de rendimiento? ::
 - ¿Qué tipo de memoria es preferida para la memoria principal debido a su densidad y coste? ::
 
 ** Notas (Notes):
@@ -109,6 +105,20 @@ tres terminales: de selección, lectura y escritura.
       puede almacenar rangos de carga.
     - Es más densa y económica, siendo la opción estándar para la
       memoria principal.
+
+** Resumen (Summary):
+La memoria principal semiconductora se basa en tecnologías de acceso
+aleatorio y volátiles. La DRAM almacena bits como carga en
+condensadores, lo que permite una alta densidad y bajo coste para la
+memoria principal, aunque necesita procesos de refresco constantes.
+
+* 2026-07-01 SRAM
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: SRAM
+- ¿Cómo se denomina la configuración de transistores que utiliza la SRAM para mantener estados estables? ::
+
+** Notas (Notes):
 - RAM estática (SRAM)
     - Es un dispositivo digital basado en biestables o flip-flops.
     - Utiliza configuraciones de cuatro o seis transistores para
@@ -118,6 +128,19 @@ tres terminales: de selección, lectura y escritura.
     - Es generalmente más rápida que la memoria dinámica.
     - Su menor densidad y mayor coste limitan su uso a las memorias
       caché.
+
+** Resumen (Summary):
+La SRAM utiliza biestables digitales que ofrecen mayor velocidad sin
+necesidad de refresco, lo que la hace ideal para memorias caché a
+pesar de ser más cara y menos densa.
+
+* 2026-07-01 DRAM vs SRAM
+
+** Preguntas y Términos clave (Cue):
+- ¿Cuáles son las dos formas básicas de memorias semiconductoras de acceso aleatorio? ::
+- ¿Cuál es la principal ventaja de la SRAM sobre la DRAM en términos de rendimiento? ::
+
+** Notas (Notes):
 - Comparación y organización
     - La interfaz DRAM tradicional es asíncrona, a diferencia de
       variantes modernas como la SDRAM.
@@ -125,15 +148,13 @@ tres terminales: de selección, lectura y escritura.
       la DRAM mediante niveles de caché.
 
 ** Resumen (Summary):
-La memoria principal semiconductora se basa en dos tecnologías de
-acceso aleatorio y volátiles: DRAM y SRAM. La DRAM almacena bits como
-carga en condensadores, lo que permite una alta densidad y bajo coste
-para la memoria principal, aunque necesita procesos de refresco
-constantes. Por el contrario, la SRAM utiliza biestables digitales que
-ofrecen mayor velocidad sin necesidad de refresco, lo que la hace
-ideal para memorias caché a pesar de ser más cara y menos densa.
+La interfaz DRAM tradicional es asíncrona y más lenta frente a las
+velocidades de la CPU, por lo que se utiliza la SRAM (mucho más rápida,
+pero de menor capacidad y mayor coste) en los niveles de caché para
+compensar esta diferencia, reservando la DRAM para la memoria principal
+gracias a su alta densidad y economía.
 
-* 2026-07-01 Tipos de Memoria de Solo Lectura (ROM)
+* 2026-07-01 Memorias ROM
 
 ** Preguntas y Términos clave (Cue):
 - término clave1 :: ROM
@@ -288,29 +309,20 @@ este número a 11. Una DRAM requiere operaciones de refresco para
 evitar pérdida de información, lo cual se puede conseguir mediante el
 uso de un contador de refresco. 
 
-* 2026-07-01 Encapsulación del chip y Organización en módulos
+* 2026-07-01 Encapsulación del chip
 
 ** Preguntas y términos clave
 - término clave1 :: memoria EPROM
 - término clave2 :: encapsulación
-- término clave3 :: palabra
-- término clave4 :: módulo
-- término clave5 :: terminal 
-
+- término clave3 :: terminal 
 - ¿En qué se diferencia la memoria EPROM con la ROM tradicional? ::
-
 - ¿Cuántas palabras se pueden almacenar en una memoria EPROM? ::
-
 - ¿Qué expresión se usa para calcular el número de terminales de direcciones en una memoria EPROM? ::
-
 - ¿Cuántas líneas de datos se emplean en una memoria EPROM? ::
-
-- En una organización modular, ¿cómo se define la cantidad de chips que se utilizarán? :: 
 
 ** Notas (Notes)
 - Los circuitos integrados se montan con patillas o terminales que los
   conectan con el mundo exterior.
-
 *** Memoria EPROM
 La memoria EPROM (Erasable Programmable Read-Only Memory) es un tipo
 de memoria ROM que, a diferencia de la ROM tradicional, sí permite
@@ -337,6 +349,22 @@ realizan las siguientes funciones:
 7. El terminal NC (No conectar) se incluye en el chip para que el
    número total de terminales sea par.
 
+** Resumen (Summary)
+Los circuitos integrados se conectan a otros componentes mediante
+terminales. En el caso de una memoria EPROM, se necesita 32
+terminales: 20 de direcciones, 9 líneas de datos, 1 línea de
+alimentación, un terminal de tierra, uno de habilitación del chip y
+una tensión de programación. Además, existe un terminal llamado NC que
+garantiza que el número total de terminales sea par.
+
+* 2026-07-01 Organización en módulos
+
+** Preguntas y términos clave
+- término clave1 :: palabra
+- término clave2 :: módulo
+- En una organización modular, ¿cómo se define la cantidad de chips que se utilizarán? :: 
+
+** Notas (Notes)
 *** Organización en módulos
 - Se necesita un número de chips igual al número de bits por palabra.
 - Para ilustrar, en una memoria RAM de 256 K palabras, cada una de
@@ -347,29 +375,34 @@ realizan las siguientes funciones:
   chips organizadas de forma similar a la memoria de 256 KB.
 
 ** Resumen (Summary)
-Los circuitos integrados se conectan a otros componentes mediante
-terminales. En el caso de una memoria EPROM, se necesita 32
-terminales: 20 de direcciones, 9 líneas de datos, 1 línea de
-alimentación, un terminal de tierra, uno de habilitación del chip y
-una tensión de programación. Además, existe un terminal llamado NC que
-garantiza que el número total de terminales sea par. Por otro lado, la
-organización modular permite diseñar RAMs con tamaños más elevados,
-como 256 KB y 1 MB. 
+Por otro lado, la organización modular permite diseñar RAMs con tamaños
+más elevados, como 256 KB y 1 MB, determinando el número de chips 
+necesarios según los bits por palabra o formando matrices para
+capacidades mayores.
 
-
-* 2026-07-01 Errores en Memorias Semiconductoras: Hard y Soft Errors
+* 2026-07-01 Corrección de Errores y código de Hamming
 
 ** Preguntas y Términos clave (Cue):
 - término clave1 :: Hard error
 - término clave2 :: Soft error
 - término clave3 :: Fallo permanente
 - término clave4 :: Error transitorio
+- término clave5 :: Hamming
+- término clave6 :: Comprobación
+- término clave7 :: Síndrome
+- término clave8 :: XOR
 - ¿Cómo se clasifican los fallos en las memorias semiconductoras? ::
 - ¿Qué características definen a un fallo de tipo permanente? ::
 - ¿Cuáles son las causas principales de un hard error? ::
 - ¿Por qué un error de tipo soft se considera un evento no destructivo? ::
 - ¿Qué factores externos suelen provocar errores transitorios en las celdas? ::
 - ¿Qué función cumplen los códigos correctores de errores en estos sistemas? ::
+- ¿Quién fue el creador del código corrector de errores más sencillo utilizado en memorias? ::
+- ¿Qué tipo de bits se añaden a los bits de datos para formar un código de corrección? ::
+- ¿Cuál es la inecuación que determina el número de bits de comprobación necesarios para una palabra de datos? ::
+- ¿En qué posiciones específicas de la palabra se ubican los bits de comprobación? ::
+- ¿Qué información proporciona el valor numérico de la palabra de síndrome? ::
+- ¿Qué función cumple el bit adicional en los códigos denominados SEC-DED? ::
 
 ** Notas (Notes):
 - Clasificación general de errores en memoria
@@ -407,33 +440,6 @@ como 256 KB y 1 MB.
     - Dependiendo del código utilizado, el sistema puede no detectar
       error, corregir un error detectado o informar de un error no
       corregible.
-
-** Resumen (Summary):
-Los errores en las memorias semiconductoras se clasifican en
-permanentes (hard) y transitorios (soft). Mientras que los hard errors
-implican un daño físico en las celdas debido a defectos de fábrica o
-desgaste, los soft errors son alteraciones aleatorias del contenido
-binario causadas por factores externos como partículas alfa o fallos
-eléctricos. Para garantizar la fiabilidad, los sistemas emplean
-códigos correctores que utilizan bits redundantes para identificar y
-solucionar estas discrepancias durante las operaciones de lectura y
-escritura.
-
-* 2026-07-01 Técnicas de Corrección de Errores: Código de Hamming
-
-** Preguntas y Términos clave (Cue):
-- término clave1 :: Hamming
-- término clave2 :: Comprobación
-- término clave3 :: Síndrome
-- término clave7 :: XOR
-- ¿Quién fue el creador del código corrector de errores más sencillo utilizado en memorias? ::
-- ¿Qué tipo de bits se añaden a los bits de datos para formar un código de corrección? ::
-- ¿Cuál es la inecuación que determina el número de bits de comprobación necesarios para una palabra de datos? ::
-- ¿En qué posiciones específicas de la palabra se ubican los bits de comprobación? ::
-- ¿Qué información proporciona el valor numérico de la palabra de síndrome? ::
-- ¿Qué función cumple el bit adicional en los códigos denominados SEC-DED? ::
-
-** Notas (Notes):
 - El código de Hamming es una técnica de corrección de errores simples
   (SEC) diseñada para incrementar la fiabilidad de las memorias
   semiconductoras.
@@ -460,6 +466,16 @@ escritura.
   de la memoria.
 
 ** Resumen (Summary):
+Los errores en las memorias semiconductoras se clasifican en
+permanentes (hard) y transitorios (soft). Mientras que los hard errors
+implican un daño físico en las celdas debido a defectos de fábrica o
+desgaste, los soft errors son alteraciones aleatorias del contenido
+binario causadas por factores externos como partículas alfa o fallos
+eléctricos. Para garantizar la fiabilidad, los sistemas emplean
+códigos correctores que utilizan bits redundantes para identificar y
+solucionar estas discrepancias durante las operaciones de lectura y
+escritura.
+
 El código de Hamming es un método fundamental para garantizar la
 integridad de los datos en memorias semiconductoras mediante el uso de
 bits de paridad redundantes. Al organizar estos bits en posiciones
@@ -471,9 +487,147 @@ de errores dobles, siendo una solución estándar en sistemas de
 computación de altas prestaciones para mitigar fallos tanto
 permanentes como transitorios.
 
+* 2026-07-01 DRAM síncrona (SDRAM)
 
+** Preguntas y Términos clave (Cue):
+- término clave1 :: Reloj externo
+- término clave2 :: Wait state
+- término clave3 :: Modo ráfaga
+- término clave4 :: Registro de modo
+- ¿Qué problema resuelve la SDRAM frente a la DRAM asíncrona tradicional? ::
+- ¿Cómo permite el "modo de ráfagas" agilizar la lectura de datos? ::
+- ¿Qué parámetros principales permite configurar el registro de modo? ::
 
-* 2026-07-01 Memoria Flash (Flash Memory)
+** Notas (Notes):
+- Arquitectura concebida para solucionar problemas de latencia y
+  "wait states" (tiempos de espera) de las DRAM asíncronas clásicas.
+- Sincronización: Está conectada y responde a una señal de reloj 
+  externa del sistema.
+- El procesador envía instrucciones y queda libre para ejecutar otras
+  tareas de manera segura, mientras la SDRAM opera internamente al 
+  ritmo del reloj.
+- Modo de ráfagas (Burst Mode): Extrae secuencias rápidas de bits 
+  uno tras otro si se encuentran en la misma fila, evitando enviar la 
+  dirección repetidamente en accesos múltiples.
+- Registro de Modo: Es un registro integrado que permite programar
+  la longitud de la ráfaga (1, 2, 4, 8 bits o página completa) y los
+  tiempos de latencia (ciclos de espera inicial).
+- Arquitectura interna: Se divide en múltiples bancos, facilitando
+  procesar operaciones en paralelo dentro del mismo chip.
+
+** Resumen (Summary):
+La SDRAM soluciona el problema de latencia de la memoria tradicional al
+sincronizarse con el reloj externo del sistema, lo que libera al 
+procesador de los tiempos de espera improductivos. Además, incorpora 
+características de alto rendimiento como un "modo de ráfagas" para 
+lecturas secuenciales veloces y un registro de modo para configurar 
+latencias y ráfagas, apoyándose en múltiples bancos para operar en 
+paralelo.
+
+* 2026-07-01 DDR SDRAM
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: Flanco de reloj
+- término clave2 :: Búfer de precarga (Prefetch buffer)
+- término clave3 :: Bank groups
+- ¿Cómo logra la tecnología DDR duplicar la velocidad sin aumentar la frecuencia del reloj interno? ::
+- ¿Qué función cumple exactamente el búfer de precarga en la memoria DDR? ::
+- ¿Cuál fue la innovación arquitectónica principal introducida en DDR4? ::
+
+** Notas (Notes):
+- Doble tasa de transferencia: Supera la limitación de la SDRAM estándar
+  enviando datos dos veces en el mismo ciclo de reloj (tanto en el 
+  flanco de subida como en el de bajada de la señal).
+- Búfer de precarga (Prefetch buffer): Ya que el núcleo interno 
+  (condensadores) es físicamente más lento que la interfaz del bus, la
+  memoria DDR lee múltiples palabras en paralelo internamente, las 
+  almacena en este búfer (una "sala de espera") y luego las envía en 
+  serie hacia el procesador a alta velocidad.
+- Generaciones de DDR y evolución del búfer:
+  - DDR1: Utiliza un búfer de 2 bits (prebusca 2 palabras, logrando el
+    doble de velocidad que el núcleo).
+  - DDR2: Amplía el búfer a 4 bits (velocidad multiplicada por 4).
+  - DDR3: Amplía el búfer a 8 bits (velocidad multiplicada por 8).
+  - DDR4: En lugar de un ineficiente búfer de 16 bits, mantiene el 
+    búfer de 8 bits pero introduce grupos de bancos (bank groups). 
+    Permite que áreas independientes completen operaciones de columna en 
+    paralelo, logrando tasas de transferencia de 2133 a 4266 Mbps.
+
+** Resumen (Summary):
+La memoria DDR SDRAM revoluciona las transferencias operando en ambos 
+flancos del ciclo de reloj, logrando enviar el doble de datos. Para 
+evitar cuellos de botella con su lento núcleo interno, emplea un búfer 
+de precarga que lee palabras en paralelo. Generación tras generación, 
+este búfer se amplió (de 2 a 8 bits) hasta la llegada de DDR4, la cual 
+innovó implementando grupos de bancos paralelos para disparar el 
+rendimiento y las frecuencias de forma masiva.
+
+* 2026-07-01 EDRAM (Embedded DRAM)
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: EDRAM
+- término clave2 :: Caché
+- término clave3 :: Densidad
+- ¿Qué significa el término eDRAM y en dónde se ubica físicamente? ::
+- ¿Qué ventajas ofrece frente a la SRAM tradicional cuando se utiliza como memoria caché? ::
+
+** Notas (Notes):
+- Naturaleza híbrida: Integra la tecnología de celdas DRAM físicamente
+  dentro del mismo chip (o en un módulo multichip) que el procesador.
+- Es una solución altamente eficiente que busca unir lo mejor de ambos 
+  mundos para la memoria caché.
+- Densidad: Proporciona mucha mayor capacidad de almacenamiento en un
+  área más reducida en comparación con la memoria SRAM tradicional.
+- Eficiencia: Disipa una menor cantidad de energía.
+- Velocidad: Al estar integrada junto al procesador (proximidad física)
+  y disponer de buses internos de gran ancho, el tiempo de acceso se 
+  reduce drásticamente frente a ir a consultar la DRAM externa.
+
+** Resumen (Summary):
+La eDRAM (DRAM incrustada) es una tecnología que ubica celdas de DRAM
+directamente en el mismo circuito integrado del procesador. Funciona
+como una caché altamente eficiente porque otorga mucha mayor densidad
+(capacidad de almacenamiento) y menor consumo energético que la SRAM, 
+logrando simultáneamente velocidades ultrarrápidas debido a su 
+proximidad física y el uso de buses internos anchos.
+
+* 2026-07-01 Implementaciones modernas
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: IBM z13
+- término clave2 :: Intel Core
+- término clave3 :: Búfer transparente
+- ¿Cómo implementó IBM la memoria eDRAM en sus sistemas corporativos z13? ::
+- ¿Cómo evolucionó el uso de la eDRAM en la arquitectura de los procesadores Intel modernos? ::
+
+** Notas (Notes):
+- Sistemas IBM z13: 
+  - Utilizan la eDRAM de forma masiva y compartida. 
+  - Cada procesador dispone de una caché L3 de 64 MB basada en eDRAM.
+  - Varios procesadores comparten un nivel de caché L4 gigantesco 
+    de 480 MB, un tamaño imposible de alcanzar utilizando SRAM.
+- Sistemas Intel Core (Evolución):
+  - Diseño original: Intel usó la eDRAM como una caché L4 estructurada 
+    de forma tradicional (funcionando como una "victim cache" de la L3). 
+    Esto creaba un cuello de botella por dependencias, obligando a 
+    pasar etiquetas a través de la L3.
+  - Diseños recientes: Cambiaron la arquitectura y ubicaron la eDRAM
+    para que actúe directamente junto al Controlador de Memoria (MC). 
+    Funciona como un búfer DRAM totalmente transparente para el software, 
+    permitiendo acelerar componentes como gráficos integrados o PCIe sin 
+    necesidad de navegar a través del procesador central.
+
+** Resumen (Summary):
+Los gigantes de la industria aprovechan la eDRAM para superar los 
+límites de espacio de la SRAM. IBM la utiliza para crear memorias caché
+masivas en sus procesadores z13 (L3 y L4). Por su parte, Intel 
+evolucionó desde usarla como una caché L4 convencional y dependiente, 
+a convertirla en un búfer transparente conectado directamente al 
+controlador de memoria, acelerando todo el sistema (incluidos gráficos) 
+de forma paralela e independiente a la CPU principal.
+
+* 2026-07-01 Memoria Flash
+
 ** Preguntas y Términos clave (Cue):
 - término clave1 :: Acceso aleatorio a nivel de byte
 - término clave2 :: Acceso por páginas
@@ -530,8 +684,8 @@ bloques. Se divide comercial y técnicamente en dos arquitecturas: NOR
 (para escritura/borrado rápido organizadas por páginas, y es el
 estándar).
 
+* 2026-07-01 Memorias no volatiles
 
-* 2026-07-01 Nuevas Tecnologías de Memoria de Estado Sólido No Volátil
 ** Preguntas y Términos clave (Cue):
 - ¿Qué limitaciones físicas de las memorias DRAM y Flash tradicionales
   generan la necesidad de desarrollar nuevas tecnologías?
@@ -561,7 +715,7 @@ estándar).
   ofrece alta resistencia eléctrica.
 - Ventajas: Posee una densidad extremadamente alta, consumo de energía
   ultra bajo durante el reposo, velocidades de conmutación
-  competitivas con la SRAM y una durabilidad de ciclos de escritura
+  competivas con la SRAM y una durabilidad de ciclos de escritura
   prácticamente infinita.
 
 *** PCRAM (Phase-Change RAM)
@@ -605,5 +759,4 @@ un disco duro, como si se tratara del "Santo Grial" de la computación.
 - [X] Leer este documento
 - [X] Escribir el resumen  de la exposición 1
 
-#+print_bibliography: 
- 
+#+print_bibliography:
