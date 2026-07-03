@@ -205,29 +205,35 @@
 #+begin_export html
 <div class="col2">
   <div>
-
-    <p style="font-size: 0.9em;">
-      <strong>Señales transferidas por los terminales:</strong>
-    </p>
+    <h3>Memoria EPROMs:</h3>
 
     <ul style="font-size: 0.8em;">
-      <li>Dirección de palabra a la que se accede: \(n = \log_2(W)\).</li>
-      <li>El dato a leer (ocho líneas).</li>
-      <li>Línea de alimentación del chip.</li>
-      <li>Un terminal de tierra.</li>
-      <li>Habilitación del chip (validar dirección dada por el bus).</li>
-      <li>Una tensión de programación.</li>
-    </ul>
+      <li>Esta memoria sí permite borrar sus datos guardados.</li>
+      <li>Una EPROM encapsulada de 8 Mb posee un millón de palabras.</li>
 
+      <li>
+        Se requiere de 32 terminales para almacenar dichas palabras, cada una con las siguientes funciones:
+        <ul>
+          <li>La dirección de la palabra a la que se accede.</li>
+          <li><strong>Número total de terminales de direcciones:</strong> \(n=\log_2(W)=20\).</li>
+          <li>El dato a leer (ocho líneas).</li>
+          <li>Línea de alimentación del chip \(V_{CC}\).</li>
+          <li>Un terminal de tierra \(V_{SS}\).</li>
+          <li>Habilitación del chip (CE).</li>
+          <li>Una tensión de programación \(V_{PP}\).</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
-  <div>
+  <div style="text-align:center;">
+   <div style="display:flex; justify-content:center; align-items:center; height:100%;">
+       <img src="./imagenes/encapsulacion_chips.png"
+            style="max-width:100%; max-height:85vh;">
+   </div>
   </div>
 </div>
 #+end_export
-  
-#+ATTR_HTML: :width 70% :align center
-[[./imagenes/encapsulacion_chips.png]]
 
 * 9. Organización en módulos
 
