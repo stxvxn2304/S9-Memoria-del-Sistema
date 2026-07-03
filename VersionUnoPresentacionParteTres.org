@@ -17,18 +17,17 @@
 #+DATE: 2026-07-02
 #+LANGUAGE: es
 
-* Inicio
+* 1. Más allá de la memoria caché
 ** @@html:<i class="fas fa-microchip"></i>@@ Arquitectura de Computadores
 #+begin_export html
 <div class="fase-header">
   <div class="numero">1</div><br>
-  <h2>Organización Avanzada de Memorias RAM</h2>
-  <div class="integrante">Presentado por Zúñiga Sebastián</div>
+  <h2>La memoria principal o Random Access Memory (RAM) es fundamental en el funcionamiento de los computadores</h2>
+  <div> Ahondemos en las características, funcionamiento y otros aspectos sobre este componente</div>
 </div>
 #+end_export
 
-
-* 1. Organización de la memoria principal semiconductora*
+* 2. Organización de la memoria interna
 ** @@html:<i class="fas fa-microchip"></i>@@ ¿Cómo funciona exactamente una memoria?
 #+ATTR_REVEAL: :frag (appear)
 - La unidad fundamental de la memoria semiconductora es una celda de
@@ -37,11 +36,121 @@
     y  0 lógico.
 - Al escribir en ellas, es posible fijar su estado.
 - Al leerlas, se detecta su estado.
+#+ATTR_HTML: :width 70% :align center
+[[./imagenes/celdas_estructura.png]]
+  
 
+* 3. DRAM
+** @@html:<i class="fas fa-microchip"></i>@@ DRAM (RAM Dinámica)
+#+ATTR_REVEAL: :frag (appear)
+#+begin_export html
+<div class="concepto-box">
+  <strong>El estándar para Memoria Principal.</strong>
+</div>
+<div class="col2">
+  <div>
+#+end_export
+- @@html:<strong>@@Estructura:@@html:</strong>@@ 1 transistor + 1 condensador.
+- @@html:<strong>@@Lógica:@@html:</strong>@@ El bit se almacena como @@html:<em>@@carga eléctrica@@html:</em>@@ (naturaleza analógica).
+- @@html:<strong>@@Reto:@@html:</strong>@@ El condensador pierde carga rápidamente. Requiere un @@html:<span style="color: #FF7675;"><strong>refresco periódico</strong></span>@@ para no perder los datos.
+#+begin_export html
+  </div>
+  <div>
+#+end_export
+#+ATTR_HTML: :width 60% :align center
+[[./imagenes/Figura_5_2a.png]]
+#+begin_export html
+  </div>
+</div>
+#+end_export
 
+* 4. SRAM
+** @@html:<i class="fas fa-microchip"></i>@@ SRAM (RAM Estática)
+#+ATTR_REVEAL: :frag (appear)
+#+begin_export html
+<div class="concepto-box temporal">
+  <strong>El estándar para Memoria Caché.</strong>
+</div>
+<div class="col2">
+  <div>
+#+end_export
+- @@html:<strong>@@Estructura:@@html:</strong>@@ 6 transistores configurados como un biestable (Flip-Flop).
+- @@html:<strong>@@Lógica:@@html:</strong>@@ Dispositivo puramente digital.
+- @@html:<strong>@@Ventaja:@@html:</strong>@@ Mientras haya energía, el dato es estable. @@html:<span style="color: #00B894;"><strong>No necesita refrescos</strong></span>@@.
+#+begin_export html
+  </div>
+  <div>
+#+end_export
+#+ATTR_HTML: :width 60% :align center
+[[./imagenes/Figura_5_2b.png]]
 
-* Lógica del chip
+#+begin_export html
+  </div>
+</div>
+#+end_export
+
+* 5. DRAM vs SRAM
+** @@html:<i class="fas fa-balance-scale"></i>@@ Comparativa
+#+ATTR_REVEAL: :frag (appear)
+¿Por qué no usar la memoria más rápida en todo el sistema?
+
+#+begin_export html
+<table style="width:100%; text-align:center; margin-top:20px;">
+  <thead style="background-color:#1E3A5A; color:#7ECFFF;">
+    <tr>
+      <th></th>
+      <th>DRAM (Dinámica)</th>
+      <th>SRAM (Estática)</th>
+    </tr>
+  </thead>
+  <tbody style="background-color:#141E2C;">
+    <tr>
+      <td><strong>Densidad</strong></td>
+      <td style="color:#00B894; font-weight:bold;">Más Alta</td>
+      <td style="color:#D63031; font-weight:bold;">Baja</td>
+    </tr>
+    <tr>
+      <td><strong>Costo</strong></td>
+      <td style="color:#00B894; font-weight:bold;">Más Barata</td>
+      <td style="color:#D63031; font-weight:bold;">Costosa</td>
+    </tr>
+    <tr>
+      <td><strong>Velocidad</strong></td>
+      <td style="color:#D63031; font-weight:bold;">Algo más lenta</td>
+      <td style="color:#00B894; font-weight:bold;">Rápida</td>
+    </tr>
+    <tr>
+      <td><strong>Refrescos</strong></td>
+      <td style="color:#D63031; font-weight:bold;">Sí (Periódicos)</td>
+      <td style="color:#00B894; font-weight:bold;">No (Constante)</td>
+    </tr>
+    <tr>
+      <td><strong>Uso Ideal</strong></td>
+      <td>Memoria Principal (RAM)</td>
+      <td>Memoria Caché (L1/L2)</td>
+    </tr>
+  </tbody>
+</table>
+#+end_export
+
+* 6. Memorias ROM
+** @@html:<i class="fas fa-memory"></i>@@ Evolución de las Memorias ROM
+#+begin_export html
+<div class="concepto-box">
+  <strong>La necesidad de flexibilidad:</strong> La ROM es no-volátil y nació como "Solo Lectura", pero la necesidad de actualizar el firmware impulsó métodos de borrado cada vez más avanzados.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<span style="color: #F0C040;"><strong>ROM (Máscara):</strong></span>@@ Programada físicamente en fábrica. @@html:<span style="color: #D63031;"><strong>Imborrable</strong></span>@@ y cero margen de error.
+- @@html:<span style="color: #F0C040;"><strong>PROM:</strong></span>@@ Programable por el usuario @@html:<em>@@una sola vez@@html:</em>@@ (quemando fusibles internos).
+- @@html:<span style="color: #F0C040;"><strong>EPROM:</strong></span>@@ Borrable con @@html:<span style="color: #7ECFFF;">luz ultravioleta</span>@@ (tarda hasta 20 minutos y borra @@html:<em>@@todo@@html:</em>@@ el chip).
+- @@html:<span style="color: #F0C040;"><strong>EEPROM:</strong></span>@@ Borrable @@html:<span style="color: #7ECFFF;">eléctricamente a nivel de byte</span>@@. Flexible, pero costosa y menos densa.
+- @@html:<span style="color: #F0C040;"><strong>Flash Memory:</strong></span>@@ Borrable eléctricamente @@html:<span style="color: #00B894;"><strong>por bloques</strong></span>@@. Combina la altísima densidad de EPROM con la flexibilidad eléctrica. El estándar actual.
+
+* 7. Lógica del chip
 ** @@html:<i class="fas fa-microchip"></i>@@ Estructura de Datos y Matriz
+#+ATTR_REVEAL: :frag (appear)
 #+begin_export html
 <div class="concepto-box">
   <strong>Consideración principal:</strong> Al diseñar una memoria semiconductora, es importante considerar el número de bits de datos que pueden ser leídos o escritos a la vez.
@@ -83,7 +192,7 @@
   2. Contador recorre celdas, pasa bit al decodificador de filas y activa RAS.
   3. Datos se leen y escriben nuevamente.
 
-* Encapsulación del chip y Organización en módulos
+* 8. Encapsulación del chip
 ** @@html:<i class="fas fa-box"></i>@@ Encapsulación del Chip
 #+begin_export html
 <div class="concepto-box espacial">
@@ -92,24 +201,259 @@
 #+end_export
 
 #+ATTR_REVEAL: :frag (appear)
-- Señales transferidas por los terminales:
-  1. Dirección de palabra a la que se accede: \(n = \log_2(W)\).
-  2. El dato a leer (ocho líneas).
-  3. Línea de alimentación del chip.
-  4. Un terminal de tierra.
-  5. Habilitación del chip (validar dirección dada por el bus).
-  6. Una tensión de programación.
 
+#+begin_export html
+<div class="col2">
+  <div>
+
+    <p style="font-size: 0.9em;">
+      <strong>Señales transferidas por los terminales:</strong>
+    </p>
+
+    <ul style="font-size: 0.8em;">
+      <li>Dirección de palabra a la que se accede: \(n = \log_2(W)\).</li>
+      <li>El dato a leer (ocho líneas).</li>
+      <li>Línea de alimentación del chip.</li>
+      <li>Un terminal de tierra.</li>
+      <li>Habilitación del chip (validar dirección dada por el bus).</li>
+      <li>Una tensión de programación.</li>
+    </ul>
+
+  </div>
+
+  <div>
+  </div>
+</div>
+#+end_export
+  
 #+ATTR_HTML: :width 70% :align center
 [[./imagenes/encapsulacion_chips.png]]
 
+* 9. Organización en módulos
 ** @@html:<i class="fas fa-cubes"></i>@@ Organización en módulos
 #+ATTR_REVEAL: :frag (appear)
 - Número de chips igual al número de bits por palabra.
 - RAM 256 K palabras (8 bits c/u): @@html:<span style="color: #ff79c6;">ocho chips de 256 KB</span>@@.
 - Memoria mayor = matriz de chips. Ejemplo: 1 M de palabras (8 bits c/u) requiere @@html:<span style="color: #ff79c6;">cuatro columnas de chips</span>@@ similares a la de 256 KB.
 
-* 1. DRAM Síncrona (SDRAM)
+* 10. Correccion de Errores y código de Hamming
+** @@html:<i class="fas fa-exclamation-triangle"></i>@@ Hard Error vs Soft Error
+#+ATTR_REVEAL: :frag (appear)
+Los sistemas de memoria están sujetos a fallos. Se dividen en dos familias principales:
+
+#+begin_export html
+<div class="concepto-box warn">
+  <strong>Hard Error (Fallo Físico)</strong><br>
+  Un defecto <strong>permanente</strong> en el hardware. Celdas que conmutan de manera errónea o que se quedan atascadas en 0 o 1. <br>
+  &rarr; <strong>Causas:</strong> Desgaste, defectos de fábrica, daño eléctrico o térmico. <br>
+  &rarr; <strong>Solución:</strong> <span style="color: #D63031;"><strong>Irreversible</strong></span>. Hay que reemplazar el chip.
+</div>
+
+<div class="concepto-box hit">
+  <strong>Soft Error (Fallo Transitorio)</strong><br>
+  Un evento <strong>aleatorio y no destructivo</strong>. Uno o más bits son alterados, pero el chip sigue siendo funcional. <br>
+  &rarr; <strong>Causas:</strong> Ruido eléctrico, <span style="color: #F0C040;"><strong>emisión radiactiva</strong></span> (partículas alfa). <br>
+  &rarr; <strong>Solución:</strong> <span style="color: #00B894;"><strong>Corregible</strong></span>. Si se detecta, se pueden volver a escribir los bits correctos.
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-shield-alt"></i>@@ Control de Errores en Memoria
+Para lidiar con los errores, se implementan lógicas de detección y corrección en el flujo de lectura y escritura de la memoria.
+
+#+ATTR_HTML: :width 80% :align center
+[[./imagenes/Figura_5_7.png]]
+
+** @@html:<i class="fas fa-barcode"></i>@@ Código de Hamming: Concepto General
+Para corregir un @@html:<em>@@Soft Error@@html:</em>@@, no basta con saber @@html:<em>@@que@@html:</em>@@ ocurrió un error, tenemos que saber @@html:<strong>@@exactamente dónde ocurrió@@html:</strong>@@.
+
+#+begin_export html
+<div class="col2">
+  <div>
+#+end_export
+- @@html:<strong>@@La idea:@@html:</strong>@@ Añadir bits de comprobación a nuestros datos.
+- Richard Hamming descubrió que ubicando estos guardianes en posiciones que son @@html:<span style="color: #F0C040;"><strong>potencias de 2</strong></span>@@, podemos generar un código matemático infalible.
+- El cruce de información (intersección en los diagramas de Venn) delata matemáticamente al bit dañado.
+#+begin_export html
+  </div>
+  <div>
+#+end_export
+#+ATTR_HTML: :width 95% :align center
+[[./imagenes/Figura_5_8.png]]
+#+begin_export html
+  </div>
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-calculator"></i>@@ Código de Hamming: Bits de comprobación
+Para que el hardware pueda corregir un error, los bits de comprobación deben ser capaces de identificar:
+- Cada una de las posibles posiciones donde puede ocurrir un error.
+- El caso en que @@html:<strong>@@no exista ningún error@@html:</strong>@@.
+
+Si una palabra contiene:
+- \(M\) bits de datos
+- \(k\) bits de comprobación
+
+entonces existen \((M+k)\) posibles posiciones de error y un caso adicional de "sin error".
+
+#+begin_export html
+<div class="concepto-box hit">
+  <strong>Condición de Hamming</strong><br>
+  Los \(k\) bits de comprobación generan \(2^k\) combinaciones posibles, por lo que debe cumplirse:<br><br>
+  <div style="text-align:center; font-size:1.5em; margin: 10px 0;">\(2^{k}-1 \ge M+k\)</div>
+  <div style="text-align:center; font-size:0.9em;">\(M\) = número de bits de datos &nbsp;&nbsp;&nbsp;&nbsp; \(k\) = número de bits de comprobación</div>
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-table"></i>@@ Código de Hamming: Ejemplos
+Aplicando la condición \(2^{k}-1 \ge M+k\) obtenemos:
+
+#+begin_export html
+<table style="width:100%; text-align:center; margin-top:20px; border-collapse: collapse;">
+  <thead style="background-color:#1E3A5A; color:#7ECFFF;">
+    <tr>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Datos (\(M\))</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Bits de comprobación (\(k\))</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Palabra final</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Incremento</th>
+    </tr>
+  </thead>
+  <tbody style="background-color:#141E2C;">
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">4</td><td style="padding: 10px; border: 1px solid #2A4A6A;">3</td><td style="padding: 10px; border: 1px solid #2A4A6A;">7</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>75%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">8</td><td style="padding: 10px; border: 1px solid #2A4A6A;">4</td><td style="padding: 10px; border: 1px solid #2A4A6A;">12</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>50%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">16</td><td style="padding: 10px; border: 1px solid #2A4A6A;">5</td><td style="padding: 10px; border: 1px solid #2A4A6A;">21</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>31.25%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">32</td><td style="padding: 10px; border: 1px solid #2A4A6A;">6</td><td style="padding: 10px; border: 1px solid #2A4A6A;">38</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>18.75%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">64</td><td style="padding: 10px; border: 1px solid #2A4A6A;">7</td><td style="padding: 10px; border: 1px solid #2A4A6A;">71</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>10.94%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="concepto-box hit" style="margin-top: 20px;">
+  <strong>Observación:</strong> Mientras mayor es el tamaño de la palabra, menor es el porcentaje de redundancia necesario para corregir errores.
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-check-circle"></i>@@ Código de Hamming: Aplicación al ejemplo
+Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores de \(k\).
+
+#+begin_export html
+<div class="col2">
+  <div>
+    <div class="concepto-box warn">
+      <strong>\(k=2\)</strong><br>
+      \(2^{2}-1=3\)<br>
+      \(3 < 4+2=6\)<br>
+      <strong>No es suficiente</strong>
+    </div>
+  </div>
+  <div>
+    <div class="concepto-box hit">
+      <strong>\(k=3\)</strong><br>
+      \(2^{3}-1=7\)<br>
+      \(7 = 4+3=7\)<br>
+      <strong>Sí cumple</strong>
+    </div>
+  </div>
+</div>
+<div style="text-align:center; font-size:1.2em; margin-top:20px;">
+  Por lo tanto utilizaremos <span style="color:#F0C040;"><strong>3 bits de comprobación: C1, C2 y C4.</strong></span>
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-step-forward"></i>@@ Generación de la palabra (Paso 1)
+@@html:<strong>@@1. Datos a enviar (4 bits):@@html:</strong>@@ =1011= (D1, D2, D3, D4)
+@@html:<strong>@@2. Posiciones:@@html:</strong>@@ Metemos los datos dejando libres las potencias de 2 para los bits de comprobación (C1, C2, C4).
+
+#+begin_export html
+<div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P1<br><small>1 (001)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P2<br><small>2 (010)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>3 (011)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P4<br><small>4 (100)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">0<br><small>5 (101)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>6 (110)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>7 (111)</small></div>
+</div>
+#+end_export
+
+@@html:<strong>@@3. Cálculo de los bits de comprobación@@html:</strong>@@ (\(C_i\) tal que \(\sum i = n\)):
+- @@html:<strong>@@C1@@html:</strong>@@ \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C1 = 0</strong></span>@@
+- @@html:<strong>@@C2@@html:</strong>@@ \(= D3 \oplus D6 \oplus D7 = 1 \oplus 1 \oplus 1 = 1 \implies\) @@html:<span style="color:#F0C040;"><strong>C2 = 1</strong></span>@@
+- @@html:<strong>@@C4@@html:</strong>@@ \(= D5 \oplus D6 \oplus D7 = 0 \oplus 1 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C4 = 0</strong></span>@@
+
+@@html:<strong>@@Mensaje final transmitido hacia la memoria:@@html:</strong>@@
+#+begin_export html
+<div style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+</div>
+#+end_export
+
+** @@html:<i class="fas fa-bug"></i>@@ Error y Corrección (Paso 2)
+#+begin_export html
+<div class="concepto-box warn">
+  <strong>¡Impacto de partícula alfa!</strong> El bit en la <strong>posición 6</strong> cambia de <code>1</code> a <code>0</code>.
+</div>
+#+end_export
+
+@@html:<strong>@@Palabra dañada leída por el procesador:@@html:</strong>@@
+#+begin_export html
+<div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>1</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>2</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>3</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>4</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>5</small></div>
+  <div style="background-color:#D63031; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>6</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>7</small></div>
+</div>
+#+end_export
+
+@@html:<strong>@@4. Detección del error:@@html:</strong>@@ El hardware recalcula los bits de comprobacion.
+- @@html:<strong>@@C1@@html:</strong>@@ \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 =\) @@html:<span style="color:#00B894;"><strong>0</strong></span>@@
+- @@html:<strong>@@C2@@html:</strong>@@ \(= D3 \oplus D6 \oplus D7 = 1 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@
+- @@html:<strong>@@C4@@html:</strong>@@ \(= D5 \oplus D6 \oplus D7 = 0 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>1</strong></span>@@
+
+** @@html:<i class="fas fa-tools"></i>@@ Palabra de síndrome (Paso 3)
+@@html:<strong>@@5. Comparación de los bits de comprobación@@html:</strong>@@
+Los bits recalculados se comparan con los almacenados mediante una operación XOR.
+
+#+begin_export html
+<table style="width:50%; margin: 0 auto; text-align:center; font-size:1.2em;">
+  <tr style="border-bottom: 2px solid white;"><th>C4</th><th>C2</th><th>C1</th></tr>
+  <tr><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>&oplus;</td><td>&oplus;</td><td>&oplus;</td></tr>
+  <tr style="border-bottom: 2px solid white;"><td>1</td><td>0</td><td>0</td></tr>
+  <tr>
+    <td style="color:#F0C040;"><strong>1</strong></td>
+    <td style="color:#F0C040;"><strong>1</strong></td>
+    <td style="color:#F0C040;"><strong>0</strong></td>
+  </tr>
+</table>
+
+<div class="concepto-box hit" style="margin-top:20px;">
+  <strong>Palabra de síndrome</strong><br>
+  La comparación genera la palabra de síndrome:<br>
+  <div style="text-align:center; font-size:1.2em; margin:10px 0;">\(S = (C4\;C2\;C1) = 110_2\)</div>
+  Al convertirla a decimal: \(110_2 = 6_{10}\)<br><br>
+  Por lo tanto, el hardware identifica que el error se encuentra en la <strong>posición 6</strong> e invierte el bit en dicha posición.
+</div>
+#+end_export
+
+* 11. DRAM Síncrona (SDRAM)
 ** @@html:<i class="fas fa-sync"></i>@@ El Problema de la Latencia
 #+begin_export html
 <div class="concepto-box">
@@ -143,7 +487,7 @@
 </div>
 #+end_export
 
-* 2. DDR SDRAM
+* 12. DDR SDRAM
 ** @@html:<i class="fas fa-tachometer-alt"></i>@@ Fundamentos DDR
 #+begin_export html
 <div class="concepto-box espacial">
@@ -161,7 +505,7 @@
 #+ATTR_HTML: :width 75% :align center
 [[./imagenes/ddr-evolucion.jpeg.jpeg]]
 
-* 3. EDRAM (Embedded DRAM)
+* 13. EDRAM (Embedded DRAM)
 ** @@html:<i class="fas fa-bolt"></i>@@ Características de EDRAM
 #+begin_export html
 <div class="concepto-box hit">
@@ -169,6 +513,7 @@
 </div>
 #+end_export
 
+* 14. Implementaciones modernas
 ** @@html:<i class="fas fa-cogs"></i>@@ Implementaciones Modernas
 #+ATTR_REVEAL: :frag (appear)
 - **IBM z13:** Uso masivo compartido (Caché L3 de 64 MB por CPU y Caché L4 compartida de 480 MB).
@@ -178,7 +523,7 @@
 #+ATTR_HTML: :width 65% :align center
 [[./imagenes/edram-intel.jpeg.jpeg]]
 
-* 4. Memoria Flash
+* 15. Memoria Flash
 ** @@html:<i class="fas fa-save"></i>@@ Principios de Operación
 #+begin_export html
 <div class="concepto-box temporal">
