@@ -37,34 +37,33 @@
 </section>
 
 <section>
-<section id="slide-org7cf874a">
-<h2 id="org7cf874a">Inicio</h2>
-<div class="outline-text-2" id="text-org7cf874a">
+<section id="slide-org0a04b9e">
+<h2 id="org0a04b9e">1. Más allá de la memoria caché</h2>
+<div class="outline-text-2" id="text-org0a04b9e">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org11d0922">
-<h3 id="org11d0922"><i class="fas fa-microchip"></i> Arquitectura de Computadores</h3>
+<section id="slide-org8c9840e">
+<h3 id="org8c9840e"><i class="fas fa-microchip"></i> Arquitectura de Computadores</h3>
 <div class="fase-header">
   <div class="numero">1</div><br>
-  <h2>Organización Avanzada de Memorias RAM</h2>
-  <div class="integrante">Presentado por Zúñiga Sebastián</div>
+  <h2>La memoria principal o Random Access Memory (RAM) es fundamental en el funcionamiento de los computadores</h2>
+  <div> Ahondemos en las características, funcionamiento y otros aspectos sobre este componente</div>
 </div>
-
 
 </section>
 </section>
 <section>
-<section id="slide-org6f062c2">
-<h2 id="org6f062c2">1. Organización de la memoria principal semiconductora*</h2>
-<div class="outline-text-2" id="text-org6f062c2">
+<section id="slide-org773583c">
+<h2 id="org773583c">2. Organización de la memoria interna</h2>
+<div class="outline-text-2" id="text-org773583c">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org8c516a7">
-<h3 id="org8c516a7"><i class="fas fa-microchip"></i> ¿Cómo funciona exactamente una memoria?</h3>
+<section id="slide-org877ff9a">
+<h3 id="org877ff9a"><i class="fas fa-microchip"></i> ¿Cómo funciona exactamente una memoria?</h3>
 <ul>
 <li class="fragment appear">La unidad fundamental de la memoria semiconductora es una celda de
 memoria. Sus propiedades  son:</li>
@@ -75,20 +74,169 @@ y  0 lógico.</li>
 
 </ul>
 
+<div id="org7103460" class="figure">
+<p><img src="./imagenes/celdas_estructura.png" alt="celdas_estructura.png" width="70%" align="center" />
+</p>
+</div>
 
 
 </section>
 </section>
 <section>
-<section id="slide-org1e2fe90">
-<h2 id="org1e2fe90">Lógica del chip</h2>
-<div class="outline-text-2" id="text-org1e2fe90">
+<section id="slide-org5da5f1e">
+<h2 id="org5da5f1e">3. DRAM</h2>
+<div class="outline-text-2" id="text-org5da5f1e">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org7a55ae2">
-<h3 id="org7a55ae2"><i class="fas fa-microchip"></i> Estructura de Datos y Matriz</h3>
+<section id="slide-org5fb459f">
+<h3 id="org5fb459f"><i class="fas fa-microchip"></i> DRAM (RAM Dinámica)</h3>
+<div class="concepto-box">
+  <strong>El estándar para Memoria Principal.</strong>
+</div>
+<div class="col2">
+  <div>
+<ul>
+<li><strong>Estructura:</strong> 1 transistor + 1 condensador.</li>
+<li><strong>Lógica:</strong> El bit se almacena como <em>carga eléctrica</em> (naturaleza analógica).</li>
+<li><strong>Reto:</strong> El condensador pierde carga rápidamente. Requiere un <span style="color: #FF7675;"><strong>refresco periódico</strong></span> para no perder los datos.</li>
+
+</ul>
+</div>
+<div>
+
+<div id="org88d80d8" class="figure">
+<p><img src="./imagenes/Figura_5_2a.png" alt="Figura_5_2a.png" width="60%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org343a830">
+<h2 id="org343a830">4. SRAM</h2>
+<div class="outline-text-2" id="text-org343a830">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4df2a9a">
+<h3 id="org4df2a9a"><i class="fas fa-microchip"></i> SRAM (RAM Estática)</h3>
+<div class="concepto-box temporal">
+  <strong>El estándar para Memoria Caché.</strong>
+</div>
+<div class="col2">
+  <div>
+<ul>
+<li><strong>Estructura:</strong> 6 transistores configurados como un biestable (Flip-Flop).</li>
+<li><strong>Lógica:</strong> Dispositivo puramente digital.</li>
+<li><strong>Ventaja:</strong> Mientras haya energía, el dato es estable. <span style="color: #00B894;"><strong>No necesita refrescos</strong></span>.</li>
+
+</ul>
+</div>
+<div>
+
+<div id="orge399672" class="figure">
+<p><img src="./imagenes/Figura_5_2b.png" alt="Figura_5_2b.png" width="60%" align="center" />
+</p>
+</div>
+
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org65b3eed">
+<h2 id="org65b3eed">5. DRAM vs SRAM</h2>
+<div class="outline-text-2" id="text-org65b3eed">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org74c15ae">
+<h3 id="org74c15ae"><i class="fas fa-balance-scale"></i> Comparativa</h3>
+<p class="fragment (appear)">
+¿Por qué no usar la memoria más rápida en todo el sistema?
+</p>
+
+<table style="width:100%; text-align:center; margin-top:20px;">
+  <thead style="background-color:#1E3A5A; color:#7ECFFF;">
+    <tr>
+      <th></th>
+      <th>DRAM (Dinámica)</th>
+      <th>SRAM (Estática)</th>
+    </tr>
+  </thead>
+  <tbody style="background-color:#141E2C;">
+    <tr>
+      <td><strong>Densidad</strong></td>
+      <td style="color:#00B894; font-weight:bold;">Más Alta</td>
+      <td style="color:#D63031; font-weight:bold;">Baja</td>
+    </tr>
+    <tr>
+      <td><strong>Costo</strong></td>
+      <td style="color:#00B894; font-weight:bold;">Más Barata</td>
+      <td style="color:#D63031; font-weight:bold;">Costosa</td>
+    </tr>
+    <tr>
+      <td><strong>Velocidad</strong></td>
+      <td style="color:#D63031; font-weight:bold;">Algo más lenta</td>
+      <td style="color:#00B894; font-weight:bold;">Rápida</td>
+    </tr>
+    <tr>
+      <td><strong>Refrescos</strong></td>
+      <td style="color:#D63031; font-weight:bold;">Sí (Periódicos)</td>
+      <td style="color:#00B894; font-weight:bold;">No (Constante)</td>
+    </tr>
+    <tr>
+      <td><strong>Uso Ideal</strong></td>
+      <td>Memoria Principal (RAM)</td>
+      <td>Memoria Caché (L1/L2)</td>
+    </tr>
+  </tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org5aa319d">
+<h2 id="org5aa319d">6. Memorias ROM</h2>
+<div class="outline-text-2" id="text-org5aa319d">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga1201f4">
+<h3 id="orga1201f4"><i class="fas fa-memory"></i> Evolución de las Memorias ROM</h3>
+<div class="concepto-box">
+  <strong>La necesidad de flexibilidad:</strong> La ROM es no-volátil y nació como "Solo Lectura", pero la necesidad de actualizar el firmware impulsó métodos de borrado cada vez más avanzados.
+</div>
+
+<ul>
+<li class="fragment appear"><span style="color: #F0C040;"><strong>ROM (Máscara):</strong></span> Programada físicamente en fábrica. <span style="color: #D63031;"><strong>Imborrable</strong></span> y cero margen de error.</li>
+<li class="fragment appear"><span style="color: #F0C040;"><strong>PROM:</strong></span> Programable por el usuario <em>una sola vez</em> (quemando fusibles internos).</li>
+<li class="fragment appear"><span style="color: #F0C040;"><strong>EPROM:</strong></span> Borrable con <span style="color: #7ECFFF;">luz ultravioleta</span> (tarda hasta 20 minutos y borra <em>todo</em> el chip).</li>
+<li class="fragment appear"><span style="color: #F0C040;"><strong>EEPROM:</strong></span> Borrable <span style="color: #7ECFFF;">eléctricamente a nivel de byte</span>. Flexible, pero costosa y menos densa.</li>
+<li class="fragment appear"><span style="color: #F0C040;"><strong>Flash Memory:</strong></span> Borrable eléctricamente <span style="color: #00B894;"><strong>por bloques</strong></span>. Combina la altísima densidad de EPROM con la flexibilidad eléctrica. El estándar actual.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7d2554e">
+<h2 id="org7d2554e">7. Lógica del chip</h2>
+<div class="outline-text-2" id="text-org7d2554e">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org0846703">
+<h3 id="org0846703"><i class="fas fa-microchip"></i> Estructura de Datos y Matriz</h3>
 <div class="concepto-box">
   <strong>Consideración principal:</strong> Al diseñar una memoria semiconductora, es importante considerar el número de bits de datos que pueden ser leídos o escritos a la vez.
 </div>
@@ -102,8 +250,8 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgc169594">
-<h3 id="orgc169594"><i class="fas fa-layer-group"></i> Las líneas en una memoria DRAM</h3>
+<section id="slide-org310758d">
+<h3 id="org310758d"><i class="fas fa-layer-group"></i> Las líneas en una memoria DRAM</h3>
 <div class="concepto-box">
   Existen determinados tipos de líneas que permiten realizar las operaciones de lectura y escritura en la matriz de una memoria semiconductora.
 </div>
@@ -119,8 +267,8 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgbb5d651">
-<h3 id="orgbb5d651"><i class="fas fa-exchange-alt"></i> Proceso de lectura y escritura</h3>
+<section id="slide-orgb220014">
+<h3 id="orgb220014"><i class="fas fa-exchange-alt"></i> Proceso de lectura y escritura</h3>
 <ul>
 <li class="fragment appear">Matriz compuesta por 4 matrices cuadradas de \(\color{#ffb86c}{2048 \cdot 2048}\) elementos.</li>
 <li class="fragment appear">Celdas acopladas a líneas horizontales (selección) y verticales (Entrada-Datos/Detección).</li>
@@ -133,8 +281,8 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-org607cb87">
-<h3 id="org607cb87"><i class="fas fa-clock"></i> Multiplexación y Refresco en DRAM</h3>
+<section id="slide-org5ba467e">
+<h3 id="org5ba467e"><i class="fas fa-clock"></i> Multiplexación y Refresco en DRAM</h3>
 <ul>
 <li class="fragment appear"><span style="color: #f1fa8c;"><strong>Multiplexación en el tiempo:</strong></span>(11 líneas en lugar de 22):
 <ol>
@@ -155,35 +303,43 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-org0fbd43f">
-<h2 id="org0fbd43f">Encapsulación del chip y Organización en módulos</h2>
-<div class="outline-text-2" id="text-org0fbd43f">
+<section id="slide-orgf1f0384">
+<h2 id="orgf1f0384">8. Encapsulación del chip</h2>
+<div class="outline-text-2" id="text-orgf1f0384">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgeb14dde">
-<h3 id="orgeb14dde"><i class="fas fa-box"></i> Encapsulación del Chip</h3>
+<section id="slide-org57cab15">
+<h3 id="org57cab15"><i class="fas fa-box"></i> Encapsulación del Chip</h3>
 <div class="concepto-box espacial">
   <strong>Terminales:</strong> Circuitos integrados se montan con patillas que los conectan al exterior. Ejemplo: EPROM de 8 Mb necesita 32 terminales.
 </div>
 
-<ul>
-<li class="fragment appear">Señales transferidas por los terminales:
-<ol>
-<li>Dirección de palabra a la que se accede: \(n = \log_2(W)\).</li>
-<li>El dato a leer (ocho líneas).</li>
-<li>Línea de alimentación del chip.</li>
-<li>Un terminal de tierra.</li>
-<li>Habilitación del chip (validar dirección dada por el bus).</li>
-<li>Una tensión de programación.</li>
+<div class="col2">
+  <div>
 
-</ol></li>
+    <p style="font-size: 0.9em;">
+      <strong>Señales transferidas por los terminales:</strong>
+    </p>
 
-</ul>
+    <ul style="font-size: 0.8em;">
+      <li>Dirección de palabra a la que se accede: \(n = \log_2(W)\).</li>
+      <li>El dato a leer (ocho líneas).</li>
+      <li>Línea de alimentación del chip.</li>
+      <li>Un terminal de tierra.</li>
+      <li>Habilitación del chip (validar dirección dada por el bus).</li>
+      <li>Una tensión de programación.</li>
+    </ul>
+
+  </div>
+
+  <div>
+  </div>
+</div>
 
 
-<div id="org5ed1edc" class="figure">
+<div id="org546e6ab" class="figure">
 <p><img src="./imagenes/encapsulacion_chips.png" alt="encapsulacion_chips.png" width="70%" align="center" />
 </p>
 </div>
@@ -191,8 +347,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgd1d08ae">
-<h3 id="orgd1d08ae"><i class="fas fa-cubes"></i> Organización en módulos</h3>
+<section id="slide-org8955d5a">
+<h2 id="org8955d5a">9. Organización en módulos</h2>
+<div class="outline-text-2" id="text-org8955d5a">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgcae5236">
+<h3 id="orgcae5236"><i class="fas fa-cubes"></i> Organización en módulos</h3>
 <ul>
 <li class="fragment appear">Número de chips igual al número de bits por palabra.</li>
 <li class="fragment appear">RAM 256 K palabras (8 bits c/u): <span style="color: #ff79c6;">ocho chips de 256 KB</span>.</li>
@@ -203,15 +366,298 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgdeb81cf">
-<h2 id="orgdeb81cf">1. DRAM Síncrona (SDRAM)</h2>
-<div class="outline-text-2" id="text-orgdeb81cf">
+<section id="slide-orgfa0b95a">
+<h2 id="orgfa0b95a">10. Correccion de Errores y código de Hamming</h2>
+<div class="outline-text-2" id="text-orgfa0b95a">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org904a757">
-<h3 id="org904a757"><i class="fas fa-sync"></i> El Problema de la Latencia</h3>
+<section id="slide-org866d802">
+<h3 id="org866d802"><i class="fas fa-exclamation-triangle"></i> Hard Error vs Soft Error</h3>
+<p class="fragment (appear)">
+Los sistemas de memoria están sujetos a fallos. Se dividen en dos familias principales:
+</p>
+
+<div class="concepto-box warn">
+  <strong>Hard Error (Fallo Físico)</strong><br>
+  Un defecto <strong>permanente</strong> en el hardware. Celdas que conmutan de manera errónea o que se quedan atascadas en 0 o 1. <br>
+  &rarr; <strong>Causas:</strong> Desgaste, defectos de fábrica, daño eléctrico o térmico. <br>
+  &rarr; <strong>Solución:</strong> <span style="color: #D63031;"><strong>Irreversible</strong></span>. Hay que reemplazar el chip.
+</div>
+
+<div class="concepto-box hit">
+  <strong>Soft Error (Fallo Transitorio)</strong><br>
+  Un evento <strong>aleatorio y no destructivo</strong>. Uno o más bits son alterados, pero el chip sigue siendo funcional. <br>
+  &rarr; <strong>Causas:</strong> Ruido eléctrico, <span style="color: #F0C040;"><strong>emisión radiactiva</strong></span> (partículas alfa). <br>
+  &rarr; <strong>Solución:</strong> <span style="color: #00B894;"><strong>Corregible</strong></span>. Si se detecta, se pueden volver a escribir los bits correctos.
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4d4a9bf">
+<h3 id="org4d4a9bf"><i class="fas fa-shield-alt"></i> Control de Errores en Memoria</h3>
+<p>
+Para lidiar con los errores, se implementan lógicas de detección y corrección en el flujo de lectura y escritura de la memoria.
+</p>
+
+
+<div id="org66582a4" class="figure">
+<p><img src="./imagenes/Figura_5_7.png" alt="Figura_5_7.png" width="80%" align="center" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0e4c7b1">
+<h3 id="org0e4c7b1"><i class="fas fa-barcode"></i> Código de Hamming: Concepto General</h3>
+<p>
+Para corregir un <em>Soft Error</em>, no basta con saber <em>que</em> ocurrió un error, tenemos que saber <strong>exactamente dónde ocurrió</strong>.
+</p>
+
+<div class="col2">
+  <div>
+<ul>
+<li><strong>La idea:</strong> Añadir bits de comprobación a nuestros datos.</li>
+<li>Richard Hamming descubrió que ubicando estos guardianes en posiciones que son <span style="color: #F0C040;"><strong>potencias de 2</strong></span>, podemos generar un código matemático infalible.</li>
+<li>El cruce de información (intersección en los diagramas de Venn) delata matemáticamente al bit dañado.</li>
+
+</ul>
+</div>
+<div>
+
+<div id="org508b564" class="figure">
+<p><img src="./imagenes/Figura_5_8.png" alt="Figura_5_8.png" width="95%" align="center" />
+</p>
+</div>
+  </div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org560f1bd">
+<h3 id="org560f1bd"><i class="fas fa-calculator"></i> Código de Hamming: Bits de comprobación</h3>
+<p>
+Para que el hardware pueda corregir un error, los bits de comprobación deben ser capaces de identificar:
+</p>
+<ul>
+<li>Cada una de las posibles posiciones donde puede ocurrir un error.</li>
+<li>El caso en que <strong>no exista ningún error</strong>.</li>
+
+</ul>
+
+<p>
+Si una palabra contiene:
+</p>
+<ul>
+<li>\(M\) bits de datos</li>
+<li>\(k\) bits de comprobación</li>
+
+</ul>
+
+<p>
+entonces existen \((M+k)\) posibles posiciones de error y un caso adicional de "sin error".
+</p>
+
+<div class="concepto-box hit">
+  <strong>Condición de Hamming</strong><br>
+  Los \(k\) bits de comprobación generan \(2^k\) combinaciones posibles, por lo que debe cumplirse:<br><br>
+  <div style="text-align:center; font-size:1.5em; margin: 10px 0;">\(2^{k}-1 \ge M+k\)</div>
+  <div style="text-align:center; font-size:0.9em;">\(M\) = número de bits de datos &nbsp;&nbsp;&nbsp;&nbsp; \(k\) = número de bits de comprobación</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdfe8c48">
+<h3 id="orgdfe8c48"><i class="fas fa-table"></i> Código de Hamming: Ejemplos</h3>
+<p>
+Aplicando la condición \(2^{k}-1 \ge M+k\) obtenemos:
+</p>
+
+<table style="width:100%; text-align:center; margin-top:20px; border-collapse: collapse;">
+  <thead style="background-color:#1E3A5A; color:#7ECFFF;">
+    <tr>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Datos (\(M\))</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Bits de comprobación (\(k\))</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Palabra final</th>
+      <th style="padding: 10px; border: 1px solid #2A4A6A;">Incremento</th>
+    </tr>
+  </thead>
+  <tbody style="background-color:#141E2C;">
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">4</td><td style="padding: 10px; border: 1px solid #2A4A6A;">3</td><td style="padding: 10px; border: 1px solid #2A4A6A;">7</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>75%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">8</td><td style="padding: 10px; border: 1px solid #2A4A6A;">4</td><td style="padding: 10px; border: 1px solid #2A4A6A;">12</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>50%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">16</td><td style="padding: 10px; border: 1px solid #2A4A6A;">5</td><td style="padding: 10px; border: 1px solid #2A4A6A;">21</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>31.25%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">32</td><td style="padding: 10px; border: 1px solid #2A4A6A;">6</td><td style="padding: 10px; border: 1px solid #2A4A6A;">38</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>18.75%</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #2A4A6A;">64</td><td style="padding: 10px; border: 1px solid #2A4A6A;">7</td><td style="padding: 10px; border: 1px solid #2A4A6A;">71</td><td style="padding: 10px; border: 1px solid #2A4A6A; color:#F0C040;"><strong>10.94%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="concepto-box hit" style="margin-top: 20px;">
+  <strong>Observación:</strong> Mientras mayor es el tamaño de la palabra, menor es el porcentaje de redundancia necesario para corregir errores.
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org797b33d">
+<h3 id="org797b33d"><i class="fas fa-check-circle"></i> Código de Hamming: Aplicación al ejemplo</h3>
+<p>
+Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores de \(k\).
+</p>
+
+<div class="col2">
+  <div>
+    <div class="concepto-box warn">
+      <strong>\(k=2\)</strong><br>
+      \(2^{2}-1=3\)<br>
+      \(3 < 4+2=6\)<br>
+      <strong>No es suficiente</strong>
+    </div>
+  </div>
+  <div>
+    <div class="concepto-box hit">
+      <strong>\(k=3\)</strong><br>
+      \(2^{3}-1=7\)<br>
+      \(7 = 4+3=7\)<br>
+      <strong>Sí cumple</strong>
+    </div>
+  </div>
+</div>
+<div style="text-align:center; font-size:1.2em; margin-top:20px;">
+  Por lo tanto utilizaremos <span style="color:#F0C040;"><strong>3 bits de comprobación: C1, C2 y C4.</strong></span>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbd162ce">
+<h3 id="orgbd162ce"><i class="fas fa-step-forward"></i> Generación de la palabra (Paso 1)</h3>
+<p>
+<strong>1. Datos a enviar (4 bits):</strong> <code>1011</code> (D1, D2, D3, D4)
+<strong>2. Posiciones:</strong> Metemos los datos dejando libres las potencias de 2 para los bits de comprobación (C1, C2, C4).
+</p>
+
+<div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P1<br><small>1 (001)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P2<br><small>2 (010)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>3 (011)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P4<br><small>4 (100)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">0<br><small>5 (101)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>6 (110)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>7 (111)</small></div>
+</div>
+
+<p>
+<strong>3. Cálculo de los bits de comprobación</strong> (\(C_i\) tal que \(\sum i = n\)):
+</p>
+<ul>
+<li><strong>C1</strong> \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 = 0 \implies\) <span style="color:#F0C040;"><strong>C1 = 0</strong></span></li>
+<li><strong>C2</strong> \(= D3 \oplus D6 \oplus D7 = 1 \oplus 1 \oplus 1 = 1 \implies\) <span style="color:#F0C040;"><strong>C2 = 1</strong></span></li>
+<li><strong>C4</strong> \(= D5 \oplus D6 \oplus D7 = 0 \oplus 1 \oplus 1 = 0 \implies\) <span style="color:#F0C040;"><strong>C4 = 0</strong></span></li>
+
+</ul>
+
+<p>
+<strong>Mensaje final transmitido hacia la memoria:</strong>
+</p>
+<div style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org22cc14a">
+<h3 id="org22cc14a"><i class="fas fa-bug"></i> Error y Corrección (Paso 2)</h3>
+<div class="concepto-box warn">
+  <strong>¡Impacto de partícula alfa!</strong> El bit en la <strong>posición 6</strong> cambia de <code>1</code> a <code>0</code>.
+</div>
+
+<p>
+<strong>Palabra dañada leída por el procesador:</strong>
+</p>
+<div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>1</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>2</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>3</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>4</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>5</small></div>
+  <div style="background-color:#D63031; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>6</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>7</small></div>
+</div>
+
+<p>
+<strong>4. Detección del error:</strong> El hardware recalcula los bits de comprobacion.
+</p>
+<ul>
+<li><strong>C1</strong> \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 =\) <span style="color:#00B894;"><strong>0</strong></span></li>
+<li><strong>C2</strong> \(= D3 \oplus D6 \oplus D7 = 1 \oplus\) <span style="color:#D63031;"><strong>0</strong></span> \(\oplus 1 =\) <span style="color:#D63031;"><strong>0</strong></span></li>
+<li><strong>C4</strong> \(= D5 \oplus D6 \oplus D7 = 0 \oplus\) <span style="color:#D63031;"><strong>0</strong></span> \(\oplus 1 =\) <span style="color:#D63031;"><strong>1</strong></span></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbe71905">
+<h3 id="orgbe71905"><i class="fas fa-tools"></i> Palabra de síndrome (Paso 3)</h3>
+<p>
+<strong>5. Comparación de los bits de comprobación</strong>
+Los bits recalculados se comparan con los almacenados mediante una operación XOR.
+</p>
+
+<table style="width:50%; margin: 0 auto; text-align:center; font-size:1.2em;">
+  <tr style="border-bottom: 2px solid white;"><th>C4</th><th>C2</th><th>C1</th></tr>
+  <tr><td>0</td><td>1</td><td>0</td></tr>
+  <tr><td>&oplus;</td><td>&oplus;</td><td>&oplus;</td></tr>
+  <tr style="border-bottom: 2px solid white;"><td>1</td><td>0</td><td>0</td></tr>
+  <tr>
+    <td style="color:#F0C040;"><strong>1</strong></td>
+    <td style="color:#F0C040;"><strong>1</strong></td>
+    <td style="color:#F0C040;"><strong>0</strong></td>
+  </tr>
+</table>
+
+<div class="concepto-box hit" style="margin-top:20px;">
+  <strong>Palabra de síndrome</strong><br>
+  La comparación genera la palabra de síndrome:<br>
+  <div style="text-align:center; font-size:1.2em; margin:10px 0;">\(S = (C4\;C2\;C1) = 110_2\)</div>
+  Al convertirla a decimal: \(110_2 = 6_{10}\)<br><br>
+  Por lo tanto, el hardware identifica que el error se encuentra en la <strong>posición 6</strong> e invierte el bit en dicha posición.
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga4986a4">
+<h2 id="orga4986a4">11. DRAM Síncrona (SDRAM)</h2>
+<div class="outline-text-2" id="text-orga4986a4">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc1bc083">
+<h3 id="orgc1bc083"><i class="fas fa-sync"></i> El Problema de la Latencia</h3>
 <div class="concepto-box">
   <strong>Concepto SDRAM:</strong> Sincronizada al reloj del sistema, permite mover datos bajo control del reloj. Libera al procesador de los "wait states" (tiempos de espera) de la DRAM asíncrona clásica mientras la memoria opera internamente.
 </div>
@@ -226,8 +672,8 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgdd42373">
-<h3 id="orgdd42373"><i class="fas fa-project-diagram"></i> Arquitectura Interna SDRAM</h3>
+<section id="slide-org1989a19">
+<h3 id="org1989a19"><i class="fas fa-project-diagram"></i> Arquitectura Interna SDRAM</h3>
 <div class="col2">
   <div>
     <ul style="font-size: 0.9em;">
@@ -237,13 +683,13 @@ y  0 lógico.</li>
   </div>
   <div>
 
-<div id="org13d13f9" class="figure">
+<div id="orge346428" class="figure">
 <p><img src="./imagenes/sdram-arquitectura.jpeg.jpeg" alt="sdram-arquitectura.jpeg.jpeg" width="90%" align="center" />
 </p>
 </div>
 
 
-<div id="org6810d29" class="figure">
+<div id="orgf5b165c" class="figure">
 <p><img src="./imagenes/sdram-tiempos.jpeg.jpeg" alt="sdram-tiempos.jpeg.jpeg" width="90%" align="center" />
 </p>
 </div>
@@ -253,15 +699,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-org9d3bcbe">
-<h2 id="org9d3bcbe">2. DDR SDRAM</h2>
-<div class="outline-text-2" id="text-org9d3bcbe">
+<section id="slide-orgcd25e9d">
+<h2 id="orgcd25e9d">12. DDR SDRAM</h2>
+<div class="outline-text-2" id="text-orgcd25e9d">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1251cd2">
-<h3 id="org1251cd2"><i class="fas fa-tachometer-alt"></i> Fundamentos DDR</h3>
+<section id="slide-orge24b3c9">
+<h3 id="orge24b3c9"><i class="fas fa-tachometer-alt"></i> Fundamentos DDR</h3>
 <div class="concepto-box espacial">
   <strong>Double-Data-Rate:</strong> Transfiere datos dos veces por ciclo (flanco de subida y de bajada). Utiliza un <em>Prefetch Buffer</em> (búfer de precarga) que accede a múltiples palabras en paralelo internamente para no limitar el bus de I/O.
 </div>
@@ -277,10 +723,10 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgefe9854">
-<h3 id="orgefe9854"><i class="fas fa-chart-line"></i> Evolución de Generaciones</h3>
+<section id="slide-org9417b8c">
+<h3 id="org9417b8c"><i class="fas fa-chart-line"></i> Evolución de Generaciones</h3>
 
-<div id="orgaed4a65" class="figure">
+<div id="orge8889ba" class="figure">
 <p><img src="./imagenes/ddr-evolucion.jpeg.jpeg" alt="ddr-evolucion.jpeg.jpeg" width="75%" align="center" />
 </p>
 </div>
@@ -288,15 +734,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orga15d652">
-<h2 id="orga15d652">3. EDRAM (Embedded DRAM)</h2>
-<div class="outline-text-2" id="text-orga15d652">
+<section id="slide-org290d922">
+<h2 id="org290d922">13. EDRAM (Embedded DRAM)</h2>
+<div class="outline-text-2" id="text-org290d922">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org89fc75e">
-<h3 id="org89fc75e"><i class="fas fa-bolt"></i> Características de EDRAM</h3>
+<section id="slide-org54d61fd">
+<h3 id="org54d61fd"><i class="fas fa-bolt"></i> Características de EDRAM</h3>
 <div class="concepto-box hit">
   <strong>Ventaja Principal:</strong> Integra la tecnología DRAM en el mismo chip del procesador. Ofrece mayor densidad y disipa menos energía que la SRAM, reduciendo los tiempos de acceso por proximidad y buses anchos.
 </div>
@@ -304,8 +750,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgcfb6619">
-<h3 id="orgcfb6619"><i class="fas fa-cogs"></i> Implementaciones Modernas</h3>
+<section id="slide-org28c6068">
+<h2 id="org28c6068">14. Implementaciones modernas</h2>
+<div class="outline-text-2" id="text-org28c6068">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4728b07">
+<h3 id="org4728b07"><i class="fas fa-cogs"></i> Implementaciones Modernas</h3>
 <ul>
 <li class="fragment appear"><b><b>IBM z13:</b></b> Uso masivo compartido (Caché L3 de 64 MB por CPU y Caché L4 compartida de 480 MB).</li>
 <li class="fragment appear"><b><b>Intel Core (Original):</b></b> Diseñada como caché L4 tradicional ("victim cache" de L3) con dependencias directas.</li>
@@ -314,7 +767,7 @@ y  0 lógico.</li>
 </ul>
 
 
-<div id="org8857c6f" class="figure">
+<div id="orgabcd228" class="figure">
 <p><img src="./imagenes/edram-intel.jpeg.jpeg" alt="edram-intel.jpeg.jpeg" width="65%" align="center" />
 </p>
 </div>
@@ -322,15 +775,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-org55988d9">
-<h2 id="org55988d9">4. Memoria Flash</h2>
-<div class="outline-text-2" id="text-org55988d9">
+<section id="slide-org166878c">
+<h2 id="org166878c">15. Memoria Flash</h2>
+<div class="outline-text-2" id="text-org166878c">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org0b318fd">
-<h3 id="org0b318fd"><i class="fas fa-save"></i> Principios de Operación</h3>
+<section id="slide-org3d65340">
+<h3 id="org3d65340"><i class="fas fa-save"></i> Principios de Operación</h3>
 <div class="concepto-box temporal">
   <strong>Efecto Túnel:</strong> Utiliza un transistor con <em>Floating Gate</em> (puerta flotante). <br>
   Estado '1' = Vacía. <br>Estado '0' = Electrones atrapados al aplicar alto voltaje (escritura).
@@ -346,19 +799,19 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-org0110032">
-<h3 id="org0110032"><i class="fas fa-object-group"></i> Topología NOR vs NAND</h3>
+<section id="slide-org71f864c">
+<h3 id="org71f864c"><i class="fas fa-object-group"></i> Topología NOR vs NAND</h3>
 <div class="col2">
   <div>
 
-<div id="org8b74a41" class="figure">
+<div id="org6c8082a" class="figure">
 <p><img src="./imagenes/flash-transistor.jpeg.jpeg" alt="flash-transistor.jpeg.jpeg" width="95%" align="center" />
 </p>
 </div>
 </div>
 <div>
 
-<div id="org42a381f" class="figure">
+<div id="orgc4ef10f" class="figure">
 <p><img src="./imagenes/flash-nornand.jpeg.jpeg" alt="flash-nornand.jpeg.jpeg" width="95%" align="center" />
 </p>
 </div>
@@ -368,15 +821,15 @@ y  0 lógico.</li>
 </section>
 </section>
 <section>
-<section id="slide-orga34ab25">
-<h2 id="orga34ab25">Fin de la Presentación</h2>
-<div class="outline-text-2" id="text-orga34ab25">
+<section id="slide-org58731f4">
+<h2 id="org58731f4">Fin de la Presentación</h2>
+<div class="outline-text-2" id="text-org58731f4">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgd370a7e">
-<h3 id="orgd370a7e"><i class="fas fa-question-circle"></i> ¿Preguntas?</h3>
+<section id="slide-orga9e05a0">
+<h3 id="orga9e05a0"><i class="fas fa-question-circle"></i> ¿Preguntas?</h3>
 <div class="text-center">
   <h3 class="azul">¡Gracias por su atención!</h3>
   <p class="muted small">Bibliografía: Estructura y Organización de Computadores (Basado en Capítulos 5 y 6).</p>
