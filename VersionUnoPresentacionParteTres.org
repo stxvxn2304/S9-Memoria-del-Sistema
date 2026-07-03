@@ -226,7 +226,7 @@
 </div>
 #+end_export
   
-#+ATTR_HTML: :width 70% :align center
+#+ATTR_HTML: :width 50% :align center
 [[./imagenes/encapsulacion_chips.png]]
 
 * 9. Organización en módulos
@@ -552,6 +552,135 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
 [[./imagenes/flash-nornand.jpeg.jpeg]]
 #+begin_export html
   </div>
+</div>
+#+end_export
+
+* 16. Memoria Flash (Flash Memory)
+** @@html:<i class="fas fa-microchip"></i>@@ Origen y Evolución
+#+begin_export html
+<div class="concepto-box">
+  Es un tipo de memoria intermedia que revolucionó el almacenamiento. Nació a mediados de los años 80 porque se necesitaba algo rápido para borrar datos sin costar una fortuna.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- Evolucionó combinando lo mejor de dos tecnologías anteriores:
+- @@html:<span style="color:#F0C040;"><strong>(EPROM):</strong></span>@@ Eran memorias que se borraban exponiéndolas a @@html:<span style="color:#7ECFFF;">luz ultravioleta</span>@@, lo cual era lentísimo y requería sacar el chip de la placa.
+- @@html:<span style="color:#F0C040;"><strong>(EEPROM):</strong></span>@@ Memorias más modernas que ya se borraban con electricidad, pero lo hacían @@html:<span style="color:#D63031;"><strong>byte por byte</strong></span>@@, de forma muy lenta.
+
+#+ATTR_REVEAL: :frag (appear)
+- La memoria Flash tomó la ventaja de borrado eléctrico de la EEPROM, pero lo hace a gran velocidad y en @@html:<span style="color:#00B894;"><strong>"bloques" enteros</strong></span>@@.
+- Además, usa solo un transistor por bit, logrando una alta densidad.
+
+** @@html:<i class="fas fa-cogs"></i>@@ ¿Cómo guarda y borra los datos físicamente?
+#+begin_export html
+<div class="concepto-box espacial">
+  <strong>Compuerta flotante:</strong> En lugar de usar transistores comunes, añade un elemento clave (una pequeña "caja fuerte" aislada eléctricamente por óxido).
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<strong>@@Estado Inicial (1 lógico):@@html:</strong>@@ La caja fuerte está vacía. La electricidad pasa libremente.
+- @@html:<strong>@@Guardar datos (0 lógico):@@html:</strong>@@ Voltaje fuerte empuja electrones a cruzar el aislamiento (@@html:<span style="color:#F0C040;"><strong>tunneling</strong></span>@@). Los electrones quedan atrapados de forma @@html:<span style="color:#00B894;"><strong>no volátil</strong></span>@@.
+- @@html:<strong>@@Lectura:@@html:</strong>@@ Un circuito externo revisa si el transistor deja pasar corriente.
+- @@html:<strong>@@Borrado:@@html:</strong>@@ Voltaje alto en dirección opuesta saca los electrones de golpe. Limpia @@html:<span style="color:#FF7675;"><strong>bloques completos</strong></span>@@ a la vez.
+
+** @@html:<i class="fas fa-network-wired"></i>@@ Tipos de Flash Memory
+#+begin_export html
+<div class="col2">
+  <div>
+    <div class="concepto-box hit">
+      <strong>NOR</strong>
+    </div>
+    <ul style="font-size: 0.8em;">
+      <li><strong>Conexión:</strong> Celdas organizadas en paralelo.</li>
+      <li><strong>Ventaja:</strong> Acceso aleatorio rapidísimo a nivel de byte. Lee instrucciones directamente.</li>
+      <li><strong>Aplicación:</strong> Código de arranque (firmware) en microcontroladores y sistemas embebidos.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="concepto-box warn">
+      <strong>NAND</strong>
+    </div>
+    <ul style="font-size: 0.8em;">
+      <li><strong>Conexión:</strong> Celdas en serie (cadenas de 16-32 transistores).</li>
+      <li><strong>Ventaja:</strong> Ocupan menos espacio físico. Muy baratas y capacidad gigantesca.</li>
+      <li><strong>Limitación:</strong> Obligada a leer/escribir en bloques/páginas. Sin acceso aleatorio directo.</li>
+      <li><strong>Aplicación:</strong> Almacenamiento masivo (USBs, SDs, SSDs).</li>
+    </ul>
+  </div>
+</div>
+#+end_export
+
+* 17. Nuevas Tecnologías de Memoria Sólida No Volátil
+** @@html:<i class="fas fa-rocket"></i>@@ El Límite Físico Actual
+#+begin_export html
+<div class="concepto-box warn">
+  <strong>El problema:</strong> Las memorias tradicionales (SRAM, DRAM y Discos Duros) están llegando a su límite físico; cada vez es más difícil hacer los chips más pequeños sin que fallen o consuman demasiada energía.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- Estas nuevas tecnologías buscan el "santo grial":
+- Combinar la @@html:<span style="color:#00B894;"><strong>velocidad extrema</strong></span>@@ de la memoria RAM.
+- Con la @@html:<span style="color:#F0C040;"><strong>no volatilidad</strong></span>@@ de no perder los datos al apagarse.
+
+** @@html:<i class="fas fa-magnet"></i>@@ STT-RAM (Spin-Transfer Torque RAM)
+#+begin_export html
+<div class="concepto-box">
+  <strong>Evolución de MRAM:</strong> Utiliza el magnetismo en lugar de cargas eléctricas. Candidato para caché o memoria principal.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<strong>@@¿Cómo funciona?@@html:</strong>@@ Tiene una "Unión de Túnel Magnético" con una capa fija y una capa libre.
+- @@html:<span style="color:#00B894;"><strong>Paralelas:</strong></span>@@ Electricidad pasa fácil (baja resistencia = 0).
+- @@html:<span style="color:#D63031;"><strong>Antiparalelas:</strong></span>@@ Cuesta pasar (alta resistencia = 1). Se cambia la capa libre con corriente directa.
+- @@html:<span style="color:#F0C040;"><strong>Fuertes:</strong></span>@@ Rapidísima (<10 ns), altísima durabilidad (>$10^{15}$ ciclos) y cero consumo en standby.
+
+** @@html:<i class="fas fa-fire-alt"></i>@@ PCRAM (Phase-Change RAM)
+#+begin_export html
+<div class="concepto-box temporal">
+  <strong>Tecnología madura:</strong> Utiliza una aleación de calcogenuro (como en CDs/DVDs regrabables) pensada para reemplazar/complementar DRAM.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<strong>@@¿Cómo funciona?@@html:</strong>@@ Cambia el estado físico del material usando pulsos de calor:
+- @@html:<span style="color:#00B894;"><strong>Estado Cristalino (SET):</strong></span>@@ Ordenado, deja pasar corriente (calentando un poco).
+- @@html:<span style="color:#FF7675;"><strong>Estado Amorfo (RESET):</strong></span>@@ Desordenado, bloquea la corriente (con chispazo fuerte y enfriamiento rápido).
+- @@html:<span style="color:#F0C040;"><strong>Fuertes:</strong></span>@@ Estabilidad física suprema, retiene información a largo plazo de forma segura.
+
+** @@html:<i class="fas fa-microscope"></i>@@ ReRAM / RRAM (Resistive RAM)
+#+begin_export html
+<div class="concepto-box espacial">
+  <strong>Memoria resistiva:</strong> Altera físicamente la resistencia de un óxido metálico. Candidata para memoria principal y masiva.
+</div>
+#+end_export
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<strong>@@¿Cómo funciona?@@html:</strong>@@ Aplicando voltaje, se crean filamentos conductores en el óxido:
+- @@html:<span style="color:#00B894;"><strong>Baja resistencia:</strong></span>@@ Filamentos creados, la corriente pasa (1 o 0).
+- @@html:<span style="color:#D63031;"><strong>Alta resistencia:</strong></span>@@ Aplicando voltaje inverso, los filamentos se rompen.
+- @@html:<span style="color:#F0C040;"><strong>Fuertes:</strong></span>@@ Muy bajo voltaje (ahorro de energía), larga duración, tamaño celular microscópico teórico para tarjetas gigantescas.
+
+** @@html:<i class="fas fa-table"></i>@@ Tabla Comparativa
+#+begin_export html
+<div class="concepto-box">
+  Comparación de los parámetros críticos de rendimiento entre las tecnologías semiconductoras tradicionales y alternativas emergentes:
+</div>
+#+end_export
+
+#+ATTR_HTML: :width 85% :align center
+[[./imagenes/tabla_comparativa_Arq.png]]
+
+** @@html:<i class="fas fa-lightbulb"></i>@@ Conclusión del Desarrollo Tecnológico
+#+begin_export html
+<div class="concepto-box hit">
+  Toda la evolución estudiada busca combinar todas estas ventajas en una única memoria, objetivo que aún no se ha alcanzado.
+</div>
+<div class="concepto-box warn" style="margin-top:20px;">
+  <strong> ¡No lo olvidemos!:</strong> A pesar de los colosales avances con STT-RAM o PCRAM, la arquitectura actual sigue dependiendo de una jerarquía fragmentada (Caché, RAM y Almacenamiento Secundario) porque ninguna tecnología comercial logra reunir de forma simultánea la velocidad extrema de la SRAM, la altísima densidad de la DRAM/NAND y la no volatilidad permanente a un costo viable.
 </div>
 #+end_export
 
