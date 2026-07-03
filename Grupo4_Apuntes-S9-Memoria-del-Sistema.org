@@ -76,7 +76,120 @@ por tener dos  estados semiestables, que representan el 0 y 1
 lógico. Además, es posible realizar dos operaciones principales en
 estas celdas: escritura, que consiste en fijar su estado, y lectura,
 que permite detectar su estado almacenado. Para este proceso, se usan
-tres terminales: de selección, lectura y escritura. 
+tres terminales: de selección, lectura y escritura.
+
+* 2026-07-01 DRAM y SRAM
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: DRAM
+- término clave2 :: SRAM
+- término clave3 :: Volatilidad
+- término clave4 :: Refresco
+- ¿Cuáles son las dos formas básicas de memorias semiconductoras de acceso aleatorio? ::
+- ¿A qué propiedad física de la celda de memoria hace referencia el término dinámica? ::
+- ¿Qué componente electrónico básico se utiliza en la DRAM para almacenar la carga? ::
+- ¿Cómo se denomina la configuración de transistores que utiliza la SRAM para mantener estados estables? ::
+- ¿Por qué la DRAM requiere circuitería adicional de refresco para mantener los datos? ::
+- ¿Cuál es la principal ventaja de la SRAM sobre la DRAM en términos de rendimiento? ::
+- ¿Qué tipo de memoria es preferida para la memoria principal debido a su densidad y coste? ::
+
+** Notas (Notes):
+- Características generales de la memoria RAM semiconductora
+    - Las palabras individuales son accedidas directamente mediante
+      lógica de direccionamiento interna.
+    - Es posible leer y escribir datos rápidamente mediante señales
+      eléctricas.
+    - Son memorias volátiles, lo que implica que pierden los datos si
+      se interrumpe la alimentación.
+- RAM dinámica (DRAM)
+    - Almacena los datos como cargas eléctricas en condensadores.
+    - La presencia o ausencia de carga se interpreta como uno o cero
+      binario.
+    - Debido a la descarga natural de los condensadores, requiere
+      refrescos periódicos para mantener la información.
+    - La operación de lectura descarga el condensador, por lo que la
+      carga debe restablecerse tras leer.
+    - Es un dispositivo esencialmente analógico porque el condensador
+      puede almacenar rangos de carga.
+    - Es más densa y económica, siendo la opción estándar para la
+      memoria principal.
+- RAM estática (SRAM)
+    - Es un dispositivo digital basado en biestables o flip-flops.
+    - Utiliza configuraciones de cuatro o seis transistores para
+      producir estados lógicos estables.
+    - No requiere refresco para mantener los datos mientras reciba
+      alimentación.
+    - Es generalmente más rápida que la memoria dinámica.
+    - Su menor densidad y mayor coste limitan su uso a las memorias
+      caché.
+- Comparación y organización
+    - La interfaz DRAM tradicional es asíncrona, a diferencia de
+      variantes modernas como la SDRAM.
+    - La SRAM se usa para compensar la velocidad relativamente baja de
+      la DRAM mediante niveles de caché.
+
+** Resumen (Summary):
+La memoria principal semiconductora se basa en dos tecnologías de
+acceso aleatorio y volátiles: DRAM y SRAM. La DRAM almacena bits como
+carga en condensadores, lo que permite una alta densidad y bajo coste
+para la memoria principal, aunque necesita procesos de refresco
+constantes. Por el contrario, la SRAM utiliza biestables digitales que
+ofrecen mayor velocidad sin necesidad de refresco, lo que la hace
+ideal para memorias caché a pesar de ser más cara y menos densa.
+
+* 2026-07-01 Tipos de Memoria de Solo Lectura (ROM)
+
+** Preguntas y Términos clave (Cue):
+- término clave1 :: ROM
+- término clave2 :: PROM
+- término clave3 :: EPROM
+- término clave4 :: EEPROM
+- término clave5 :: Flash
+- ¿Qué característica distingue a la memoria ROM en cuanto a la persistencia de datos sin energía eléctrica? ::
+- ¿Cuáles son los dos problemas principales derivados de la fabricación de ROM mediante máscaras? ::
+- ¿Qué proceso físico es necesario para borrar el contenido almacenado en una EPROM? ::
+- ¿En qué se diferencia la flexibilidad de escritura de una EEPROM frente a una PROM? ::
+- ¿Qué tipo de borrado permite la memoria Flash que la sitúa entre la EPROM y la EEPROM? ::
+
+** Notas (Notes):
+- Memoria de solo lectura (ROM)
+    - Contiene un patrón permanente de datos que no puede ser
+      alterado.
+    - Es no volátil, por lo que no requiere fuente de alimentación
+      para mantener los bits.
+    - Sus aplicaciones incluyen microprogramación, programas del
+      sistema y tablas de funciones.
+    - Los datos se cablean físicamente durante la fabricación, lo que
+      genera altos costes fijos iniciales.
+    - No permite errores; si un bit es incorrecto, se debe desechar
+      toda la tirada de chips.
+- ROM programable (PROM)
+    - Es una alternativa no volátil que puede grabarse una sola vez
+      eléctricamente.
+    - El proceso de escritura lo realiza el suministrador o el cliente
+      tras la fabricación con equipo especial.
+- Memorias de sobre-todo lectura (Read-mostly)
+    - EPROM (Erasable PROM): Se lee y escribe eléctricamente, pero
+      requiere exposición a luz ultravioleta para el borrado completo
+      antes de reescribir.
+    - EEPROM (Electrically Erasable PROM): Permite la escritura en
+      cualquier momento sin borrar contenido previo, actualizando solo
+      los bytes direccionados.
+    - Memoria Flash: Utiliza tecnología de borrado eléctrico por
+      bloques en lugar de bytes, ofreciendo una alta densidad de
+      almacenamiento.
+    - La memoria Flash es más rápida de borrar que la EPROM y se sitúa
+      entre la EPROM y la EEPROM en coste y funcionalidad.
+
+** Resumen (Summary):
+La memoria ROM es un almacenamiento no volátil que evoluciona desde
+las versiones cableadas de fábrica hacia opciones programables como la
+PROM. Existen variantes denominadas de sobre-todo lectura que permiten
+actualizaciones, destacando la EPROM por su borrado mediante luz
+ultravioleta y la EEPROM por su capacidad de borrado eléctrico a nivel
+de byte. La memoria Flash representa una solución intermedia que
+permite el borrado eléctrico por bloques, combinando la alta densidad
+de la EPROM con la flexibilidad de la actualización eléctrica.
 
 
 * 2026-07-01 Lógica del chip
@@ -210,14 +323,119 @@ ocho bits, se necesitarían ocho chips de 256 KB.
   chips organizadas de forma similar a la memoria de 256 KB.                                                                                                    
 
 
+* 2026-07-01 Errores en Memorias Semiconductoras: Hard y Soft Errors
 
+** Preguntas y Términos clave (Cue):
+- término clave1 :: Hard error
+- término clave2 :: Soft error
+- término clave3 :: Fallo permanente
+- término clave4 :: Error transitorio
+- ¿Cómo se clasifican los fallos en las memorias semiconductoras? ::
+- ¿Qué características definen a un fallo de tipo permanente? ::
+- ¿Cuáles son las causas principales de un hard error? ::
+- ¿Por qué un error de tipo soft se considera un evento no destructivo? ::
+- ¿Qué factores externos suelen provocar errores transitorios en las celdas? ::
+- ¿Qué función cumplen los códigos correctores de errores en estos sistemas? ::
 
+** Notas (Notes):
+- Clasificación general de errores en memoria
+    - Las memorias semiconductoras pueden presentar fallos que se
+      categorizan según su persistencia y origen.
+    - La mayoría de los sistemas modernos incorporan lógica específica
+      para la detección y corrección de estos fallos.
+- Fallos permanentes (Hard Errors)
+    - Se definen como un defecto físico en el hardware de la memoria.
+    - Las celdas afectadas pierden la capacidad de almacenar datos de
+      forma segura.
+    - El comportamiento típico es quedar ancladas a un valor fijo
+      (cero o uno) o conmutar de manera errática.
+    - Sus causas principales incluyen el funcionamiento bajo
+      condiciones ambientales adversas, defectos surgidos durante la
+      fabricación y el desgaste por uso.
+- Errores transitorios (Soft Errors)
+    - Consisten en eventos aleatorios que alteran el contenido de las
+      celdas sin dañarlas físicamente.
+    - Se consideran no destructivos porque la memoria sigue siendo
+      funcional tras el evento.
+    - Una de las causas más frecuentes es la incidencia de partículas
+      alfa resultantes de emisiones radiactivas.
+    - Los núcleos radiactivos responsables de estas emisiones se
+      encuentran en pequeñas cantidades en casi todos los materiales.
+    - También pueden ser provocados por fluctuaciones o problemas en
+      la fuente de alimentación.
+- Proceso de detección y corrección
+    - El sistema realiza cálculos con los datos para producir un
+      código que se almacena simultáneamente.
+    - Durante la lectura, se genera un nuevo código a partir de los
+      datos captados y se compara con el código guardado.
+    - Esta comparación genera una palabra de síndrome que permite
+      identificar si hubo un error.
+    - Dependiendo del código utilizado, el sistema puede no detectar
+      error, corregir un error detectado o informar de un error no
+      corregible.
 
+** Resumen (Summary):
+Los errores en las memorias semiconductoras se clasifican en
+permanentes (hard) y transitorios (soft). Mientras que los hard errors
+implican un daño físico en las celdas debido a defectos de fábrica o
+desgaste, los soft errors son alteraciones aleatorias del contenido
+binario causadas por factores externos como partículas alfa o fallos
+eléctricos. Para garantizar la fiabilidad, los sistemas emplean
+códigos correctores que utilizan bits redundantes para identificar y
+solucionar estas discrepancias durante las operaciones de lectura y
+escritura.
 
+* 2026-07-01 Técnicas de Corrección de Errores: Código de Hamming
 
+** Preguntas y Términos clave (Cue):
+- término clave1 :: Hamming
+- término clave2 :: Comprobación
+- término clave3 :: Síndrome
+- término clave7 :: XOR
+- ¿Quién fue el creador del código corrector de errores más sencillo utilizado en memorias? ::
+- ¿Qué tipo de bits se añaden a los bits de datos para formar un código de corrección? ::
+- ¿Cuál es la inecuación que determina el número de bits de comprobación necesarios para una palabra de datos? ::
+- ¿En qué posiciones específicas de la palabra se ubican los bits de comprobación? ::
+- ¿Qué información proporciona el valor numérico de la palabra de síndrome? ::
+- ¿Qué función cumple el bit adicional en los códigos denominados SEC-DED? ::
 
+** Notas (Notes):
+- El código de Hamming es una técnica de corrección de errores simples
+  (SEC) diseñada para incrementar la fiabilidad de las memorias
+  semiconductoras.
+- El proceso implica añadir K bits redundantes a una palabra de M bits
+  de datos, de modo que el tamaño real almacenado es M+K.
+- Para determinar el número de bits de comprobación necesarios, se
+  debe cumplir la inecuación 2 elevado a K, menos 1, mayor o igual a M
+  más K.
+- Los bits de comprobación se asignan a las posiciones de bit cuyos
+  números son potencias de dos (1, 2, 4, 8...).
+- Cada bit de comprobación se calcula mediante una operación XOR
+  (OR-exclusiva) sobre un subconjunto específico de los bits de datos.
+- Durante la lectura, se genera un nuevo código que se compara con el
+  código almacenado para producir una palabra de síndrome.
+- Si el síndrome es distinto de cero, su valor indica la posición del
+  bit erróneo, permitiendo su corrección mediante la inversión del
+  bit.
+- Las memorias modernas suelen implementar el código SEC-DED (Single
+  Error Correction-Double Error Detection), que añade un bit extra
+  para detectar errores dobles que el código SEC estándar no podría
+  identificar correctamente.
+- La implementación de estos códigos mejora la fiabilidad a costa de
+  un aumento en la complejidad y un incremento porcentual en el tamaño
+  de la memoria.
 
-
+** Resumen (Summary):
+El código de Hamming es un método fundamental para garantizar la
+integridad de los datos en memorias semiconductoras mediante el uso de
+bits de paridad redundantes. Al organizar estos bits en posiciones
+estratégicas y utilizar lógica XOR, el sistema puede generar un
+síndrome que identifica la ubicación exacta de un error simple para su
+corrección automática. Mientras que el esquema SEC básico se enfoca en
+errores únicos, la evolución hacia SEC-DED permite además la detección
+de errores dobles, siendo una solución estándar en sistemas de
+computación de altas prestaciones para mitigar fallos tanto
+permanentes como transitorios.
 
 
 * 2026-07-01 Memoria Flash (Flash Memory)
@@ -398,9 +616,9 @@ de Cornell es apuntar las tareas. Pero esto lo podemos aprovechar con
 Emacs ~TODO~.
 
 
-* TODO Mis Tareas [50%]
+* TODO Mis Tareas [100%]
 - [X] Leer este documento
-- [ ] Escribir el resumen  de la exposición 1
+- [X] Escribir el resumen  de la exposición 1
 
 #+print_bibliography: 
  

@@ -393,20 +393,22 @@ Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores 
 
 #+begin_export html
 <div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
-  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P1<br><small>1 (001)</small></div>
-  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P2<br><small>2 (010)</small></div>
-  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>3 (011)</small></div>
-  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">P4<br><small>4 (100)</small></div>
-  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">0<br><small>5 (101)</small></div>
-  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>6 (110)</small></div>
+  
   <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>7 (111)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>6 (110)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">0<br><small>5 (101)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">C4<br><small>4 (100)</small></div>
+  <div style="background-color:#2980b9; padding:10px; border-radius:5px; color:white; text-align:center;">1<br><small>3 (011)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">C2<br><small>2 (010)</small></div>
+  <div style="background-color:#d35400; padding:10px; border-radius:5px; color:white; text-align:center;">C1<br><small>1 (001)</small></div>
+  
 </div>
 #+end_export
 
 @@html:<strong>@@3. Cálculo de los bits de comprobación@@html:</strong>@@ (\(C_i\) tal que \(\sum i = n\)):
-- @@html:<strong>@@C1@@html:</strong>@@ \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C1 = 0</strong></span>@@
-- @@html:<strong>@@C2@@html:</strong>@@ \(= D3 \oplus D6 \oplus D7 = 1 \oplus 1 \oplus 1 = 1 \implies\) @@html:<span style="color:#F0C040;"><strong>C2 = 1</strong></span>@@
-- @@html:<strong>@@C4@@html:</strong>@@ \(= D5 \oplus D6 \oplus D7 = 0 \oplus 1 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C4 = 0</strong></span>@@
+- @@html:<strong>@@C1@@html:</strong>@@ \(= D1(3) \oplus D2(5) \oplus D4(7) = 1 \oplus 0 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C1 = 0</strong></span>@@
+- @@html:<strong>@@C2@@html:</strong>@@ \(= D1(3) \oplus D3(6) \oplus D4(7) = 1 \oplus 1 \oplus 1 = 1 \implies\) @@html:<span style="color:#F0C040;"><strong>C2 = 1</strong></span>@@
+- @@html:<strong>@@C4@@html:</strong>@@ \(= D2(5) \oplus D3(6) \oplus D4(7) = 0 \oplus 1 \oplus 1 = 0 \implies\) @@html:<span style="color:#F0C040;"><strong>C4 = 0</strong></span>@@
 
 @@html:<strong>@@Mensaje final transmitido hacia la memoria:@@html:</strong>@@
 #+begin_export html
@@ -431,20 +433,20 @@ Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores 
 @@html:<strong>@@Palabra dañada leída por el procesador:@@html:</strong>@@
 #+begin_export html
 <div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>1</small></div>
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>2</small></div>
-  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>3</small></div>
-  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>4</small></div>
-  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>5</small></div>
-  <div style="background-color:#D63031; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>6</small></div>
   <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>7</small></div>
+  <div style="background-color:#D63031; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>6</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>5</small></div>
+   <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>4</small></div>
+  <div style="background-color:#2980b9; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>3</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">1<br><small>2</small></div>
+  <div style="background-color:#d35400; padding:10px 20px; border-radius:5px; color:white; font-weight:bold;">0<br><small>1</small></div>
 </div>
 #+end_export
 
 @@html:<strong>@@4. Detección del error:@@html:</strong>@@ El hardware recalcula los bits de comprobacion.
-- @@html:<strong>@@C1@@html:</strong>@@ \(= D3 \oplus D5 \oplus D7 = 1 \oplus 0 \oplus 1 =\) @@html:<span style="color:#00B894;"><strong>0</strong></span>@@
-- @@html:<strong>@@C2@@html:</strong>@@ \(= D3 \oplus D6 \oplus D7 = 1 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@
-- @@html:<strong>@@C4@@html:</strong>@@ \(= D5 \oplus D6 \oplus D7 = 0 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>1</strong></span>@@
+- @@html:<strong>@@C1@@html:</strong>@@ \(= D1(3) \oplus D2(5) \oplus D4(7) = 1 \oplus 0 \oplus 1 =\) @@html:<span style="color:#00B894;"><strong>0</strong></span>@@
+- @@html:<strong>@@C2@@html:</strong>@@ \(= D1(3) \oplus D3(6) \oplus D4(7) = 1 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@
+- @@html:<strong>@@C4@@html:</strong>@@ \(= D2(5) \oplus D3(6) \oplus D4(7) = 0 \oplus\) @@html:<span style="color:#D63031;"><strong>0</strong></span>@@ \(\oplus 1 =\) @@html:<span style="color:#D63031;"><strong>1</strong></span>@@
 
 ** @@html:<i class="fas fa-tools"></i>@@ Palabra de síndrome (Paso 3)
 @@html:<strong>@@5. Comparación de los bits de comprobación@@html:</strong>@@
@@ -466,7 +468,7 @@ Los bits recalculados se comparan con los almacenados mediante una operación XO
 <div class="concepto-box hit" style="margin-top:20px;">
   <strong>Palabra de síndrome</strong><br>
   La comparación genera la palabra de síndrome:<br>
-  <div style="text-align:center; font-size:1.2em; margin:10px 0;">\(S = (C4\;C2\;C1) = 110_2\)</div>
+  <div style="text-align:center; font-size:1.2em; margin:10px 0;">\(S = 110_2\)</div>
   Al convertirla a decimal: \(110_2 = 6_{10}\)<br><br>
   Por lo tanto, el hardware identifica que el error se encuentra en la <strong>posición 6</strong> e invierte el bit en dicha posición.
 </div>
