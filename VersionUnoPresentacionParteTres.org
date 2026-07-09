@@ -260,6 +260,16 @@
 </div>
 #+end_export
 
+#+begin_export html
+  </div>
+
+  <div>
+    <h3>Simulación de chip de memoria RAM</h3>
+    https://digisim.io/circuits/templates/basic-ram-memory-system
+  </div>
+</div>
+#+end_export
+
 * 10. Correccion de Errores y código de Hamming
 ** @@html:<i class="fas fa-exclamation-triangle"></i>@@ Hard Error vs Soft Error
 #+ATTR_REVEAL: :frag (appear)
