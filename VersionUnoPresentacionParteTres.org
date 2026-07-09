@@ -260,16 +260,6 @@
 </div>
 #+end_export
 
-#+begin_export html
-  </div>
-
-  <div>
-    <h3>Simulación de chip de memoria RAM</h3>
-    https://digisim.io/circuits/templates/basic-ram-memory-system
-  </div>
-</div>
-#+end_export
-
 * 10. Correccion de Errores y código de Hamming
 ** @@html:<i class="fas fa-exclamation-triangle"></i>@@ Hard Error vs Soft Error
 #+ATTR_REVEAL: :frag (appear)
@@ -403,7 +393,7 @@ Nuestro ejemplo utiliza una palabra de \(M=4\) bits. Probamos distintos valores 
 #+end_export
 
 ** @@html:<i class="fas fa-step-forward"></i>@@ Generación de la palabra (Paso 1)
-@@html:<strong>@@1. Datos a enviar (4 bits):@@html:</strong>@@ =1011= (D1, D2, D3, D4)
+@@html:<strong>@@1. Datos a enviar (4 bits):@@html:</strong>@@1101 (D4, D3, D2, D1)
 @@html:<strong>@@2. Posiciones:@@html:</strong>@@ Metemos los datos dejando libres las potencias de 2 para los bits de comprobación (C1, C2, C4).
 
 #+begin_export html

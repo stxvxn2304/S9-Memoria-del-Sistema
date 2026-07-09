@@ -3,8 +3,8 @@
 #+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
 #+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
 #+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+title: Plantilla para Toma de Notas en Clase
-#+date:  2026-07-01
+#+title: S9-Memorias del Sistema_Apuntes
+#+date:  2026-07-09
 #+author: Echeverría Steven, Jami Mateo, Pérez Martín y Zúñiga Sebastián. 
 #+email: sebastian.zuniga@epn.edu.ec
 #+language: Español
